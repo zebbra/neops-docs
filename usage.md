@@ -8,7 +8,8 @@
 
 The network search view gives you an overview over the entities "Location/Group", "Devices" and "Interfaces". All three views display the search related elements. In addition, the topology of the searched network elements is displayed.
 
-<img src="./_media/search-elements.png" alt="drawing" height="100"/>
+![Search Elements](./_media/search-elements.png)
+
 Relevant data regarding the entities (facts, checks and global data) is searchable via the search bar.
 
 ![Search Bar](./_media/search-bar.png)
