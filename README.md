@@ -53,8 +53,10 @@ Examples:
 - **[zebbra AG](https://zebbra.ch), Bern, Switzerland**
   - **Simon Obi** - _Backend_ - [obisimon](https://github.com/obisimon)
   - **Claudio Siegenthaler** - _Frontend_ - [cloedu87](https://github.com/cloedu87)
+  - **Leandro Lerena** - _Backend_ - [leandrolerena](https://github.com/leandrolerena)
+  - **Marcel Wälti Rettenmund** - _UX_ - [waleburg](https://github.com/waleburg)
 
-See also the list of other [contributors](https://github.com/zebbra/neops-core/contributors) who participated in this project.
+And the whole [Zebbra Team](https://zebbra.ch/#team)!
 
 ## License
 
