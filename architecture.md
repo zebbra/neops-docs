@@ -113,7 +113,7 @@ Locations are Device Groups with additional properties like address and coordina
 
 ## Frontend
 
-!> TODO
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ## Backend
 
@@ -197,20 +197,20 @@ Interface, Device, DeviceGroup including their facts are stored as separated Ind
 
 ### Workers/Celery
 
-!> **TODO**
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ### nornir/Tasks/Providers
 
-!> **TODO**
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ## Style Guide
 
-!> **TODO**
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ## Testing
 
-!> **TODO**
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ## Documentation
 
-!> **TODO**
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
