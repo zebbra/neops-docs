@@ -2,7 +2,7 @@
 
 ## Frontend
 
-!> TODO
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ### Network Search
 

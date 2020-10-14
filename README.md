@@ -53,10 +53,12 @@ Examples:
 ## Authors
 
 - **[zebbra AG](https://zebbra.ch), Bern, Switzerland**
-  - **Simon Obi** - _Backend_ - [obisimon](https://github.com/obisimon)
   - **Claudio Siegenthaler** - _Frontend_ - [cloedu87](https://github.com/cloedu87)
   - **Leandro Lerena** - _Backend_ - [leandrolerena](https://github.com/leandrolerena)
   - **Marcel Wälti Rettenmund** - _UX_ - [waleburg](https://github.com/waleburg)
+  - **Roland Mamie** - _Networking and backend_ - [rmamie](https://github.com/rmamie)
+  - **Simon Obi** - _Backend_ - [obisimon](https://github.com/obisimon)
+  
 
 And the whole [Zebbra Team](https://zebbra.ch/#team)!
 
