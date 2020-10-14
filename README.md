@@ -8,19 +8,15 @@
 
 !> **Getting ready for Version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Until then, this documentation is incomplete. Stay tuned by the end of the year and subscribe to updates on [neops.io](https://www.neops.io/#contact)!
 
-## Getting Started
-
-Check out the [Quick Start](installation.md) documentation to get started.
-
 ## About
 
-neops.io is an application for network automation.
+**neops.io, the smart way to network programmability.**
 
-for more information visit [neops.io](https://neops.io)
 
-## Usage
+The key to be competitive tomorrow lies in an effective network automation that is closely integrated into your business processes. neops.io was built for complex enterprise and MSP environments and empowers you to automate and integrate on the fast-track. Many organizations invest heavily in enabling their network teams to learn to code and to automate. neops.io builds on those skills and helps to realize value faster by providing a modular platform that takes care of the heavy lifting. This lets your engineers focus on creating custom network & business logic, while neops.io provides the overview, tools and mechanisms to handle the management part.
 
-see [Usage](usage.md)
+For more information visit [neops.io](https://neops.io)
+
 
 ## External Resources
 
