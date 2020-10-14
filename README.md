@@ -43,6 +43,15 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/zebbra/neops-core/tags).
 
+
+**Note: Upgrading Neops requires you to sequentially install all minor releases**
+
+Examples:
+
+- Upgrade from v1.0 to v1.1: Install directly
+- Upgrade from v1.0 to v1.2: Install v1.1 first
+- Upgrade from v1.0 to v1.x: Install v1.1, ..., v1.(x-1) first
+
 ## Authors
 
 - **[zebbra AG](https://zebbra.ch), Bern, Switzerland**
