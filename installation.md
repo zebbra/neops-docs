@@ -153,7 +153,7 @@ The last 2 parameters are the user id and the name of the app
 
 #### Keycloak (neops_auth_keycloak)
 
-!> **TODO**
+!> **Coming with version 1.0**
 
 ## Web Frontends
 
@@ -173,7 +173,7 @@ Use the discovery process on the dashboard to add new devices
 
 ### Kubernetes
 
-!> **TODO** Describe how to deploy using Helm chart
+!> **Coming with version 1.0** Neops can be deployed on a kubernetes cluster using helm. We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ### Docker - Compose
 

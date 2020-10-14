@@ -135,15 +135,15 @@ To find the saved search term, enter the defined name. Saved searches are per de
 
 ### <a name="frontend-tasks">Tasks</a>
 
-!> TODO
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ### Execute Tasks
 
-!> TODO
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ### Discovery
 
-!> TODO
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ## Facts
 
@@ -561,12 +561,12 @@ def process_global_result(
 
 ### Inheritance
 
-!> TODO
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ## nornir Task Resolvers
 
-!> TODO
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
 ## Checks
 
-!> TODO
+!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!

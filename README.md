@@ -8,13 +8,13 @@
 
 ## Getting Started
 
-Check out the [Quick Start](https://docs.neops.io/#/installation) documentation to get started.
+Check out the [Quick Start](installation.md) documentation to get started.
 
 ## About
 
 neops.io is an application for network automation.
 
-for more information visit neops.io
+for more information visit [neops.io](https://neops.io)
 
 ## Usage
 
@@ -33,18 +33,14 @@ Below you can find links to other resources related to neops:
 
 ## Roadmap
 
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+We are currently working hard on the v1.0 release. Stay tuned!
 
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/zebbra/neops-core/tags).
 
 
-**Note: Upgrading Neops requires you to sequentially install all minor releases**
+**Note: Upgrading Neops requires you to sequentially install all minor releases, if not stated otherwise**
 
 Examples:
 
@@ -63,6 +59,12 @@ See also the list of other [contributors](https://github.com/zebbra/neops-core/c
 ## License
 
 Currently neops.io is released under a proprietary license, we have planned to release the core of neops.io under a copy left or noncomercial license.
+
+## Contributing
+
+At this time, we are not set up to handle contributions. However, we appreciate any ideas or inputs. Please don't hesistate to contact us via [neops.io](https://neops.io). 
+
+If you are a developer, you can also read our [private contribution guidelines](CONTRIBUTING.md) for details on our code of conduct.
 
 ## Acknowledgments
 
