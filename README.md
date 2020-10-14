@@ -6,6 +6,8 @@
 
 <!-- TODO: Doc and Latest Release Badge -->
 
+!> **Getting ready for Version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Until then, this documentation is incomplete. Stay tuned by the end of the year and subscribe to updates on [neops.io](https://www.neops.io/#contact)!
+
 ## Getting Started
 
 Check out the [Quick Start](installation.md) documentation to get started.
