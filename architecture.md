@@ -1,11 +1,5 @@
 # Architecture
 
-neops.io
-
-## Setup
-
-see [Installation](installation.md)
-
 ## Principles
 
 neops.io as a network automation software was built with the following principles in mind
