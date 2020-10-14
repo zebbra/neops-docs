@@ -18,16 +18,16 @@ The key to be competitive tomorrow lies in an effective network automation that 
 For more information visit [neops.io](https://neops.io)
 
 
-## External Resources
+## Resources
 
 Below you can find links to other resources related to neops:
 
 - [neops.io Website](https://neops.io)
 - [zebbra](https://zebbra.ch) has built neops.io
-- this [Documentation](https://docs.neops.io)
-- [Demo](https://demo.neops.io)
-- [Docker Containers at quay.io](https://quay.io/organization/zebbra/neops)
-- for documentation of used projects at neops.io see [Acknowledgments](#acknowledgments)
+- [Demo](https://demo.neops.io) (Username: demo, Password: demodemo)
+- [Acknowledgments](#acknowledgments) for documentation of used projects at neops.io.
+- [Docker Containers at quay.io](https://quay.io/organization/zebbra/neops) (Private)
+- [Documentation](https://docs.neops.io)
 
 ## Roadmap
 
