@@ -167,3 +167,9 @@ RESlot
 ### Ressources
 
 - [TextFSM Documentation](https://github.com/google/textfsm/wiki/TextFSM)
+
+
+## Installation manual 
+
+An [Installation manual](installation.md) is available for developers.
+
