@@ -1,4 +1,4 @@
-# Neops Tasks
+# Pre and post run tasks
 
 Neops tasks are specific instances of a [neops provider](https://link), which contain the needed configuration such as **pre** and **post run tasks**.
 
