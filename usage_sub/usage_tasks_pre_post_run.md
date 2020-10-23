@@ -56,6 +56,8 @@ graph LR
 
 ### Optimize task sequence
 
+#### Removal of consecutively repeating tasks
+
 Consider an example with pre and post run tasks, similar to the previous. Here, a pre run task is added to task 1 and 2, such that the integrity check is mandatory before a change can occur:
 
 ```mermaid
@@ -159,5 +161,64 @@ graph LR
     C11 -- pre task 1 --> A1
     A1 -- post task 1 --> C12
     C12 -- pre task 2 --> A2
+    A2 -- post task 2 --> C22
+```
+
+
+#### Optimize task sequence by finding shortest path
+
+Consider the previous example with an added post run task (task 4) to task 1. Task 4 has no dependencies.
+
+
+```mermaid
+graph LR
+    A1[Task 1: Collect Facts]    
+    A2[Task 3: Configuration Task]
+    C[Task 2: Integrity Check]
+    A3[Task 4: Renaming task]
+    C -- pre --> A1
+    A1 -- post --> C
+    C -- pre --> A2
+    A2 -- post --> C
+    A1 --> A2
+    A1 --> A3
+```
+
+Here, a second possible path fulfilling the requirements is introduced. Neops will find the task sequence which is shortest.
+
+6 Task executions (shortest)
+
+```mermaid
+graph LR
+    A1[Task 1: Collect Facts]    
+    A2[Task 3: Configuration Task]
+    A3[Task 4: Renaming task]
+    C11[Task 2: Integrity Check]
+    C12[Task 2: Integrity Check]
+    C22[Task 2: Integrity Check]
+    C11 -- pre task 1 --> A1
+    A1 -- post task 1 --> C12
+    C12 -- pre task 2 --> A2
+    A2 -- post task 2 --> C22
+    C22 -- post task 1 --> A3
+```
+
+7 task executions (not shortest)
+
+```mermaid
+graph LR
+    A1[Task 1: Collect Facts]    
+    A2[Task 3: Configuration Task]
+    A3[Task 4: Renaming task]
+    C11[Task 2: Integrity Check]
+    C12[Task 2: Integrity Check]
+    C22[Task 2: Integrity Check]
+    C21[Task 2: Integrity Check]
+
+    C11 -- pre task 1 --> A1
+    A1 -- post task 1 --> C12
+    C12 -- post task 1 --> A3
+    A3 -- post task 1 --> C21
+    C21 -- pre task 2 --> A2
     A2 -- post task 2 --> C22
 ```
