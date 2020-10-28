@@ -48,4 +48,4 @@ Select the task in the bottom bar and click on __preview__. Enter a description 
 
 ![Search Elements](../_media/screenshots/devices-run-task-2.png)
 
-You can learn more about how a task is resolved in the provider section.
+You can learn more about how network elements are resolved in the provider section.
