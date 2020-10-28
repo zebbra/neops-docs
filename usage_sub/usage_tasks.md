@@ -1,13 +1,14 @@
-# Tasks
+# Tasks and Checks
 
-Neops tasks are specific instances of a [neops provider](https://link), which are often very generic. 
+Neops tasks and checks are specific instances of a [neops provider](https://link), which are often very generic. 
 
-A task passes the required configuration to a provider to make it runnable. These requirements are defined in a providers [json schema](https://link) 
+A task or check passes the required configuration to a provider to make it runnable. These requirements are defined in a providers [json schema](https://link) 
 
+**A check is a task, which does not manipulate the network state in any way.**
 
-## Create new task
+## Create new task or check
 
-To create a new task, navigate to the task menu in the main navigation and click on __create__.
+To create a new task navigate to the task menu in the main navigation and click on __create__.
 
 ![Search Elements](../_media/screenshots/tasks-empty.png)
 
