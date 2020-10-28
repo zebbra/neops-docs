@@ -1,4 +1,4 @@
-# Pre and post run tasks
+# Task graph: using Pre and post run tasks
 
 Neops tasks can be combined and reused in other tasks by setting them as a **pre run** or **post run** task. The task resolver will then find a valid sequence to run the tasks.
 
