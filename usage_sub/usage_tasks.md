@@ -25,8 +25,8 @@ General task fields:
 | Unique task identifier | Can be assigned to use the task over our API                                   |
 | Run Filter             | Additional filter, using the elastic query style                               |
 | Provider               | The provider (will expand the form with dynamic fields from the provider)      |
-| Pre run tasks          | Tasks which have to run before this task (see task graph for more information) |
-| Post run tasks         | Tasks which have to run after this task (see task graph for more information)  |
+| Pre run tasks          | Tasks which have to run before this task (see [task graph](./usage_tasks_graph.md) for more information) |
+| Post run tasks         | Tasks which have to run after this task (see [task graph](./usage_tasks_graph.md) for more information)  |
 
 
 <!-- ![Search Elements](../_media/screenshots/edit-task-2.png) -->
