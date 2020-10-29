@@ -21,8 +21,9 @@ The task form consists of general task fields and specific fields depending on t
 
 General task fields:
 
-| Name                   | A human readable name for the task                                             |
+| Field                  | Description                                                                    |
 |------------------------|--------------------------------------------------------------------------------|
+| Name                   | A human readable name for the task                                             |
 | Unique task identifier | Can be assigned to use the task over our API                                   |
 | Run Filter             | Additional filter, using the elastic query style                               |
 | Provider               | The provider (will expand the form with dynamic fields from the provider)      |

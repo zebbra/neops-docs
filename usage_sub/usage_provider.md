@@ -56,3 +56,18 @@ graph LR
     P3 -- 13 run --> P2
     S -- 14 run --> P1
 ```
+
+
+## Run Options
+
+<!-- TODO: Init method, run options -->
+
+
+## Result handling
+
+## Base providers
+
+- Base provider
+- Base Check provider
+- Base Fact Provider
+- Base Configure Provider
