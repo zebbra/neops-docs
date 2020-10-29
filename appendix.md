@@ -8,3 +8,10 @@
 
 An [Installation manual](installation.md) is available for developers.
 
+## Contributing
+
+Our [Contributing](CONTRIBUTING.md) guidelines.
+
+<!-- ## Changelog
+
+[Changelog](CHANGELOG.md) -->
