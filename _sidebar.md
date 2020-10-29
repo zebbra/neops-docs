@@ -8,3 +8,6 @@
 <!-- - [Changelog](CHANGELOG.md) -->
 <!-- - [Installation](installation.md) -->
 - [Appendix](appendix.md)
+  - [Jinja2](appendix_sub/appendix_jinja2.md)
+  - [JSON Form](appendix_sub/appendix_jsonform.md)
+  - [Text FSM](appendix_sub/appendix_textfsm.md)
