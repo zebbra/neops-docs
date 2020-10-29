@@ -42,9 +42,9 @@ graph LR
     P7[Clients of Interface]
 
     S -- 1 pre run --> P1
-    P1 -- 2 pre run --> P2
+    S -- 2 pre run --> P2
     P2 -- 3 pre run --> P3
-    P3 -- 4 pre run --> P4
+    S -- 4 pre run --> P4
     P4 -- 5 pre run --> P5
     P5 -- 6 pre run --> P6
     P6 -- 7 pre run --> P7
@@ -52,7 +52,7 @@ graph LR
     P7 -- 9 run --> P6
     P6 -- 10 run --> P5
     P5 -- 11 run --> P4
-    P4 -- 12 run --> P3
+    P3 -- 12 run --> P3
     P3 -- 13 run --> P2
-    P2 -- 14 run --> P1
+    S -- 14 run --> P1
 ```
