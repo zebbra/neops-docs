@@ -1,36 +1,72 @@
 # neops.core.provider.base.base_check
 ## NeopsCheckBaseProvider
-```
 Description of the base run cycle for a provider
-```
+
 ----------
 ### Class variables
-- **based_on_checks**
-- **check_for**
-- **deprecated**: __bool__
-- **description**: __str__
-- **execution_updater**: __neops.core.provider.base.execution_updater.ExecutionUpdater__
-- **json_schema**: __Dict__
-- **provider_type**: __neops.core.provider.base.enum.ProviderTypeEnum__
-- **related_facts**
-- **result_writer**: __neops.core.provider.base.base_result_writer.BaseResultWriter__
-- **run_input_json_schema**: __Dict__
-- **run_on**: __neops.core.provider.base.enum.RunOnEnum__
-- **run_on_all_if_empty**: __bool__
-- **run_on_strict**: __bool__
-- **short_description**: __str__
-- **validate_input**: __bool__
+```python
+based_on_checks
+```
+```python
+check_for
+```
+```python
+deprecated: bool
+```
+```python
+description: str
+```
+```python
+execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater
+```
+```python
+json_schema: Dict
+```
+```python
+provider_type: neops.core.provider.base.enum.ProviderTypeEnum
+```
+```python
+related_facts
+```
+```python
+result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter
+```
+```python
+run_input_json_schema: Dict
+```
+```python
+run_on: neops.core.provider.base.enum.RunOnEnum
+```
+```python
+run_on_all_if_empty: bool
+```
+```python
+run_on_strict: bool
+```
+```python
+short_description: str
+```
+```python
+validate_input: bool
+```
 ### Functions
-**inherit_json_schema**(__json_schema: Dict = None__) -> __Dict__
+```python
+inherit_json_schema(json_schema: Dict = None) -> Dict
 ```
 Merges JSON Schemas: If this method is called on one of the classes children, then
 super().json_schema resolves, else we do a pseudo merge.
 :param json_schema:
 :return:
-```
+
 ----------
 ## NeopsCheckResult
 ### Class variables
-- **metrics**
-- **reason**
-- **result**
+```python
+metrics
+```
+```python
+reason
+```
+```python
+result
+```

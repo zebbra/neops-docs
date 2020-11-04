@@ -1,58 +1,123 @@
 # neops.core.provider.base.enum
 ## ExpandElement
-```
 An enumeration.
-```
+
 ----------
 ### Class variables
-- **CLIENTS_ON_INTERFACES**
-- **CLIENTS_ON_LOCATIONS**
-- **DEVICES**
-- **GROUPS**
-- **INTERFACES**
-- **NORNIR_DEVICES**
+```python
+CLIENTS_ON_INTERFACES
+```
+```python
+CLIENTS_ON_LOCATIONS
+```
+```python
+DEVICES
+```
+```python
+GROUPS
+```
+```python
+INTERFACES
+```
+```python
+NORNIR_DEVICES
+```
 ### Functions
-**intersects**(__list1: List[ExpandElement],list2: List[ExpandElement]__) -> ____
-**resolve**(__key: str__) -> __neops.core.provider.base.enum.ExpandElement__
-**resolve_for**(__key: str,selection: List[ExpandElement]__) -> __Union[neops.core.provider.base.enum.ExpandElement, NoneType]__
+```python
+intersects(list1: List[ExpandElement],list2: List[ExpandElement]) -> 
+```
+```python
+resolve(key: str) -> neops.core.provider.base.enum.ExpandElement
+```
+```python
+resolve_for(key: str,selection: List[ExpandElement]) -> Union[neops.core.provider.base.enum.ExpandElement, NoneType]
+```
 ## ProviderTypeEnum
-```
 An enumeration.
-```
+
 ----------
 ### Class variables
-- **CHECK**
-- **CONFIGURE**
-- **EXECUTE**
-- **FACTS**
-- **NONE**
+```python
+CHECK
+```
+```python
+CONFIGURE
+```
+```python
+EXECUTE
+```
+```python
+FACTS
+```
+```python
+NONE
+```
 ### Instance variables
-- **is_check**
-- **is_configure**
-- **is_execute**
-- **is_facts**
-- **is_none**
+```python
+is_check
+```
+```python
+is_configure
+```
+```python
+is_execute
+```
+```python
+is_facts
+```
+```python
+is_none
+```
 ### Functions
-**resolve**(__key: str__) -> __neops.core.provider.base.enum.ProviderTypeEnum__
+```python
+resolve(key: str) -> neops.core.provider.base.enum.ProviderTypeEnum
+```
 ## RunOnEnum
-```
 An enumeration.
-```
+
 ----------
 ### Class variables
-- **CLIENT**
-- **DEVICE**
-- **GENERIC**
-- **GLOBAL**
-- **GROUP**
-- **INTERFACE**
+```python
+CLIENT
+```
+```python
+DEVICE
+```
+```python
+GENERIC
+```
+```python
+GLOBAL
+```
+```python
+GROUP
+```
+```python
+INTERFACE
+```
 ### Instance variables
-- **is_client**
-- **is_device**
-- **is_generic**
-- **is_global**
-- **is_group**
-- **is_interface**
+```python
+is_client
+```
+```python
+is_device
+```
+```python
+is_generic
+```
+```python
+is_global
+```
+```python
+is_group
+```
+```python
+is_interface
+```
 ### Functions
-**resolve**(__key: str__) -> __neops.core.provider.base.enum.RunOnEnum__
-**resolve_for**(__key: str,selection: List[RunOnEnum]__) -> __Union[neops.core.provider.base.enum.RunOnEnum, NoneType]__
+```python
+resolve(key: str) -> neops.core.provider.base.enum.RunOnEnum
+```
+```python
+resolve_for(key: str,selection: List[RunOnEnum]) -> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]
+```

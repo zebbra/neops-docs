@@ -1,28 +1,50 @@
 # neops.core.provider.base.element_resolver
 ## ElementResolver
 ## ResolveBy
-```
 An enumeration.
-```
+
 ----------
 ### Class variables
-- **CLIENT**
-- **DEVICE**
-- **DEVICE_GROUP**
-- **INTERFACE**
-- **NORNIR_DEVICE**
+```python
+CLIENT
+```
+```python
+DEVICE
+```
+```python
+DEVICE_GROUP
+```
+```python
+INTERFACE
+```
+```python
+NORNIR_DEVICE
+```
 ### Functions
-**resolve**(__key: str__) -> __neops.core.provider.base.element_resolver.ResolveBy__
+```python
+resolve(key: str) -> neops.core.provider.base.element_resolver.ResolveBy
+```
 ## ResolveOn
-```
 An enumeration.
-```
+
 ----------
 ### Class variables
-- **CLIENTS**
-- **DEVICES**
-- **GROUPS**
-- **INTERFACES**
-- **NORNIR_DEVICES**
+```python
+CLIENTS
+```
+```python
+DEVICES
+```
+```python
+GROUPS
+```
+```python
+INTERFACES
+```
+```python
+NORNIR_DEVICES
+```
 ### Functions
-**resolve**(__key: str__) -> __neops.core.provider.base.element_resolver.ResolveOn__
+```python
+resolve(key: str) -> neops.core.provider.base.element_resolver.ResolveOn
+```
