@@ -1,0 +1,61 @@
+Module neops.core.provider.base.result.provider_result
+======================================================
+
+Classes
+-------
+
+`ProviderResult(pre_run_result: Any = None, result: Any = None, message: str = '', exception: Exception = None, failed: bool = False, state: neops.core.models.execution_result.ExecutionResultStateEnum = running, from_object: ProviderResult = None)`
+:   
+
+    ### Descendants
+
+    * neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult
+    * neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceGroupResult
+    * neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceResult
+    * neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult
+    * neops.core.provider.base.result.coupled_provider_result_types.ProviderNornirDeviceResult
+    * neops.core.provider.base.result.provider_global_result.ProviderGlobalResult
+
+    ### Methods
+
+    `add_child(self, child: ProviderResult, reverse: bool = True) ‑> NoneType`
+    :
+
+    `add_parent(self, parent: ProviderResult, reverse: bool = True) ‑> NoneType`
+    :
+
+    `child_has_state(self, state: neops.core.models.execution_result.ExecutionResultStateEnum) ‑> bool`
+    :
+
+    `child_has_state_recursive(self, state: neops.core.models.execution_result.ExecutionResultStateEnum) ‑> bool`
+    :
+
+    `child_is_failed(self) ‑> bool`
+    :
+
+    `child_is_failed_recursive(self) ‑> bool`
+    :
+
+    `get_ran_on(self) ‑> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
+    :
+
+    `is_failed(self) ‑> bool`
+    :
+
+    `parent_is_failed(self) ‑> bool`
+    :
+
+    `related_is_failed(self) ‑> bool`
+    :
+
+    `set_children_as_failed(self) ‑> NoneType`
+    :
+
+    `set_parents_as_failed(self) ‑> NoneType`
+    :
+
+    `update(self, pre_run_result: Any = None, result: Any = None, message: str = None, exception: Exception = None, failed: bool = None, state: Union[neops.core.models.execution_result.ExecutionResultStateEnum, neops.core.models.device_execution.DeviceExecutionStateEnum] = None, from_object: ProviderResult = None, reset_result: bool = False, set_children_as_failed: bool = True, set_parents_as_failed: bool = False, overwrite: bool = True) ‑> NoneType`
+    :
+
+    `write_result(self, execution_id: int)`
+    :

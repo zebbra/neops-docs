@@ -1,0 +1,19 @@
+Module neops.core.provider.base.execution_updater
+=================================================
+
+Classes
+-------
+
+`ExecutionUpdater(name, execution_id)`
+:   Updates a particular execution
+
+    ### Methods
+
+    `update_do(self, do: str, append: bool = True) ‑> NoneType`
+    :
+
+    `update_done(self, done: str, append: bool = True) ‑> NoneType`
+    :
+
+    `update_log(self, log: str, append: bool = True) ‑> NoneType`
+    :

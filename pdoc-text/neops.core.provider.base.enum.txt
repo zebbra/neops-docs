@@ -1,0 +1,146 @@
+Module neops.core.provider.base.enum
+====================================
+
+Classes
+-------
+
+`ExpandElement(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   An enumeration.
+
+    ### Ancestors (in MRO)
+
+    * enum.Enum
+
+    ### Class variables
+
+    `CLIENTS_ON_INTERFACES`
+    :
+
+    `CLIENTS_ON_LOCATIONS`
+    :
+
+    `DEVICES`
+    :
+
+    `GROUPS`
+    :
+
+    `INTERFACES`
+    :
+
+    `NORNIR_DEVICES`
+    :
+
+    ### Static methods
+
+    `intersects(list1: List[ExpandElement], list2: List[ExpandElement])`
+    :
+
+    `resolve(key: str) ‑> neops.core.provider.base.enum.ExpandElement`
+    :
+
+    `resolve_for(key: str, selection: List[ExpandElement]) ‑> Union[neops.core.provider.base.enum.ExpandElement, NoneType]`
+    :
+
+`ProviderTypeEnum(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   An enumeration.
+
+    ### Ancestors (in MRO)
+
+    * choicesenum.enums.ChoicesEnum
+    * enum.Enum
+
+    ### Class variables
+
+    `CHECK`
+    :
+
+    `CONFIGURE`
+    :
+
+    `EXECUTE`
+    :
+
+    `FACTS`
+    :
+
+    `NONE`
+    :
+
+    ### Static methods
+
+    `resolve(key: str) ‑> neops.core.provider.base.enum.ProviderTypeEnum`
+    :
+
+    ### Instance variables
+
+    `is_check`
+    :
+
+    `is_configure`
+    :
+
+    `is_execute`
+    :
+
+    `is_facts`
+    :
+
+    `is_none`
+    :
+
+`RunOnEnum(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   An enumeration.
+
+    ### Ancestors (in MRO)
+
+    * choicesenum.enums.ChoicesEnum
+    * enum.Enum
+
+    ### Class variables
+
+    `CLIENT`
+    :
+
+    `DEVICE`
+    :
+
+    `GENERIC`
+    :
+
+    `GLOBAL`
+    :
+
+    `GROUP`
+    :
+
+    `INTERFACE`
+    :
+
+    ### Static methods
+
+    `resolve(key: str) ‑> neops.core.provider.base.enum.RunOnEnum`
+    :
+
+    `resolve_for(key: str, selection: List[RunOnEnum]) ‑> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
+    :
+
+    ### Instance variables
+
+    `is_client`
+    :
+
+    `is_device`
+    :
+
+    `is_generic`
+    :
+
+    `is_global`
+    :
+
+    `is_group`
+    :
+
+    `is_interface`
+    :

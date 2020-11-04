@@ -1,0 +1,13 @@
+Module neops.core.provider.base.result.exception.related_result_failed
+======================================================================
+
+Classes
+-------
+
+`RelatedResultFailed(*args, **kwargs)`
+:   Common base class for all non-exit exceptions.
+
+    ### Ancestors (in MRO)
+
+    * builtins.Exception
+    * builtins.BaseException

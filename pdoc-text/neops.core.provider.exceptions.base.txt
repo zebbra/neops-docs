@@ -1,0 +1,46 @@
+Module neops.core.provider.exceptions.base
+==========================================
+
+Classes
+-------
+
+`InvalidTaskArgumentsException(*args, **kwargs)`
+:   Common base class for all non-exit exceptions.
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.exceptions.base.NeopsTaskBaseException
+    * builtins.Exception
+    * builtins.BaseException
+
+`InvalidTaskException(*args, **kwargs)`
+:   Common base class for all non-exit exceptions.
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.exceptions.base.NeopsTaskBaseException
+    * builtins.Exception
+    * builtins.BaseException
+
+`NeopsTaskBaseException(*args, **kwargs)`
+:   Common base class for all non-exit exceptions.
+
+    ### Ancestors (in MRO)
+
+    * builtins.Exception
+    * builtins.BaseException
+
+    ### Descendants
+
+    * neops.core.provider.exceptions.base.InvalidTaskArgumentsException
+    * neops.core.provider.exceptions.base.InvalidTaskException
+    * neops.core.provider.exceptions.base.WrongExecuteEntityException
+
+`WrongExecuteEntityException(*args, **kwargs)`
+:   Common base class for all non-exit exceptions.
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.exceptions.base.NeopsTaskBaseException
+    * builtins.Exception
+    * builtins.BaseException

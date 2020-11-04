@@ -1,0 +1,58 @@
+Module neops.core.provider.device_rommon_upgrade
+================================================
+
+Classes
+-------
+
+`DeviceRommonUpgradeProvider(**kwargs)`
+:   Description of the base run cycle for a provider
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.base.base.NeopsBaseProvider
+    * neops.core.provider.base.base_run_cycle.BaseRunCycle
+    * neops.core.provider.base.base_process_options.BaseProcessOptions
+    * abc.ABC
+
+    ### Class variables
+
+    `deprecated: bool`
+    :
+
+    `description: str`
+    :
+
+    `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
+    :
+
+    `json_schema: Dict`
+    :
+
+    `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
+    :
+
+    `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
+    :
+
+    `run_input_json_schema: Dict`
+    :
+
+    `run_on: neops.core.provider.base.enum.RunOnEnum`
+    :
+
+    `run_on_all_if_empty: bool`
+    :
+
+    `run_on_strict: bool`
+    :
+
+    `short_description: str`
+    :
+
+    `validate_input: bool`
+    :
+
+    ### Methods
+
+    `run_on_nornir_device(self, task: nornir.core.task.Task, dry_run: bool = True, execute_on: List = None, **kwargs) ‑> NoneType`
+    :

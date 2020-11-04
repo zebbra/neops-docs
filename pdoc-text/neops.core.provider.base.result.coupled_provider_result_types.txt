@@ -1,0 +1,110 @@
+Module neops.core.provider.base.result.coupled_provider_result_types
+====================================================================
+
+Classes
+-------
+
+`ProviderClientResult(client_id: int, **kwargs)`
+:   
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.base.result.provider_result.ProviderResult
+
+    ### Methods
+
+    `get_ran_on(self) ‑> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
+    :
+
+    `set_interface(self, interface: ProviderInterfaceResult, reverse: bool = True) ‑> NoneType`
+    :
+
+    `set_location(self, location: ProviderDeviceGroupResult, reverse: bool = True) ‑> NoneType`
+    :
+
+    `write_result(self, execution_id: int)`
+    :
+
+`ProviderDeviceGroupResult(device_group_id: int, **kwargs)`
+:   
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.base.result.provider_result.ProviderResult
+
+    ### Methods
+
+    `add_client(self, client: ProviderClientResult, reverse: bool = True) ‑> NoneType`
+    :
+
+    `add_device(self, device: ProviderDeviceResult, reverse: bool = True) ‑> NoneType`
+    :
+
+    `get_ran_on(self) ‑> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
+    :
+
+    `write_result(self, execution_id: int)`
+    :
+
+`ProviderDeviceResult(device_id: int, **kwargs)`
+:   
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.base.result.provider_result.ProviderResult
+
+    ### Methods
+
+    `add_device_group(self, device_group: "'ProviderDeviceGroupResult'", reverse: bool = True) ‑> NoneType`
+    :
+
+    `add_interface(self, interface: ProviderInterfaceResult, reverse: bool = True) ‑> NoneType`
+    :
+
+    `get_ran_on(self) ‑> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
+    :
+
+    `set_nornir_device(self, nornir_device: "'ProviderNornirDeviceResult'", reverse: bool = True) ‑> NoneType`
+    :
+
+    `write_result(self, execution_id: int)`
+    :
+
+`ProviderInterfaceResult(interface_id: int, **kwargs)`
+:   
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.base.result.provider_result.ProviderResult
+
+    ### Methods
+
+    `add_client(self, client: "'ProviderClientResult'", reverse: bool = True) ‑> NoneType`
+    :
+
+    `get_ran_on(self) ‑> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
+    :
+
+    `set_device(self, device: "'ProviderDeviceResult'", reverse: bool = True) ‑> NoneType`
+    :
+
+    `write_result(self, execution_id: int)`
+    :
+
+`ProviderNornirDeviceResult(nornir_device_id: int, **kwargs)`
+:   
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.base.result.provider_result.ProviderResult
+
+    ### Methods
+
+    `add_device(self, device: ProviderDeviceResult, reverse: bool = True) ‑> NoneType`
+    :
+
+    `get_ran_on(self) ‑> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
+    :
+
+    `write_result(self, execution_id: int)`
+    :

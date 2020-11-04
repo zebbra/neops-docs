@@ -1,0 +1,19 @@
+Module neops.core.provider.deprecated
+=====================================
+
+Sub-modules
+-----------
+* neops.core.provider.deprecated.device_check
+* neops.core.provider.deprecated.device_interface_textfsm_facts
+* neops.core.provider.deprecated.device_regex_facts
+* neops.core.provider.deprecated.device_test_provider
+* neops.core.provider.deprecated.device_textfsm_facts
+* neops.core.provider.deprecated.device_textfsm_facts_by_param
+* neops.core.provider.deprecated.device_textfsm_ntc_facts
+* neops.core.provider.deprecated.global_from_excel
+* neops.core.provider.deprecated.global_test_provider
+* neops.core.provider.deprecated.group_test_provider
+* neops.core.provider.deprecated.interface_check
+* neops.core.provider.deprecated.interface_regex_facts
+* neops.core.provider.deprecated.interface_test_provider
+* neops.core.provider.deprecated.interface_textfsm_facts
