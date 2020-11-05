@@ -23,6 +23,7 @@ Sub-modules
 * neops.core.provider.generic_check_aggregation
 * neops.core.provider.generic_from_excel
 * neops.core.provider.generic_jinja_check
+* neops.core.provider.generic_jinja_facts
 * neops.core.provider.generic_ping
 * neops.core.provider.generic_report
 * neops.core.provider.generic_rest_facts

@@ -40,6 +40,16 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+process_global_result(self,result: nornir.core.task.Result = None) -> NoneType
+```
+Global check are currently not supported..
+
+----------
+```python
+run_on_interface(self,interface_id,task,**kwargs) -> Any
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

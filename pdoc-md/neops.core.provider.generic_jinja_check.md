@@ -40,6 +40,31 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
+```
+```python
+process_global_result(self,result: nornir.core.task.Result = None) -> NoneType
+```
+Global check are currently not supported..
+
+----------
+```python
+run_on_client_of_interface(self,task: nornir.core.task.Task,client_id: int,check_on: str,template: str,**kwargs) -> Union[neops.core.provider.base.base_check.NeopsCheckResult, NoneType]
+```
+```python
+run_on_client_of_location(self,client_id: int,check_on: str,template: str,**kwargs) -> Union[neops.core.provider.base.base_check.NeopsCheckResult, NoneType]
+```
+```python
+run_on_device(self,task: nornir.core.task.Task,device_id: int,check_on: str,template: str,**kwargs) -> Union[neops.core.provider.base.base_check.NeopsCheckResult, NoneType]
+```
+```python
+run_on_device_group(self,device_group_id: int,check_on: str,template: str,**kwargs) -> Union[neops.core.provider.base.base_check.NeopsCheckResult, NoneType]
+```
+```python
+run_on_interface(self,task: nornir.core.task.Task,interface_id: int,check_on: str,template: str,**kwargs) -> Union[neops.core.provider.base.base_check.NeopsCheckResult, NoneType]
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

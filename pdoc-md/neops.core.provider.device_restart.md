@@ -40,6 +40,10 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+run_on_nornir_device(self,task: nornir.core.task.Task,dry_run: bool = True,execute_on: List = None,**kwargs) -> NoneType
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

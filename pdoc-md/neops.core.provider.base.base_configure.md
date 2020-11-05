@@ -43,6 +43,10 @@ success_message
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+run_on_nornir_device(self,task: nornir.core.task.Task,nornir_device_result: neops.core.provider.base.result.coupled_provider_result_types.ProviderNornirDeviceResult,dry_run: bool = True,**kwargs) -> str
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

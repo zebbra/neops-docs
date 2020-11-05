@@ -40,6 +40,13 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+oid_str_to_tuple(self,oid: str) -> 
+```
+```python
+run_on_device(self,task: nornir.core.task.Task,device_id: int,dry_run: bool = True,execute_on: List = None,**kwargs) -> Union[Dict, nornir.core.task.Result]
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

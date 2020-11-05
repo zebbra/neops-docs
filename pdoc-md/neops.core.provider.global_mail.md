@@ -40,6 +40,10 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+run_global(self,title: str,body: str,mail_to: str,include_executor: bool,mail_from: str,task_input_kwargs: Any,**kwargs) -> Any
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

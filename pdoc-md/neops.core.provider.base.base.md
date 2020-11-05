@@ -46,6 +46,40 @@ success_message
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+add_nornir_processors(self) -> 
+```
+```python
+init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
+```
+```python
+init_before_run(self,task_input_kwargs: Dict,execute_on: List = None,execute_on_type: neops.core.provider.base.enum.RunOnEnum = device,dry_run: bool = True,search_query: str = '',**kwargs) -> NoneType
+```
+```python
+init_without_run(self,**kwargs) -> NoneType
+```
+```python
+print_results(self) -> 
+```
+```python
+run(self,task_input_kwargs: Dict,execute_on: List = None,execute_on_type: neops.core.provider.base.enum.RunOnEnum = device,dry_run: bool = True,search_query: str = '',**kwargs) -> NoneType
+```
+```python
+update_do(self,do: str,append: bool = True) -> NoneType
+```
+```python
+update_done(self,done: str,append: bool = True) -> NoneType
+```
+```python
+update_log(self,log: str,append: bool = True) -> NoneType
+```
+```python
+validate_schema(self,task_kwargs: Dict = None) -> NoneType
+```
+```python
+write_results(self,finish: bool = False) -> NoneType
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

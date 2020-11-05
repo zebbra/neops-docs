@@ -40,6 +40,13 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
+```
+```python
+run_on_device(self,task: nornir.core.task.Task,device_id: int,**kwargs) -> Any
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

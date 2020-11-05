@@ -38,6 +38,9 @@ Classes
     * neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow
     * neops.core.provider.generic_test_provider.GenericTestProvider
     * neops.core.provider.global_mail.GlobalMail
+    * neops.customer.migros.provider.global_pom_import.GlobalImportLocationsFromPOMProvider
+    * neops.customer.migros.provider.location_bluecat_import_networks.LocationImportNetworksFromBluecatProvider
+    * neops.customer.migros.provider.location_pom_import_clients.LocationImportClientsFromPOMProvider
 
     ### Class variables
 

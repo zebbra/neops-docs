@@ -40,6 +40,10 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+run_global(self,**kwargs) -> Any
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

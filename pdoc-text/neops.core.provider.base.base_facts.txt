@@ -25,10 +25,12 @@ Classes
     * neops.core.provider.deprecated.interface_textfsm_facts.InterfaceTextFSMFactsProvider
     * neops.core.provider.device_napalm_facts.DeviceNapalmFacts
     * neops.core.provider.device_snmp_facts.DeviceSNMPFactsProvider
+    * neops.core.provider.generic_jinja_facts.GenericJinjaFactsProvider
     * neops.core.provider.generic_ping.GenericPing
     * neops.core.provider.generic_rest_facts.GenericRestFactsProvider
     * neops.core.provider.generic_textfsm_facts.GenericTextFSMFacts
     * neops.core.provider.generic_textfsm_facts_v2.GenericTextFSMFactsV2
+    * neops.customer.migros.provider.device_interface_prime_facts.DeviceInterfacePrimeFactsProvider
 
     ### Class variables
 

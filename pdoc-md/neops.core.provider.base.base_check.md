@@ -49,6 +49,25 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+process_client_results(self,results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult] = None) -> NoneType
+```
+```python
+process_device_group_results(self,results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceGroupResult] = None) -> NoneType
+```
+```python
+process_device_results(self,results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceResult] = None) -> NoneType
+```
+```python
+process_global_result(self,result: nornir.core.task.Result = None) -> NoneType
+```
+Global check are currently not supported..
+
+----------
+```python
+process_interface_results(self,results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult] = None) -> NoneType
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

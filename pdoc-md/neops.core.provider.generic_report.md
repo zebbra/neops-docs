@@ -40,6 +40,19 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+init_adjust_run_on(self,report_for: str,**kwargs) -> NoneType
+```
+```python
+run_on_device(self,task: nornir.core.task.Task,device_id: int,report_for: str,template: str,**kwargs) -> Any
+```
+```python
+run_on_device_group(self,device_group_id: int,report_for: str,template: str,**kwargs) -> Any
+```
+```python
+run_on_interface(self,task: nornir.core.task.Task,device_id: int,interface_id: int,report_for: str,template: str,**kwargs) -> Any
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict

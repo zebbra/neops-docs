@@ -47,6 +47,34 @@ short_description: str
 ```python
 validate_input: bool
 ```
+### Methods
+```python
+pre_run_global(self,**kwargs) -> Any
+```
+```python
+pre_run_on_device(self,**kwargs) -> Any
+```
+```python
+pre_run_on_device_group(self,**kwargs) -> Any
+```
+```python
+pre_run_on_nornir_device(self,**kwargs) -> Any
+```
+```python
+run_global(self,**kwargs) -> Any
+```
+```python
+run_on_device(self,**kwargs) -> Any
+```
+```python
+run_on_device_group(self,**kwargs) -> Any
+```
+```python
+run_on_interface(self,**kwargs) -> Any
+```
+```python
+run_on_nornir_device(self,**kwargs) -> Any
+```
 ### Functions
 ```python
 inherit_json_schema(json_schema: Dict = None) -> Dict
