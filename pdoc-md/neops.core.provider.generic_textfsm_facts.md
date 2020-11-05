@@ -47,13 +47,3 @@ init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execut
 ```python
 run_on_device(self,task: nornir.core.task.Task,device_id: int,**kwargs) -> Any
 ```
-### Functions
-```python
-inherit_json_schema(json_schema: Dict = None) -> Dict
-```
-Merges JSON Schemas: If this method is called on one of the classes children, then
-super().json_schema resolves, else we do a pseudo merge.
-:param json_schema:
-:return:
-
-----------

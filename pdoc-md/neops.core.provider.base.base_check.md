@@ -68,16 +68,6 @@ Global check are currently not supported..
 ```python
 process_interface_results(self,results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult] = None) -> NoneType
 ```
-### Functions
-```python
-inherit_json_schema(json_schema: Dict = None) -> Dict
-```
-Merges JSON Schemas: If this method is called on one of the classes children, then
-super().json_schema resolves, else we do a pseudo merge.
-:param json_schema:
-:return:
-
-----------
 ## NeopsCheckResult
 ### Class variables
 ```python

@@ -44,13 +44,3 @@ validate_input: bool
 ```python
 run_on_device(self,task: nornir.core.task.Task,device_id: int,execute_on: List[int],execute_on_type: neops.core.provider.base.enum.RunOnEnum,**kwargs) -> nornir.core.task.Result
 ```
-### Functions
-```python
-inherit_json_schema(json_schema: Dict = None) -> Dict
-```
-Merges JSON Schemas: If this method is called on one of the classes children, then
-super().json_schema resolves, else we do a pseudo merge.
-:param json_schema:
-:return:
-
-----------

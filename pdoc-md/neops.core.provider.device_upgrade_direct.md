@@ -44,13 +44,3 @@ validate_input: bool
 ```python
 run_on_nornir_device(self,task: Callable[..., Any],dry_run: bool = True,**kwargs) -> Any
 ```
-### Functions
-```python
-inherit_json_schema(json_schema: Dict = None) -> Dict
-```
-Merges JSON Schemas: If this method is called on one of the classes children, then
-super().json_schema resolves, else we do a pseudo merge.
-:param json_schema:
-:return:
-
-----------

@@ -56,13 +56,3 @@ run_on_device(self,device_id: int,aggregate_from: str,aggregate_to: str,check
 ```python
 run_on_device_group(self,device_group_id: int,aggregate_from: str,aggregate_to: str,check_key_from: str,percent: int = 100,**kwargs) -> Any
 ```
-### Functions
-```python
-inherit_json_schema(json_schema: Dict = None) -> Dict
-```
-Merges JSON Schemas: If this method is called on one of the classes children, then
-super().json_schema resolves, else we do a pseudo merge.
-:param json_schema:
-:return:
-
-----------

@@ -53,13 +53,3 @@ run_on_device_group(self,device_group_id: int,report_for: str,template: str,*
 ```python
 run_on_interface(self,task: nornir.core.task.Task,device_id: int,interface_id: int,report_for: str,template: str,**kwargs) -> Any
 ```
-### Functions
-```python
-inherit_json_schema(json_schema: Dict = None) -> Dict
-```
-Merges JSON Schemas: If this method is called on one of the classes children, then
-super().json_schema resolves, else we do a pseudo merge.
-:param json_schema:
-:return:
-
-----------
