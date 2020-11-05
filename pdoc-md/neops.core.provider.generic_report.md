@@ -3,6 +3,17 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Excel to Process Tasks
+
+
+##### Properties
+
+
+- **`report_for`** *(string)*: Select on which entity you want to report. Must be one of: `['GROUP', 'DEVICE', 'INTERFACE']`.
+
+- **`template`** *(string)*: Jinja template the report.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +52,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 init_adjust_run_on(self,report_for: str,**kwargs) -> NoneType
 ```

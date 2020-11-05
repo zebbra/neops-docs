@@ -3,6 +3,24 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Add Structured Command to Facts
+
+
+##### Properties
+
+
+- **`facts_key`** *(string)*: Set the key where the facts are saved.
+
+- **`command`** *(string)*: Show command to convert to structured data.
+
+- **`jmes_param`** *(string)*: Add a JMES Path that can be uses as Param in the command.
+                The $1 will be replaced by the content.
+                For executing and parsing the command we expect a list.
+                (access to device facts use facts. as initial key). Default: ``.
+
+- **`textfsm`** *(string)*: TextFSM Template to parse the show output.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +59,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 run_on_device(self,task: nornir.core.task.Task,device_id: int,**kwargs) -> Any
 ```

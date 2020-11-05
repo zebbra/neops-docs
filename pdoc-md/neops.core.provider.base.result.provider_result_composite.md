@@ -1,5 +1,6 @@
 # neops.core.provider.base.result.provider_result_composite
 ## ProviderResultsComposite
+
 ### Methods
 ```python
 get_client_result(self,client_id: int) -> neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult

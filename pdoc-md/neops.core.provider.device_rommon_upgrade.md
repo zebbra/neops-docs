@@ -3,6 +3,15 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Device Upgrade ROMMON
+
+
+##### Properties
+
+
+- **`source_url`** *(string)*: from this URL the image will be loaded.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +50,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 run_on_nornir_device(self,task: nornir.core.task.Task,dry_run: bool = True,execute_on: List = None,**kwargs) -> NoneType
 ```

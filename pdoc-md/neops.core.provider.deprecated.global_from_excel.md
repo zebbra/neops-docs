@@ -3,6 +3,25 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Excel to Process Tasks
+
+
+##### Properties
+
+
+- **`header_num`** *(number)*: On which line in the sheet is the header placed. Default: `1`.
+
+- **`tasks`** *(array)*: This description is used as a help message.
+
+  - **Items** *(object)*
+
+    - **`hosts_template`** *(string)*: parse excel content (given as excel var to jinja) and create a list of hosts to run the process on. Default: ``.
+
+    - **`task_id`** *(number)*: Default: `0`.
+
+    - **`task_template`** *(string)*: parse excel content (given as excel var to jinja) and provide the data structure for the task. Default: ``.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +60,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 run_global(self,**kwargs) -> Any
 ```

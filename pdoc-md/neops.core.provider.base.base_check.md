@@ -3,6 +3,15 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Check Base Provider
+
+
+##### Properties
+
+
+- **`check_key`** *(string)*: Set the key where the check is saved.
+
 ### Class variables
 ```python
 based_on_checks
@@ -51,6 +60,13 @@ validate_input: bool
 ```
 ### Methods
 ```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
+```python
 process_client_results(self,results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult] = None) -> NoneType
 ```
 ```python
@@ -69,6 +85,7 @@ Global check are currently not supported..
 process_interface_results(self,results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult] = None) -> NoneType
 ```
 ## NeopsCheckResult
+
 ### Class variables
 ```python
 metrics

@@ -3,6 +3,10 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### JSON Schema
+
+
 ### Class variables
 ```python
 deprecated: bool
@@ -47,6 +51,13 @@ success_message
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 add_nornir_processors(self) -> 
 ```

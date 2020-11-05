@@ -3,6 +3,23 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Excel to Process Tasks
+
+
+##### Properties
+
+
+- **`check_key`** *(string)*: Set the key where the check is saved.
+
+- **`aggregate_from`** *(string)*: Aggregate from entity Type. Must be one of: `['DEVICE', 'INTERFACE']`.
+
+- **`check_key_from`** *(string)*: set the check with the check key to aggregate on. Default: ``.
+
+- **`aggregate_to`** *(string)*: Aggregate to entity Type. Must be one of: `['GROUP', 'DEVICE']`.
+
+- **`percent`** *(integer)*: . Default: `100`.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +58,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
 ```

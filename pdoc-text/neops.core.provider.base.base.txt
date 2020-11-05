@@ -12,6 +12,7 @@ Classes
     * neops.core.provider.base.base_run_cycle.BaseRunCycle
     * neops.core.provider.base.base_process_options.BaseProcessOptions
     * abc.ABC
+    * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
 
     ### Descendants
 
@@ -101,6 +102,10 @@ Classes
     :
 
     ### Methods
+
+    `add_markdown_helptext(self, md_content: neops.core.libs.helptext.markdown_content.MarkDownContent)`
+    :   Creates additional helptext. Make shure the class is instantiable through import_string method
+        :return: Helptext string
 
     `add_nornir_processors(self)`
     :

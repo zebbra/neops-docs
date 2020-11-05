@@ -3,6 +3,7 @@
 Updates a particular execution
 
 ----------
+
 ### Methods
 ```python
 update_do(self,do: str,append: bool = True) -> NoneType

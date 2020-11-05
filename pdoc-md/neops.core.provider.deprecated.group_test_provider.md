@@ -10,6 +10,15 @@ test_sub_task(task: nornir.core.task.Task,res: str) -> nornir.core.task.Result
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Group Test Provider
+
+
+##### Properties
+
+
+- **`foo`** *(string)*: Foo Task Form Value.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -48,6 +57,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 pre_run_global(self,**kwargs) -> Any
 ```

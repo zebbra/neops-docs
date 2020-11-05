@@ -14,6 +14,7 @@ Classes
     * neops.core.provider.base.base_run_cycle.BaseRunCycle
     * neops.core.provider.base.base_process_options.BaseProcessOptions
     * abc.ABC
+    * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
 
     ### Class variables
 

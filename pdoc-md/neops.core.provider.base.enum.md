@@ -3,6 +3,7 @@
 An enumeration.
 
 ----------
+
 ### Class variables
 ```python
 CLIENTS_ON_INTERFACES
@@ -36,6 +37,7 @@ resolve_for(key: str,selection: List[ExpandElement]) -> Union[neops.core.provi
 An enumeration.
 
 ----------
+
 ### Class variables
 ```python
 CHECK
@@ -76,6 +78,7 @@ resolve(key: str) -> neops.core.provider.base.enum.ProviderTypeEnum
 An enumeration.
 
 ----------
+
 ### Class variables
 ```python
 CLIENT

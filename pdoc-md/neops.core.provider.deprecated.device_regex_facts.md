@@ -3,6 +3,30 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Add Structured Command to Facts
+
+
+##### Properties
+
+
+- **`facts_key`** *(string)*: Set the key where the facts are saved.
+
+- **`command`** *(string)*: Show command to convert to structured data.
+
+- **`regex`** *(string)*: Regular expression.
+
+- **`regex_ignore`** *(boolean)*: Regular expression case sensitive or not. Default: `False`.
+
+- **`regex_multi`** *(boolean)*: Regular expression multiline or not. Default: `False`.
+
+- **`regex_dotall`** *(boolean)*: Dot stands for special characters as well. Default: `False`.
+
+- **`match_keys`** *(array)*: map the matches to keys,
+                if multiple (for OR in regex without match use (?:expr1|expr2) ).
+
+  - **Items** *(string)*
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +65,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 run_on_device(self,task: nornir.core.task.Task,device_id: int,**kwargs) -> Any
 ```

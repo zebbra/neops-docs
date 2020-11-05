@@ -1,5 +1,6 @@
 # neops.core.provider.base.element_resolver
 ## ElementResolver
+
 ### Methods
 ```python
 resolve_execute(self,resolve_on: ResolveOn,execute_on: List,execute_on_type: RunOnEnum,invert_filter: bool = False) -> Union[List[int], NoneType]
@@ -63,6 +64,7 @@ resolve_related_elements_by_nornir_device(self,nornir_device_id: int,execute_on
 An enumeration.
 
 ----------
+
 ### Class variables
 ```python
 CLIENT
@@ -87,6 +89,7 @@ resolve(key: str) -> neops.core.provider.base.element_resolver.ResolveBy
 An enumeration.
 
 ----------
+
 ### Class variables
 ```python
 CLIENTS

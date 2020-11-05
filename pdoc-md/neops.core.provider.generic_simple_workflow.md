@@ -3,6 +3,36 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Excel to Process Tasks
+
+
+##### Properties
+
+
+- **`run_as`** *(string)*: Select on which entity the task should run on. Must be one of: `['GLOBAL', 'GROUP', 'DEVICE', 'INTERFACE']`.
+
+- **`tasks`** *(array)*: This description is used as a help message.
+
+  - **Items** *(object)*
+
+    - **`titleProp`** *(string)*
+
+    - **`run_as`** *(string)*: Select on which execute on entities will be passed to the task. Must be one of: `['GROUP', 'DEVICE', 'INTERFACE']`.
+
+    - **`allow_all`** *(boolean)*: some providers have the ability to run on all elements if there are none given, decide if this is fine for your task. Default: `False`.
+
+    - **`entity_template`** *(string)*: Get a List of Entity by the Template. Default: `{% set device_list = [] %}
+{% for device in neops.search_devices("devices.hostname: *.neops.io") %}
+    {{ device.hostname }}
+    {% do device_list.append(device.id) %}
+{% endfor %}
+{% do neops.set_entities(device_list) %}`.
+
+    - **`task_id`** *(number)*: Default: `0`.
+
+    - **`task_template`** *(string)*: parse excel content (given as excel var to jinja) and provide the data structure for the task. Default: `{% do neops.set_params({}) %}`.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +71,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
 ```

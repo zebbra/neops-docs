@@ -3,6 +3,7 @@
 This class describes the methods provided to process different result objects
 
 ----------
+
 ### Methods
 ```python
 process_client_result(self,result: neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult) -> NoneType

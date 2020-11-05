@@ -3,6 +3,19 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Add Structured Command to Facts
+
+
+##### Properties
+
+
+- **`facts_key`** *(string)*: Set the key where the facts are saved.
+
+- **`add_facts_to`** *(string)*: Add Facts to Group, Device, Interface or Clients. Must be one of: `['GLOBAL', 'GROUP', 'CLIENT OF LOCATIONS', 'DEVICE', 'INTERFACE', 'CLIENT OF INTERFACE']`.
+
+- **`destination_template`** *(string)*: List of Targets (1 per line). Default: `8.8.8.8`.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +54,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
 ```

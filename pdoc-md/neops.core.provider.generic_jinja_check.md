@@ -3,6 +3,20 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Generic Jinja Check
+
+
+##### Properties
+
+
+- **`check_key`** *(string)*: Set the key where the check is saved.
+
+- **`check_on`** *(string)*: Select on which entity you want save the Check. Must be one of: `['GROUP', 'DEVICE', 'INTERFACE', 'CLIENT ON GROUP', 'CLIENT ON INTERFACE']`.
+
+- **`template`** *(string)*: Default: `{% do neops.set_result(True) %}
+{% do neops.set_reason("because") %}`.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +55,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
 ```

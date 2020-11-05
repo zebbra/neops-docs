@@ -1,5 +1,6 @@
 # neops.core.provider.base.result.coupled_provider_result_types
 ## ProviderClientResult
+
 ### Methods
 ```python
 get_ran_on(self) -> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]
@@ -14,6 +15,7 @@ set_location(self,location: ProviderDeviceGroupResult,reverse: bool = True) 
 write_result(self,execution_id: int) -> 
 ```
 ## ProviderDeviceGroupResult
+
 ### Methods
 ```python
 add_client(self,client: ProviderClientResult,reverse: bool = True) -> NoneType
@@ -28,6 +30,7 @@ get_ran_on(self) -> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]
 write_result(self,execution_id: int) -> 
 ```
 ## ProviderDeviceResult
+
 ### Methods
 ```python
 add_device_group(self,device_group: "'ProviderDeviceGroupResult'",reverse: bool = True) -> NoneType
@@ -45,6 +48,7 @@ set_nornir_device(self,nornir_device: "'ProviderNornirDeviceResult'",reverse: 
 write_result(self,execution_id: int) -> 
 ```
 ## ProviderInterfaceResult
+
 ### Methods
 ```python
 add_client(self,client: "'ProviderClientResult'",reverse: bool = True) -> NoneType
@@ -59,6 +63,7 @@ set_device(self,device: "'ProviderDeviceResult'",reverse: bool = True) -> No
 write_result(self,execution_id: int) -> 
 ```
 ## ProviderNornirDeviceResult
+
 ### Methods
 ```python
 add_device(self,device: ProviderDeviceResult,reverse: bool = True) -> NoneType

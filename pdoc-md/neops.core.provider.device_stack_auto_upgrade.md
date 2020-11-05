@@ -3,6 +3,15 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Stack Auto Upgrade
+
+
+##### Properties
+
+
+- **`reload_on_members`** *(number)*: How long should the process wait till the Stack Members are ready. Default: `1200`.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -41,6 +50,13 @@ short_description: str
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 run_on_nornir_device(self,task: nornir.core.task.Task,nornir_device_id: int,dry_run: bool = False,**kwargs) -> Any
 ```

@@ -3,6 +3,17 @@
 Description of the base run cycle for a provider
 
 ----------
+### JSON Schema
+#### Configure Base Provider
+
+
+##### Properties
+
+
+- **`apply`** *(string)*: Method how to apply the configuration, over cli or copy with scp and merge. Must be one of: `['scp', 'cli', 'scp-startup']`.
+
+- **`slow_device`** *(integer)*: Add a factor for longer wait times for heavy loaded devices. Default: `0`.
+
 ### Class variables
 ```python
 deprecated: bool
@@ -44,6 +55,13 @@ success_message
 validate_input: bool
 ```
 ### Methods
+```python
+add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
+```
+Creates additional helptext. Make shure the class is instantiable through import_string method
+:return: Helptext string
+
+----------
 ```python
 run_on_nornir_device(self,task: nornir.core.task.Task,nornir_device_result: neops.core.provider.base.result.coupled_provider_result_types.ProviderNornirDeviceResult,dry_run: bool = True,**kwargs) -> str
 ```
