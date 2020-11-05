@@ -2,6 +2,7 @@
 
 ## Base Providers 
 
+- [NeopsBaseProvider](pdoc-md/neops.core.provider.base.base.md)
 - [NeopsCheckBaseProvider](pdoc-md/neops.core.provider.base.base_check.md)
 - [NeopsConfigureBaseProvider](pdoc-md/neops.core.provider.base.base_configure.md)
 - [NeopsFactsBaseProvider](pdoc-md/neops.core.provider.base.base_facts.md)
