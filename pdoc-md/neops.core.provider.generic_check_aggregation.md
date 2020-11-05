@@ -59,21 +59,8 @@ validate_input: bool
 ```
 ### Methods
 ```python
-add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
-```
-Creates additional helptext. Make shure the class is instantiable through import_string method
-:return: Helptext string
-
-----------
-```python
 init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
 ```
-```python
-process_global_result(self,result: nornir.core.task.Result = None) -> NoneType
-```
-Global check are currently not supported..
-
-----------
 ```python
 run_on_device(self,device_id: int,aggregate_from: str,aggregate_to: str,check_key_from: str,percent: int = 100,**kwargs) -> Any
 ```

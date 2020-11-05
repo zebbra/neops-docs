@@ -49,11 +49,3 @@ short_description: str
 ```python
 validate_input: bool
 ```
-### Methods
-```python
-add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
-```
-Creates additional helptext. Make shure the class is instantiable through import_string method
-:return: Helptext string
-
-----------
