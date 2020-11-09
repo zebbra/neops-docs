@@ -6,11 +6,16 @@
 resolve_execute(self,resolve_on: ResolveOn,execute_on: List,execute_on_type: RunOnEnum,invert_filter: bool = False) -> Union[List[int], NoneType]
 ```
 This method calls the right resolver based on resolve_on
-:param resolve_on:
-:param execute_on:
-:param execute_on_type:
-:param invert_filter:
-:return:
+\
+__param__ resolve_on:
+\
+__param__ execute_on:
+\
+__param__ execute_on_type:
+\
+__param__ invert_filter:
+\
+__return__:
 
 ----------
 ```python
@@ -38,11 +43,16 @@ resolve_execute_on_nornir_devices(self,execute_on: List,execute_on_type: RunOn
 resolve_related_elements(self,resolve_by: ResolveBy,element_id: int,execute_on: List,resolve_related_on: RunOnEnum = None) -> Union[List[int], NoneType]
 ```
 This method calls the right resolver based on resolve_by
-:param resolve_by:
-:param element_id:
-:param execute_on:
-:param resolve_related_on:
-:return:
+\
+__param__ resolve_by:
+\
+__param__ element_id:
+\
+__param__ execute_on:
+\
+__param__ resolve_related_on:
+\
+__return__:
 
 ----------
 ```python

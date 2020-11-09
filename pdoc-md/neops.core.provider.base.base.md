@@ -1,6 +1,7 @@
 # neops.core.provider.base.base
 ## NeopsBaseProvider
-Description of the base run cycle for a provider
+The base neops provider contains all methods and required data processing for a concrete provider.
+To create a new provider, either extend this NeopsBaseProvider or a concrete provider
 
 ----------
 ### JSON Schema
@@ -55,7 +56,8 @@ validate_input: bool
 add_markdown_helptext(self,md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) -> 
 ```
 Creates additional helptext. Make shure the class is instantiable through import_string method
-:return: Helptext string
+\
+__return__: Helptext string
 
 ----------
 ```python
@@ -97,8 +99,10 @@ inherit_json_schema(json_schema: Dict = None) -> Dict
 ```
 Merges JSON Schemas: If this method is called on one of the classes children, then
 super().json_schema resolves, else we do a pseudo merge.
-:param json_schema:
-:return:
+\
+__param__ json_schema:
+\
+__return__:
 
 ----------
 ```python

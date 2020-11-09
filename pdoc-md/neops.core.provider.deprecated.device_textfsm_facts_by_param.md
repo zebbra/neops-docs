@@ -1,6 +1,7 @@
 # neops.core.provider.deprecated.device_textfsm_facts_by_param
 ## DeviceTextFSMFactsByParamProvider
-Description of the base run cycle for a provider
+The base neops provider contains all methods and required data processing for a concrete provider.
+To create a new provider, either extend this NeopsBaseProvider or a concrete provider
 
 ----------
 ### JSON Schema
