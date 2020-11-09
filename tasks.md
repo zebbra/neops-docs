@@ -27,19 +27,7 @@ To create a new task navigate to the task menu in the main navigation and click 
 ![Search Elements](../_media/screenshots/edit-task-1.png)
 
 
-The task form consists of general task fields and specific fields depending on the provider (read more on how to to create your own provider and add form fields using JSON Form )
-
-General task fields:
-
-| Field                  | Description                                                                    |
-|------------------------|--------------------------------------------------------------------------------|
-| Name                   | A human readable name for the task                                             |
-| Unique task identifier | Can be assigned to use the task over our API                                   |
-| Run Filter             | Additional filter, using the elastic query style                               |
-| Provider               | The provider (will expand the form with dynamic fields from the provider)      |
-| Pre run tasks          | Tasks which have to run before this task (see [task graph](./usage_tasks_graph.md) for more information) |
-| Post run tasks         | Tasks which have to run after this task (see [task graph](./usage_tasks_graph.md) for more information)  |
-
+The task form consists of general task fields and specific fields depending on the provider (read more on how to to create your own provider and add form fields using JSON Form)
 
 <!-- ![Search Elements](../_media/screenshots/edit-task-2.png) -->
 
@@ -50,6 +38,8 @@ General task fields:
 After saving the task, it will appear in your task list. 
 
 ![Search Elements](../_media/screenshots/menu-tasks.png)
+
+## Execute Tasks
 
 Navigate to your network, and select the elements you want to run the task on.
 
@@ -62,34 +52,35 @@ Select the task in the bottom bar and click on __preview__. Enter a description 
 You can learn more about how network elements are resolved in the provider section.
 
 
-## Generic task parameters
+## Task parameters
 
-Generic task parameters are used to describe the task itself and how it is acting.
+Task parameters are used to describe the task itself and how it is acting.
 
-### Description
+General task parameters are available in each task. Fields written in **bold** are mandatory. 
 
-Set an appropriate Description to the task, that describe its functionality.
+| Field                  | Description                                                                    |
+|------------------------|--------------------------------------------------------------------------------|
+| **Name**                   | A human readable name for the task                                             |
+| Description            | A human readable description for the task                                      |
+| Unique task identifier | Can be assigned to use the task over our API                                   |
+| Run Filter             | Additional filter, using the elastic query style                               |
+| **Provider**               | The provider (will expand the form with dynamic parameters from the provider)  |
+| Pre run tasks          | Tasks which have to run before this task (see [task graph](./usage_tasks_graph.md) for more information) |
+| Post run tasks         | Tasks which have to run after this task (see [task graph](./usage_tasks_graph.md) for more information)  |
 
-### Provider name and module
 
-This is a reference to the provider that is used to instantiate and run the task.
+### Additional input parameters (JSON scheme for running the task)
 
-### Input parameters (JSON scheme for running the task)
+Providers describe additional input parameters as [JSON Schema](https://json-schema.org/learn/getting-started-step-by-step.html). They are required to run a task.
 
-This describes additional input parameters as [JSON Schema](https://json-schema.org/learn/getting-started-step-by-step.html). They are required to run a task.
-
-Before executing a task, a web Form is rendered based on the task JSON schema to get the required input values.
+When creating a task, a web Form is rendered based on the task JSON schema to get the required input values.
 
 For more information how to build such a JSON Schema look in [Appendix under JSON Form](appendix.md#json-form)
 
-### Pre and post running tasks
+
+## Pre and post running tasks (task graph)
 
 For some tasks, like configurations or checks, it's essential to have accurate (actual) data. They are based on current facts or states, which should be collected in front of the task. Such supporting tasks can be referenced as pre- or post-running tasks
-
-**Other parameters are provider specific**
-
-
-## Task graph: using Pre and post run tasks
 
 Neops tasks can be combined and reused in other tasks by setting them as a **pre run** or **post run** task. The task resolver will then find a valid sequence to run the tasks.
 

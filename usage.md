@@ -1,10 +1,8 @@
 # Usage
 
-## Frontend
-
 !> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
-### Network Search
+## Network Search
 
 The network search view gives you an overview over the entities "Location/Group", "Devices" and "Interfaces". All three views display the search related elements. In addition, the topology of the searched network elements is displayed.
 
@@ -14,12 +12,12 @@ Relevant data regarding the entities (facts, checks and global data) is searchab
 
 ![Search Bar](./_media/screenshots/devices-search-bar.png)
 
-#### Search Terms
+### Search Terms
 
 Search terms are composed by [key]: [value] and put together by the logical operators AND/OR (optionally NOT).
 Or additionally full text searches are possible as well.
 
-##### Keys
+#### Keys
 
 Possible keys are suggested. They are composed hierarchically over the full data structure. For example if you have facts on devices stored under the key of VLANs like the following:
 
@@ -112,44 +110,36 @@ Or on `GigabitEthernet3/1`:
 
 With the interface related search term `interfaces.facts.vlans.name: CLIENT-A` you will get interfaces Gi0/1, Gi3/0 and Gig3/1. And in device and location view, you'd get the related devices or locations with interfaces that match the above search.
 
-##### Values
+#### Values
 
 A `*` can be uses as a wildcard.
 For exact matches use double quotes `"`.
 
 Strings within facts in a key name with `ip` in it, are tried to be stored as ip addresses. This gives you the ability to search within ip addresses in a subnet. Entering the network and subnet length in double quotes like `"192.0.2.16/28` will give you all elements that contains a ip address in the range 192.0.2.16 - 192.0.2.31 in the result set.
 
-##### Operators
+#### Operators
 
 Operators `AND`, `OR` and `NOT` have to be uppercase. Parentheses can be used for logical ordering.
 
-##### Ressources
+#### Ressources
 
 [elastic query string search documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html)
 
-#### Saved Searches
+### Saved Searches
 
 To easily reuse complex search terms, you can save and name them with the disk sign on the right.
 
 To find the saved search term, enter the defined name. Saved searches are per default added in front of the term with the `AND` operator added.
 
-### <a name="frontend-tasks">Tasks</a>
+## Discovery
 
 !> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
-### Execute Tasks
-
-!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
-
-### Discovery
-
-!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
-
-## Implemented Providers
+# Implemented Providers
 
 Providers implemented in neops.io: for what they are, how they work and how they can be used
 
-### DeviceJinjaConfigureProvider
+## DeviceJinjaConfigureProvider
 
 This provider renders a Jinja2 template and applies the rendered configuration to the device.
 
@@ -158,7 +148,7 @@ Parmeters:
 - `apply`: _how to apply the configuration (scp to copy and merge the configuration, cli to paste the configuration over the ssh/cli session)_
 - `template`: _the content of the jinja2 template which will be rendered_
 
-#### Template
+### Template
 
 In the template you can access pre-populated variables and if required facts of other elements.
 
@@ -171,7 +161,7 @@ In the template you can access pre-populated variables and if required facts of 
 
 For more information on how to build a Jinja2 template, have a look at [Appendix under Jinja2](appendix.md#jinja2)
 
-### InterfaceJinjaConfigureProvider
+## InterfaceJinjaConfigureProvider
 
 This provider renders a Jinja2 template and applies the rendered configuration to the device. The selected interfaces are returned as a list in the `interfaces` variable for iterating.
 
@@ -180,7 +170,7 @@ Parameters:
 - `apply`: _how to apply the configuration (scp to copy and merge the configuration, cli to paste the configuration over the ssh/cli session)_
 - `template`: _the content of the jinja2 template which will be rendered_
 
-#### Template
+### Template
 
 In the template you can access on pre-populated variables and if required facts of other elements.
 
@@ -203,7 +193,7 @@ interface {{ iface.name }}
 
 For more information how to build a Jinja2 template, have a look at [Appendix under Jinja2](appendix.md#jinja2)
 
-### DeviceNTCTemplateFactsProvider
+## DeviceNTCTemplateFactsProvider
 
 This provider parses the output of a command against the [ntc (network to code) TestFSM](https://github.com/networktocode/ntc-templates) templates.
 
@@ -212,7 +202,7 @@ Parameters:
 - `command`: _the command that produces the output to be parsed by the TextFSM template_
 - `facts_key`: _the key where the structed data is stored_
 
-### DeviceTextFSMFactsProvider / InterfaceTextFSMFactsProvider
+## DeviceTextFSMFactsProvider / InterfaceTextFSMFactsProvider
 
 This provider parses the output of a command against your own [TestFSM](https://github.com/google/textfsm/wiki/TextFSM) templates.
 
@@ -224,7 +214,7 @@ Parameters:
 
 For more information on how to build a TextFSM template, have a look at [Appendix under TextFSM](appendix.md#textfsm)
 
-### DeviceRegexFactsProvider / InterfaceRegexFactsProvider
+## DeviceRegexFactsProvider / InterfaceRegexFactsProvider
 
 This provider parses the output of a command against a regular expression.
 
@@ -239,7 +229,7 @@ If you use OR operators in your regular expression, which shouldn't be stored on
 
 To test your regular expressions check out [Pythex](https://pythex.org/)
 
-#### Example
+### Example
 
 Parse a Cisco `show version` command
 
@@ -265,10 +255,10 @@ Results in those data structure:
 }
 ```
 
-## nornir Task Resolvers
+# nornir Task Resolvers
 
 !> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
 
-## Checks
+# Checks
 
 !> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
