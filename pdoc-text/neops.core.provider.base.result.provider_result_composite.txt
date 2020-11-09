@@ -1,0 +1,79 @@
+Module neops.core.provider.base.result.provider_result_composite
+================================================================
+
+Classes
+-------
+
+`ProviderResultsComposite()`
+:   
+
+    ### Methods
+
+    `get_client_result(self, client_id: int) ‑> neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult`
+    :
+
+    `get_device_group_result(self, device_group_id: int) ‑> neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceGroupResult`
+    :
+
+    `get_device_result(self, device_id: int) ‑> neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceResult`
+    :
+
+    `get_interface_result(self, interface_id: int) ‑> neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult`
+    :
+
+    `get_nornir_device_result(self, nornir_device_id: int) ‑> neops.core.provider.base.result.coupled_provider_result_types.ProviderNornirDeviceResult`
+    :
+
+    `load_from_db(self, execution_id: int, pre_check_as_failed: bool = False, post_check_as_failed: bool = False)`
+    :
+
+    `merge(self, merge_object: ProviderResultsComposite) ‑> NoneType`
+    :
+
+    `reset_result(self) ‑> NoneType`
+    :
+
+    `set_client_interface_relation(self, client_id: int, interface_id: int) ‑> NoneType`
+    :
+
+    `set_client_location_relation(self, client_id: int, location_id: int) ‑> NoneType`
+    :
+
+    `set_device_device_group_relation(self, device_id: int, device_group_id: int) ‑> NoneType`
+    :
+
+    `set_device_nornir_device_relation(self, device_id: int, nornir_device_id: int) ‑> NoneType`
+    :
+
+    `set_interface_device_relation(self, interface_id: int, device_id: int) ‑> NoneType`
+    :
+
+    `update_client_result(self, client_id: int, **kwargs) ‑> NoneType`
+    :
+
+    `update_device_group_result(self, device_group_id: int, **kwargs) ‑> NoneType`
+    :
+
+    `update_device_result(self, device_id: int, **kwargs) ‑> NoneType`
+    :
+
+    `update_interface_result(self, interface_id: int, **kwargs) ‑> NoneType`
+    :
+
+    `update_nornir_device_result(self, nornir_device_id: int, **kwargs) ‑> NoneType`
+    :
+
+    `upsert_client_result(self, client_id: int, **kwargs) ‑> NoneType`
+    :
+
+    `upsert_device_group_result(self, device_group_id: int, **kwargs) ‑> NoneType`
+    :
+
+    `upsert_device_result(self, device_id: int, **kwargs) ‑> NoneType`
+    :
+
+    `upsert_interface_result(self, interface_id: int, **kwargs) ‑> NoneType`
+    :
+
+    `upsert_nornir_device_result(self, nornir_device_id: int, **kwargs) ‑> NoneType`
+    :

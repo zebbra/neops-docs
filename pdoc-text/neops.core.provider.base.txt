@@ -1,0 +1,17 @@
+Module neops.core.provider.base
+===============================
+
+Sub-modules
+-----------
+* neops.core.provider.base.base
+* neops.core.provider.base.base_check
+* neops.core.provider.base.base_configure
+* neops.core.provider.base.base_facts
+* neops.core.provider.base.base_process_options
+* neops.core.provider.base.base_result_writer
+* neops.core.provider.base.base_run_arguments
+* neops.core.provider.base.base_run_cycle
+* neops.core.provider.base.element_resolver
+* neops.core.provider.base.enum
+* neops.core.provider.base.execution_updater
+* neops.core.provider.base.result

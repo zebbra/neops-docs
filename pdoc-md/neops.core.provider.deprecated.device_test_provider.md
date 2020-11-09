@@ -1,0 +1,91 @@
+# neops.core.provider.deprecated.device_test_provider
+### Module functions
+```python
+test_sub_sub_task(task: nornir.core.task.Task,res: str) -> nornir.core.task.Result
+```
+```python
+test_sub_task(task: nornir.core.task.Task,res: str) -> nornir.core.task.Result
+```
+## DeviceTestProvider
+The base neops provider contains all methods and required data processing for a concrete provider.
+To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+
+----------
+### JSON Schema
+#### Demo Form JSON Schema
+
+
+##### Properties
+
+
+- **`foo`** *(string)*: Foo rendered as normal input field.
+
+- **`bar`** *(string)*: Bar rendered as editor with syntax highlighting for jinja2.
+
+- **`bool`** *(boolean)*: boolean is rendered as checkbox. Default: `False`.
+
+### Class variables
+```python
+deprecated: bool
+```
+```python
+description: str
+```
+```python
+execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater
+```
+```python
+json_schema: Dict
+```
+```python
+provider_type: neops.core.provider.base.enum.ProviderTypeEnum
+```
+```python
+result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter
+```
+```python
+run_input_json_schema: Dict
+```
+```python
+run_on: neops.core.provider.base.enum.RunOnEnum
+```
+```python
+run_on_all_if_empty: bool
+```
+```python
+run_on_strict: bool
+```
+```python
+short_description: str
+```
+```python
+validate_input: bool
+```
+### Methods
+```python
+pre_run_global(self,**kwargs) -> Any
+```
+```python
+pre_run_on_device(self,**kwargs) -> Any
+```
+```python
+pre_run_on_device_group(self,**kwargs) -> Any
+```
+```python
+pre_run_on_nornir_device(self,**kwargs) -> Any
+```
+```python
+run_global(self,**kwargs) -> Any
+```
+```python
+run_on_device(self,**kwargs) -> Any
+```
+```python
+run_on_device_group(self,**kwargs) -> Any
+```
+```python
+run_on_interface(self,**kwargs) -> Any
+```
+```python
+run_on_nornir_device(self,**kwargs) -> Any
+```

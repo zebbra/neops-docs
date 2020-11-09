@@ -1,0 +1,6 @@
+Namespace neops.core.provider.base.result.exception
+===================================================
+
+Sub-modules
+-----------
+* neops.core.provider.base.result.exception.related_result_failed

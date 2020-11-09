@@ -1,0 +1,6 @@
+Module neops.core.provider.exceptions
+=====================================
+
+Sub-modules
+-----------
+* neops.core.provider.exceptions.base

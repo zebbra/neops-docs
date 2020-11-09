@@ -1,0 +1,51 @@
+Module neops.core.provider.base.base_process_options
+====================================================
+
+Classes
+-------
+
+`BaseProcessOptions()`
+:   This class describes the methods provided to process different result objects
+
+    ### Ancestors (in MRO)
+
+    * abc.ABC
+
+    ### Descendants
+
+    * neops.core.provider.base.base.NeopsBaseProvider
+
+    ### Methods
+
+    `process_client_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult) ‑> NoneType`
+    :
+
+    `process_client_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult]) ‑> NoneType`
+    :
+
+    `process_device_group_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceGroupResult) ‑> NoneType`
+    :
+
+    `process_device_group_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceGroupResult]) ‑> NoneType`
+    :
+
+    `process_device_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceResult) ‑> NoneType`
+    :
+
+    `process_device_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceResult]) ‑> NoneType`
+    :
+
+    `process_global_result(self, result: neops.core.provider.base.result.provider_result.ProviderResult) ‑> NoneType`
+    :
+
+    `process_interface_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult) ‑> NoneType`
+    :
+
+    `process_interface_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult]) ‑> NoneType`
+    :
+
+    `process_nornir_device_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderNornirDeviceResult) ‑> NoneType`
+    :
+
+    `process_nornir_device_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderNornirDeviceResult]) ‑> NoneType`
+    :

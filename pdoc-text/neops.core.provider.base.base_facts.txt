@@ -1,0 +1,93 @@
+Module neops.core.provider.base.base_facts
+==========================================
+
+Classes
+-------
+
+`NeopsFactsBaseProvider(**kwargs)`
+:   The base neops provider contains all methods and required data processing for a concrete provider.
+    To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.base.base.NeopsBaseProvider
+    * neops.core.provider.base.base_run_cycle.BaseRunCycle
+    * neops.core.provider.base.base_process_options.BaseProcessOptions
+    * abc.ABC
+    * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
+
+    ### Descendants
+
+    * neops.core.provider.deprecated.device_interface_textfsm_facts.DeviceInterfaceTextFSMFactsProvider
+    * neops.core.provider.deprecated.device_regex_facts.DeviceRegexFactsProvider
+    * neops.core.provider.deprecated.device_textfsm_facts.DeviceTextFSMFactsProvider
+    * neops.core.provider.deprecated.device_textfsm_facts_by_param.DeviceTextFSMFactsByParamProvider
+    * neops.core.provider.deprecated.device_textfsm_ntc_facts.DeviceTextFSMNTCFactsProvider
+    * neops.core.provider.deprecated.interface_regex_facts.InterfaceRegexFactsProvider
+    * neops.core.provider.deprecated.interface_textfsm_facts.InterfaceTextFSMFactsProvider
+    * neops.core.provider.device_napalm_facts.DeviceNapalmFacts
+    * neops.core.provider.device_snmp_facts.DeviceSNMPFactsProvider
+    * neops.core.provider.generic_jinja_facts.GenericJinjaFactsProvider
+    * neops.core.provider.generic_ping.GenericPing
+    * neops.core.provider.generic_rest_facts.GenericRestFactsProvider
+    * neops.core.provider.generic_textfsm_facts.GenericTextFSMFacts
+    * neops.core.provider.generic_textfsm_facts_v2.GenericTextFSMFactsV2
+    * neops.customer.migros.provider.device_interface_prime_facts.DeviceInterfacePrimeFactsProvider
+
+    ### Class variables
+
+    `deprecated: bool`
+    :
+
+    `description: str`
+    :
+
+    `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
+    :
+
+    `facts_for`
+    :
+
+    `json_schema: Dict`
+    :
+
+    `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
+    :
+
+    `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
+    :
+
+    `run_input_json_schema: Dict`
+    :
+
+    `run_on: neops.core.provider.base.enum.RunOnEnum`
+    :
+
+    `run_on_all_if_empty: bool`
+    :
+
+    `run_on_strict: bool`
+    :
+
+    `short_description: str`
+    :
+
+    `validate_input: bool`
+    :
+
+    ### Methods
+
+    `process_client_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult]) ‑> NoneType`
+    :
+
+    `process_device_group_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceGroupResult]) ‑> NoneType`
+    :
+
+    `process_device_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceResult]) ‑> NoneType`
+    :
+
+    `process_global_result(self, result: neops.core.provider.base.result.provider_result.ProviderResult) ‑> NoneType`
+    :
+
+    `process_interface_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult]) ‑> NoneType`
+    :

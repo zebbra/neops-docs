@@ -1,0 +1,10 @@
+Namespace neops.core.provider.base.result
+=========================================
+
+Sub-modules
+-----------
+* neops.core.provider.base.result.coupled_provider_result_types
+* neops.core.provider.base.result.exception
+* neops.core.provider.base.result.provider_global_result
+* neops.core.provider.base.result.provider_result
+* neops.core.provider.base.result.provider_result_composite

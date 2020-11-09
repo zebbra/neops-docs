@@ -1,0 +1,36 @@
+Module neops.core.provider
+==========================
+
+Sub-modules
+-----------
+* neops.core.provider.base
+* neops.core.provider.deprecated
+* neops.core.provider.device_configure_from_jinja
+* neops.core.provider.device_discovery
+* neops.core.provider.device_exec_from_jinja
+* neops.core.provider.device_image_cleanup
+* neops.core.provider.device_napalm_facts
+* neops.core.provider.device_restart
+* neops.core.provider.device_rollback
+* neops.core.provider.device_rommon_upgrade
+* neops.core.provider.device_rommon_upgrade_unattended
+* neops.core.provider.device_snmp_facts
+* neops.core.provider.device_stack_auto_upgrade
+* neops.core.provider.device_upgrade
+* neops.core.provider.device_upgrade_direct
+* neops.core.provider.device_upgrade_unattended
+* neops.core.provider.exceptions
+* neops.core.provider.generic_check_aggregation
+* neops.core.provider.generic_from_excel
+* neops.core.provider.generic_jinja_check
+* neops.core.provider.generic_jinja_facts
+* neops.core.provider.generic_ping
+* neops.core.provider.generic_report
+* neops.core.provider.generic_rest_facts
+* neops.core.provider.generic_simple_workflow
+* neops.core.provider.generic_test_provider
+* neops.core.provider.generic_textfsm_facts
+* neops.core.provider.generic_textfsm_facts_v2
+* neops.core.provider.global_mail
+* neops.core.provider.interface_configure_from_jinja
+* neops.core.provider.registry

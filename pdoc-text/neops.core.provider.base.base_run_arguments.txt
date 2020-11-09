@@ -1,0 +1,8 @@
+Module neops.core.provider.base.base_run_arguments
+==================================================
+
+Classes
+-------
+
+`NeopsProviderRunArguments(task_input_kwargs: Dict = None, execute_on: List = None, execute_on_type: neops.core.provider.base.enum.RunOnEnum = device, dry_run: bool = False, search_query: str = '', **kwargs)`
+:

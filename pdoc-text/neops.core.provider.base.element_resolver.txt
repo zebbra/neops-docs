@@ -1,0 +1,120 @@
+Module neops.core.provider.base.element_resolver
+================================================
+
+Classes
+-------
+
+`ElementResolver(filtered_elements: Dict[str, Optional[List[Any]]], run_on: RunOnEnum, run_on_all_if_empty: bool)`
+:   
+
+    ### Methods
+
+    `resolve_execute(self, resolve_on: ResolveOn, execute_on: List, execute_on_type: RunOnEnum, invert_filter: bool = False) ‑> Union[List[int], NoneType]`
+    :   This method calls the right resolver based on resolve_on
+        :param resolve_on:
+        :param execute_on:
+        :param execute_on_type:
+        :param invert_filter:
+        :return:
+
+    `resolve_execute_on_clients(self, execute_on: List, execute_on_type: RunOnEnum, invert_filter: bool = False) ‑> List[int]`
+    :
+
+    `resolve_execute_on_clients_of_group(self, execute_on: List, execute_on_type: RunOnEnum, invert_filter: bool = False) ‑> List[int]`
+    :
+
+    `resolve_execute_on_clients_of_interface(self, execute_on: List, execute_on_type: RunOnEnum, invert_filter: bool = False) ‑> List[int]`
+    :
+
+    `resolve_execute_on_devices(self, execute_on: List, execute_on_type: RunOnEnum, invert_filter: bool = False) ‑> List[int]`
+    :
+
+    `resolve_execute_on_groups(self, execute_on: List, execute_on_type: RunOnEnum, invert_filter: bool = False) ‑> Union[List[int], NoneType]`
+    :
+
+    `resolve_execute_on_interfaces(self, execute_on: List, execute_on_type: RunOnEnum, invert_filter: bool = False) ‑> List[int]`
+    :
+
+    `resolve_execute_on_nornir_devices(self, execute_on: List, execute_on_type: RunOnEnum, invert_filter: bool = False) ‑> List[int]`
+    :
+
+    `resolve_related_elements(self, resolve_by: ResolveBy, element_id: int, execute_on: List, resolve_related_on: RunOnEnum = None) ‑> Union[List[int], NoneType]`
+    :   This method calls the right resolver based on resolve_by
+        :param resolve_by:
+        :param element_id:
+        :param execute_on:
+        :param resolve_related_on:
+        :return:
+
+    `resolve_related_elements_by_client(self, client_id: int, execute_on: List, resolve_related_on: RunOnEnum = None) ‑> List[int]`
+    :
+
+    `resolve_related_elements_by_device(self, device_id: int, execute_on: List, resolve_related_on: RunOnEnum = None) ‑> List`
+    :
+
+    `resolve_related_elements_by_device_group(self, device_group_id: int, execute_on: List, resolve_related_on: RunOnEnum = None) ‑> List[int]`
+    :
+
+    `resolve_related_elements_by_interface(self, interface_id: int, execute_on: List, resolve_related_on: RunOnEnum = None) ‑> List[int]`
+    :
+
+    `resolve_related_elements_by_nornir_device(self, nornir_device_id: int, execute_on: List, resolve_related_on: RunOnEnum = None) ‑> List[int]`
+    :
+
+`ResolveBy(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   An enumeration.
+
+    ### Ancestors (in MRO)
+
+    * enum.Enum
+
+    ### Class variables
+
+    `CLIENT`
+    :
+
+    `DEVICE`
+    :
+
+    `DEVICE_GROUP`
+    :
+
+    `INTERFACE`
+    :
+
+    `NORNIR_DEVICE`
+    :
+
+    ### Static methods
+
+    `resolve(key: str) ‑> neops.core.provider.base.element_resolver.ResolveBy`
+    :
+
+`ResolveOn(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   An enumeration.
+
+    ### Ancestors (in MRO)
+
+    * enum.Enum
+
+    ### Class variables
+
+    `CLIENTS`
+    :
+
+    `DEVICES`
+    :
+
+    `GROUPS`
+    :
+
+    `INTERFACES`
+    :
+
+    `NORNIR_DEVICES`
+    :
+
+    ### Static methods
+
+    `resolve(key: str) ‑> neops.core.provider.base.element_resolver.ResolveOn`
+    :

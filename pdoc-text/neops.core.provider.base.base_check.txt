@@ -1,0 +1,102 @@
+Module neops.core.provider.base.base_check
+==========================================
+
+Classes
+-------
+
+`NeopsCheckBaseProvider(**kwargs)`
+:   The base neops provider contains all methods and required data processing for a concrete provider.
+    To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.base.base.NeopsBaseProvider
+    * neops.core.provider.base.base_run_cycle.BaseRunCycle
+    * neops.core.provider.base.base_process_options.BaseProcessOptions
+    * abc.ABC
+    * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
+
+    ### Descendants
+
+    * neops.core.provider.deprecated.device_check.DeviceCheckProvider
+    * neops.core.provider.deprecated.interface_check.InterfaceCheckProvider
+    * neops.core.provider.generic_check_aggregation.GenericCheckAggregation
+    * neops.core.provider.generic_jinja_check.GenericJinjaCheckProvider
+
+    ### Class variables
+
+    `based_on_checks`
+    :
+
+    `check_for`
+    :
+
+    `deprecated: bool`
+    :
+
+    `description: str`
+    :
+
+    `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
+    :
+
+    `json_schema: Dict`
+    :
+
+    `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
+    :
+
+    `related_facts`
+    :
+
+    `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
+    :
+
+    `run_input_json_schema: Dict`
+    :
+
+    `run_on: neops.core.provider.base.enum.RunOnEnum`
+    :
+
+    `run_on_all_if_empty: bool`
+    :
+
+    `run_on_strict: bool`
+    :
+
+    `short_description: str`
+    :
+
+    `validate_input: bool`
+    :
+
+    ### Methods
+
+    `process_client_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult] = None) ‑> NoneType`
+    :
+
+    `process_device_group_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceGroupResult] = None) ‑> NoneType`
+    :
+
+    `process_device_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceResult] = None) ‑> NoneType`
+    :
+
+    `process_global_result(self, result: nornir.core.task.Result = None) ‑> NoneType`
+    :   Global check are currently not supported..
+
+    `process_interface_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult] = None) ‑> NoneType`
+    :
+
+`NeopsCheckResult(result: neops.core.provider.base.enum.RunOnEnum = failed, reason: str = '', metrics: dict = None)`
+:   
+
+    ### Class variables
+
+    `metrics`
+    :
+
+    `reason`
+    :
+
+    `result`
+    :

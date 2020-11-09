@@ -1,7 +1,11 @@
 - [Overview](README.md)
 - [Usage](usage.md)
+- [Facts](facts.md)
+- [Tasks](tasks.md)
+- [Provider](provider.md)
+- [Provider overview](provider_overview.md)
 - [Architecture](architecture.md)
-<!-- - [Contributing](CONTRIBUTING.md) -->
-<!-- - [Changelog](CHANGELOG.md) -->
-<!-- - [Installation](installation.md) -->
 - [Appendix](appendix.md)
+  - [Jinja2](appendix_sub/appendix_jinja2.md)
+  - [JSON Form](appendix_sub/appendix_jsonform.md)
+  - [Text FSM](appendix_sub/appendix_textfsm.md)
