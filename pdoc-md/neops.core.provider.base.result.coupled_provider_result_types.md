@@ -12,7 +12,7 @@ set_interface(self,interface: ProviderInterfaceResult,reverse: bool = True) 
 set_location(self,location: ProviderDeviceGroupResult,reverse: bool = True) -> NoneType
 ```
 ```python
-write_result(self,execution_id: int) -> 
+write_result(self,execution_id: int,neops_task_id: Optional[int] = None,granularity: int = 5) -> 
 ```
 ## ProviderDeviceGroupResult
 
@@ -27,7 +27,7 @@ add_device(self,device: ProviderDeviceResult,reverse: bool = True) -> NoneTy
 get_ran_on(self) -> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]
 ```
 ```python
-write_result(self,execution_id: int) -> 
+write_result(self,execution_id: int,neops_task_id: Optional[int] = None,granularity: int = 5) -> 
 ```
 ## ProviderDeviceResult
 
@@ -45,7 +45,7 @@ get_ran_on(self) -> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]
 set_nornir_device(self,nornir_device: "'ProviderNornirDeviceResult'",reverse: bool = True) -> NoneType
 ```
 ```python
-write_result(self,execution_id: int) -> 
+write_result(self,execution_id: int,neops_task_id: Optional[int] = None,granularity: int = 5) -> 
 ```
 ## ProviderInterfaceResult
 
@@ -60,7 +60,7 @@ get_ran_on(self) -> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]
 set_device(self,device: "'ProviderDeviceResult'",reverse: bool = True) -> NoneType
 ```
 ```python
-write_result(self,execution_id: int) -> 
+write_result(self,execution_id: int,neops_task_id: Optional[int] = None,granularity: int = 5) -> 
 ```
 ## ProviderNornirDeviceResult
 
@@ -72,5 +72,5 @@ add_device(self,device: ProviderDeviceResult,reverse: bool = True) -> NoneTy
 get_ran_on(self) -> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]
 ```
 ```python
-write_result(self,execution_id: int) -> 
+write_result(self,execution_id: int,neops_task_id: Optional[int] = None,granularity: int = 5) -> 
 ```

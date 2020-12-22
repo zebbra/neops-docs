@@ -1,7 +1,17 @@
 # neops.core.provider.generic_jinja_check
 ## GenericJinjaCheckProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+This Provider is inherited from the `NeopsBaseProvider`, it brings additional functionality to handle checks.
+
+Every Task based on this provider needs a check key where the check result is stored in the database per element.
+
+For providers inherits from this provider the check results are written automatically based on the result set of the pre- and run methods per element.
+It supports check results, boolean values and handels exceptions.
+
+This provider should be the base for check providers. So if you create a new check provider with, either extend this `NeopsCheckBaseProvider` or a concrete check provider
+
+----------
+### Check Result
+see below
 
 ----------
 ### JSON Schema
@@ -18,47 +28,7 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 - **`template`** *(string)*: Default: `{% do neops.set_result(True) %}
 {% do neops.set_reason("because") %}`.
 
-### Class variables
-```python
-deprecated: bool
-```
-```python
-description: str
-```
-```python
-execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater
-```
-```python
-json_schema: Dict
-```
-```python
-provider_type: neops.core.provider.base.enum.ProviderTypeEnum
-```
-```python
-result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter
-```
-```python
-run_input_json_schema: Dict
-```
-```python
-run_on: neops.core.provider.base.enum.RunOnEnum
-```
-```python
-run_on_all_if_empty: bool
-```
-```python
-run_on_strict: bool
-```
-```python
-short_description: str
-```
-```python
-validate_input: bool
-```
 ### Methods
-```python
-init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
-```
 ```python
 run_on_client_of_interface(self,task: nornir.core.task.Task,client_id: int,check_on: str,template: str,**kwargs) -> Union[neops.core.provider.base.base_check.NeopsCheckResult, NoneType]
 ```

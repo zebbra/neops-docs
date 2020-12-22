@@ -25,49 +25,10 @@ Classes
 
     ### Class variables
 
-    `deprecated: bool`
-    :
-
-    `description: str`
-    :
-
-    `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
-    :
-
-    `json_schema: Dict`
-    :
-
-    `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
-    :
-
-    `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
-    :
-
-    `run_input_json_schema: Dict`
-    :
-
-    `run_on: neops.core.provider.base.enum.RunOnEnum`
-    :
-
-    `run_on_all_if_empty: bool`
-    :
-
-    `run_on_strict: bool`
-    :
-
     `set_child_to_failed`
     :
 
-    `short_description: str`
-    :
-
-    `validate_input: bool`
-    :
-
     ### Methods
-
-    `init_adjust_run_on(self, execute_on: Union[List[int], NoneType] = None, execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None, dry_run: Union[bool, NoneType] = None, task_input_kwargs: Union[Dict[Any, Any], NoneType] = None, search_query: str = '', task_kwargs: Union[Dict[Any, Any], NoneType] = None, **kwargs) ‑> NoneType`
-    :
 
     `pre_run_global(self, **kwargs) ‑> Any`
     :

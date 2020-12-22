@@ -1,6 +1,6 @@
 # Providers
 
-Providers are the classes used by tasks. They provide functionality and expose configuration parameters through JSON Forms to the user. Providers are running the tasks.  
+Providers are the classes used by tasks. They provide functionality and expose configuration parameters through JSON Forms to the user. Providers are running the tasks.
 
 This way, a provider can be written (like a function) in a generic and reusable way, while a task contains configuration which is passed to the provider.
 
@@ -14,7 +14,7 @@ On which entity and how the provider has to be executed:
 
 - `run_on`: _the task is executed on this entity_
 - `run_on_strict`: _describes the allowed input entities, if strict only elements of the run_on entity are allowed, otherwise the run_on entity is resolved from the given entity (eg. interface 1,2 belongs to device A, interface 3,4 belongs to device B. if run_on is set to DEVICE and run_on_strict is False: interface 1 is given the task runs on device A. vice verca if run on is set to INTERFACE and run_on_strict is False: device B is given the task runs on interface 3 and 4. if run_on_strict is True only run_on entity is supported)_
-- `runon_all_if_empty`: _use with caution_ - _runs on all elements if none is given (mostly used for facts providers)_
+- `run_on_all_if_empty`: _use with caution_ - _runs on all elements if none is given (mostly used for facts providers)_
 
 ```python
 run_on = RunOnEnum.DEVICE
@@ -42,36 +42,34 @@ json_schema = {}
 run_input_json_schema = {}
 ```
 
-
 ## Run cycle
 
-The run cycle definition is implemented in each neops provider. Steps can be left empty, but the order is immutable. 
+The run cycle definition is implemented in each neops provider. Steps can be left empty, but the order is immutable.
 
-Use __pre run__ and __run__ steps to prepare and execute. 
+Use **pre run** and **run** steps to prepare and execute.
 
-| #  | Step                            | Description                                                                                                                 |
-|----|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| 1  | Pre run on global               | All task arguments are passed                                                                                               |
-| 2  | Pre run on device group         | Per device group. Device groups are resolved and passed                                                                     |
-| 3  | Pre run on clients of group     | Per client of group. Runs in context of group (here, groups are locations). Device group and client are resolved and passed |
-| 4  | Pre run on nornir device        | Per nornir device. Nornir device is resolved and passed                                                                     |
-| 5  | Pre run on device               | Per device. Device is resolved and passed                                                                                   |
-| 6  | Pre run on interface            | Per interface of device. Device and interface are resolved and passed                                                       |
-| 7  | Pre run on clients of interface | Per client of interface. Device, nornir device an dinterface are resovled and passed                                        |
-| 8  | Run on clients of interface     | Run equivalent for #7                                                                                                       |
-| 9  | Run on interface                | Run equivalent for #6                                                                                                       |
-| 10 | Run on device                   | Run equivalent for #5                                                                                                       |
-| 11 | Run on nornir device            | Run equivalent for #4                                                                                                       |
-| 12 | Run on clients of group         | Run equivalent for #3                                                                                                       |
-| 13 | Run on device group             | Run equivalent for #2                                                                                                       |
-| 14 | Run on global                   | Run equivalent for #1                                                                                                       |
-
+| #   | Step                            | Description                                                                                                                 |
+| --- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Pre run on global               | All task arguments are passed                                                                                               |
+| 2   | Pre run on device group         | Per device group. Device groups are resolved and passed                                                                     |
+| 3   | Pre run on clients of group     | Per client of group. Runs in context of group (here, groups are locations). Device group and client are resolved and passed |
+| 4   | Pre run on nornir device        | Per nornir device. Nornir device is resolved and passed                                                                     |
+| 5   | Pre run on device               | Per device. Device is resolved and passed                                                                                   |
+| 6   | Pre run on interface            | Per interface of device. Device and interface are resolved and passed                                                       |
+| 7   | Pre run on clients of interface | Per client of interface. Device, nornir device an dinterface are resovled and passed                                        |
+| 8   | Run on clients of interface     | Run equivalent for #7                                                                                                       |
+| 9   | Run on interface                | Run equivalent for #6                                                                                                       |
+| 10  | Run on device                   | Run equivalent for #5                                                                                                       |
+| 11  | Run on nornir device            | Run equivalent for #4                                                                                                       |
+| 12  | Run on clients of group         | Run equivalent for #3                                                                                                       |
+| 13  | Run on device group             | Run equivalent for #2                                                                                                       |
+| 14  | Run on global                   | Run equivalent for #1                                                                                                       |
 
 ```mermaid
 graph LR
     S[Start]
     P1[Global]
-    P2[Device Group]    
+    P2[Device Group]
     P3[Clients of Group]
     P4[Nornir Device]
     P5[Device]
@@ -94,19 +92,13 @@ graph LR
     S -- 14 run --> P1
 ```
 
-
-
-
 ## Run Options
 
-
 !> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
-
 
 ## Result handling
 
 !> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
-
 
 ## Methods
 

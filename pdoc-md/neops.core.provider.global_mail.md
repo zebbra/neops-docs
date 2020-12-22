@@ -19,46 +19,15 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 
 - **`body`** *(string)*: . Default: ``.
 
+- **`as_attachment`** *(string)*: . Default: ``.
+
+- **`attachment_name`** *(string)*: . Default: ``.
+
+- **`zip_attachment`** *(boolean)*: Default: `False`.
+
 - **`mail_from`** *(string)*: . Default: ``.
 
-### Class variables
-```python
-deprecated: bool
-```
-```python
-description: str
-```
-```python
-execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater
-```
-```python
-json_schema: Dict
-```
-```python
-provider_type: neops.core.provider.base.enum.ProviderTypeEnum
-```
-```python
-result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter
-```
-```python
-run_input_json_schema: Dict
-```
-```python
-run_on: neops.core.provider.base.enum.RunOnEnum
-```
-```python
-run_on_all_if_empty: bool
-```
-```python
-run_on_strict: bool
-```
-```python
-short_description: str
-```
-```python
-validate_input: bool
-```
 ### Methods
 ```python
-run_global(self,title: str,body: str,mail_to: str,include_executor: bool,mail_from: str,task_input_kwargs: Any,**kwargs) -> Any
+run_global(self,execute_on: List[int],execute_on_type: neops.core.provider.base.enum.RunOnEnum,dry_run: bool,task_input_kwargs: Dict[Any, Any],search_query: str,task_kwargs: Dict[Any, Any],result,**kwargs) -> Any
 ```

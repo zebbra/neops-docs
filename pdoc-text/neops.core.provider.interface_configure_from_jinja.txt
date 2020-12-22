@@ -5,8 +5,9 @@ Classes
 -------
 
 `InterfaceJinjaConfigureProvider(**kwargs)`
-:   The base neops provider contains all methods and required data processing for a concrete provider.
-    To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+:   This provider extends the NeopsBaseProvider by the functionality of storing configurations (on device results) to the device it self by different apply methods.
+    
+    This provider should be the base for configuration providers. So if you create a new configuration provider with, either extend this `NeopsConfigureBaseProvider` or a concrete configuration provider
 
     ### Ancestors (in MRO)
 
@@ -16,44 +17,6 @@ Classes
     * neops.core.provider.base.base_process_options.BaseProcessOptions
     * abc.ABC
     * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
-
-    ### Class variables
-
-    `deprecated: bool`
-    :
-
-    `description: str`
-    :
-
-    `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
-    :
-
-    `json_schema: Dict`
-    :
-
-    `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
-    :
-
-    `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
-    :
-
-    `run_input_json_schema: Dict`
-    :
-
-    `run_on: neops.core.provider.base.enum.RunOnEnum`
-    :
-
-    `run_on_all_if_empty: bool`
-    :
-
-    `run_on_strict: bool`
-    :
-
-    `short_description: str`
-    :
-
-    `validate_input: bool`
-    :
 
     ### Methods
 

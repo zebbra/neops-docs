@@ -33,4 +33,5 @@ Sub-modules
 * neops.core.provider.generic_textfsm_facts_v2
 * neops.core.provider.global_mail
 * neops.core.provider.interface_configure_from_jinja
+* neops.core.provider.interface_rollback
 * neops.core.provider.registry

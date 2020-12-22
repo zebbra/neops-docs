@@ -1,7 +1,13 @@
 # neops.core.provider.generic_rest_facts
 ## GenericRestFactsProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+This Provider is inherited from the `NeopsBaseProvider`, it brings additional functionality to handle facts (flexible data structures per entity).
+
+Every task based on this provider needs a facts key where the facts result is stored in the database per element.
+
+For providers inherits from this provider the facts results are written automatically based on the result set of the pre- and run methods per element.
+It supports data structures of any kind as long as they are compatible to JSON.
+
+This provider should be the base for fact providers. So if you create a new fact provider with, either extend this `NeopsFactsBaseProvider` or a concrete fact provider
 
 ----------
 ### JSON Schema
@@ -33,34 +39,9 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 
     - **`header_value`** *(string)*
 
-### Class variables
-```python
-description: str
-```
-```python
-json_schema: Dict[str, Any]
-```
-```python
-provider_type: neops.core.provider.base.enum.ProviderTypeEnum
-```
-```python
-run_on: neops.core.provider.base.enum.RunOnEnum
-```
-```python
-run_on_all_if_empty: bool
-```
-```python
-run_on_strict: bool
-```
-```python
-short_description: str
-```
 ### Methods
 ```python
 get_rest(self,url: str,auth: Dict = None,headers: List = None) -> Dict
-```
-```python
-init_adjust_run_on(self,execute_on: Union[List[int], NoneType] = None,execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None,dry_run: Union[bool, NoneType] = None,task_input_kwargs: Union[Dict[Any, Any], NoneType] = None,search_query: str = '',task_kwargs: Union[Dict[Any, Any], NoneType] = None,**kwargs) -> NoneType
 ```
 ```python
 pre_run_global(self,request_on: str,url: str,task_input_kwargs: Dict,auth: Dict = None,headers: List = None,**kwargs) -> Any

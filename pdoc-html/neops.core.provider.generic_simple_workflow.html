@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.1" />
+<meta name="generator" content="pdoc 0.9.2" />
 <title>neops.core.provider.generic_simple_workflow API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
@@ -47,65 +47,8 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 <li>abc.ABC</li>
 <li>neops.core.libs.helptext.help_text_resolver.HelpTextResolver</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.deprecated"><code class="name">var <span class="ident">deprecated</span> : bool</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.description"><code class="name">var <span class="ident">description</span> : str</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.execution_updater"><code class="name">var <span class="ident">execution_updater</span> : <a title="neops.core.provider.base.execution_updater.ExecutionUpdater" href="base/execution_updater.html#neops.core.provider.base.execution_updater.ExecutionUpdater">ExecutionUpdater</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.json_schema"><code class="name">var <span class="ident">json_schema</span> : Dict</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.provider_type"><code class="name">var <span class="ident">provider_type</span> : <a title="neops.core.provider.base.enum.ProviderTypeEnum" href="base/enum.html#neops.core.provider.base.enum.ProviderTypeEnum">ProviderTypeEnum</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.result_writer"><code class="name">var <span class="ident">result_writer</span> : <a title="neops.core.provider.base.base_result_writer.BaseResultWriter" href="base/base_result_writer.html#neops.core.provider.base.base_result_writer.BaseResultWriter">BaseResultWriter</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_input_json_schema"><code class="name">var <span class="ident">run_input_json_schema</span> : Dict</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_on"><code class="name">var <span class="ident">run_on</span> : <a title="neops.core.provider.base.enum.RunOnEnum" href="base/enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_on_all_if_empty"><code class="name">var <span class="ident">run_on_all_if_empty</span> : bool</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_on_strict"><code class="name">var <span class="ident">run_on_strict</span> : bool</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.short_description"><code class="name">var <span class="ident">short_description</span> : str</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.validate_input"><code class="name">var <span class="ident">validate_input</span> : bool</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Methods</h3>
 <dl>
-<dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.init_adjust_run_on"><code class="name flex">
-<span>def <span class="ident">init_adjust_run_on</span></span>(<span>self, execute_on: Union[List[int], NoneType] = None, execute_on_type: Union[<a title="neops.core.provider.base.enum.RunOnEnum" href="base/enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a>, NoneType] = None, dry_run: Union[bool, NoneType] = None, task_input_kwargs: Union[Dict[Any, Any], NoneType] = None, search_query: str = '', task_kwargs: Union[Dict[Any, Any], NoneType] = None, **kwargs) ‑> NoneType</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt id="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_global"><code class="name flex">
 <span>def <span class="ident">run_global</span></span>(<span>self, execute_on: List[int], execute_on_type: <a title="neops.core.provider.base.enum.RunOnEnum" href="base/enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a>, dry_run: bool, task_input_kwargs: Dict[Any, Any], search_query: str, task_kwargs: Dict[Any, Any], result=neops.core.provider.base.result.provider_global_result.ProviderGlobalResult, **kwargs) ‑> Any</span>
 </code></dt>
@@ -118,7 +61,32 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 <li><code><b><a title="neops.core.provider.base.base.NeopsBaseProvider" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider">NeopsBaseProvider</a></b></code>:
 <ul class="hlist">
 <li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.add_markdown_helptext" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.add_markdown_helptext">add_markdown_helptext</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.add_nornir_processors" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.add_nornir_processors">add_nornir_processors</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.deprecated" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.deprecated">deprecated</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.description" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.description">description</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.execution_updater" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.execution_updater">execution_updater</a></code></li>
 <li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.inherit_json_schema" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.inherit_json_schema">inherit_json_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.init_adjust_run_on" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.init_adjust_run_on">init_adjust_run_on</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.init_before_run" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.init_before_run">init_before_run</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.init_from_task_model" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.init_from_task_model">init_from_task_model</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.json_schema" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.json_schema">json_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.merge_run_input_json_schema" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.merge_run_input_json_schema">merge_run_input_json_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.print_results" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.print_results">print_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.provider_type" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.provider_type">provider_type</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.result_writer" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.result_writer">result_writer</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run">run</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_input_json_schema" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_input_json_schema">run_input_json_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_on" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_on">run_on</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_on_all_if_empty" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_on_all_if_empty">run_on_all_if_empty</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_on_result" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_on_result">run_on_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_on_strict" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_on_strict">run_on_strict</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.short_description" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.short_description">short_description</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.success_message" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.success_message">success_message</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.update_do" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.update_do">update_do</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.update_log" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.update_log">update_log</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.validate_input" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.validate_input">validate_input</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.validate_schema" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.validate_schema">validate_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.write_results" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider.write_results">write_results</a></code></li>
 </ul>
 </li>
 </ul>
@@ -142,20 +110,7 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 <li>
 <h4><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow">GenericSimpleWorkflow</a></code></h4>
 <ul class="">
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.deprecated" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.deprecated">deprecated</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.description" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.description">description</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.execution_updater" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.execution_updater">execution_updater</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.init_adjust_run_on" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.init_adjust_run_on">init_adjust_run_on</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.json_schema" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.json_schema">json_schema</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.provider_type" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.provider_type">provider_type</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.result_writer" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.result_writer">result_writer</a></code></li>
 <li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_global" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_global">run_global</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_input_json_schema" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_input_json_schema">run_input_json_schema</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_on" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_on">run_on</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_on_all_if_empty" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_on_all_if_empty">run_on_all_if_empty</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_on_strict" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.run_on_strict">run_on_strict</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.short_description" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.short_description">short_description</a></code></li>
-<li><code><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.validate_input" href="#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow.validate_input">validate_input</a></code></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +119,7 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
 </footer>
 </body>
 </html>

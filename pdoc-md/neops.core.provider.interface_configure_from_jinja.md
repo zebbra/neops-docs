@@ -1,7 +1,23 @@
 # neops.core.provider.interface_configure_from_jinja
 ## InterfaceJinjaConfigureProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+This provider extends the NeopsBaseProvider by the functionality of storing configurations (on device results) to the device it self by different apply methods.
+
+This provider should be the base for configuration providers. So if you create a new configuration provider with, either extend this `NeopsConfigureBaseProvider` or a concrete configuration provider
+
+----------
+### Global Base Configure Parameters
+#### Apply Method
+
+The apply method descripbes how the configuration is written to the device.
+    
+* `cli`: the configuration is applied directly in the configration mode
+* `scp`: the configuration is copied (with scp) as a file to the device and applied with an merge operation
+* `scp-startup`: the configuration is copied (with scp) as a file to the device and written to the start up configuration
+
+
+#### Slow Devices
+
+With the `slow_device` parameter you can specify a delay factor to wait a longer time on responses from slow devices
 
 ----------
 ### JSON Schema
@@ -17,43 +33,6 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 
 - **`template`** *(string)*: Jinja Template to generate the configuration.
 
-### Class variables
-```python
-deprecated: bool
-```
-```python
-description: str
-```
-```python
-execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater
-```
-```python
-json_schema: Dict
-```
-```python
-provider_type: neops.core.provider.base.enum.ProviderTypeEnum
-```
-```python
-result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter
-```
-```python
-run_input_json_schema: Dict
-```
-```python
-run_on: neops.core.provider.base.enum.RunOnEnum
-```
-```python
-run_on_all_if_empty: bool
-```
-```python
-run_on_strict: bool
-```
-```python
-short_description: str
-```
-```python
-validate_input: bool
-```
 ### Methods
 ```python
 run_on_device(self,task: nornir.core.task.Task,device_id: int,execute_on: List[int],execute_on_type: neops.core.provider.base.enum.RunOnEnum,**kwargs) -> nornir.core.task.Result

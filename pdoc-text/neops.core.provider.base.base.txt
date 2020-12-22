@@ -40,6 +40,7 @@ Classes
     * neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow
     * neops.core.provider.generic_test_provider.GenericTestProvider
     * neops.core.provider.global_mail.GlobalMail
+    * neops.core.provider.interface_rollback.InterfaceRollbackProvider
     * neops.customer.migros.provider.global_pom_import.GlobalImportLocationsFromPOMProvider
     * neops.customer.migros.provider.location_bluecat_import_networks.LocationImportNetworksFromBluecatProvider
     * neops.customer.migros.provider.location_pom_import_clients.LocationImportClientsFromPOMProvider
@@ -47,46 +48,58 @@ Classes
     ### Class variables
 
     `deprecated: bool`
-    :
+    :   Indicates if this provider will no longer be supported in the future.
 
     `description: str`
-    :
+    :   Description String, to give the user an indication of the purpose of this provider
 
     `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
-    :
+    :   class to update logs of the current execution (is set by initialization)
 
     `json_schema: Dict`
-    :
+    :   The `json_schema` specifies the required input values to instantiate the provider as a task.
 
     `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
-    :
+    :   `provider_type` specifices the provider type, currently we are suppoting vor different types of providers `CONFIGURE`, `FACTS`, `CHECK` and `EXECUTE`. 
+        The provider type can be used by "frontend" applications to have different processes for the provider types. The neops.io frontend the normal handels for example `CONFIGURE` provider types with a two step run, first dry run then apply.
 
     `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
-    :
+    :   class to write results (is set by initialization)
 
     `run_input_json_schema: Dict`
-    :
+    :   The `run_input_json_schema` specifies the required parameter a provider uses to run, but they must be given on every run and not on task instantination. 
+        
+        On a task instantination additional parameters can be requested as input values on a task run. They are merged with the `run_input_json_schema` values.
 
     `run_on: neops.core.provider.base.enum.RunOnEnum`
-    :
+    :   `run_on` specifies on which entity the provider runs, possible values are `GLOBAL`, `GROUP`, `DEVICE`, `INTERFACE`, `CLIENT` and `GENERIC`.
+        On `GENERIC` the task instance must overwrite the run on value with the `init_adjust_run_on` method, to specify the excact run_on.
 
     `run_on_all_if_empty: bool`
-    :
+    :   `run_on_all_if_empty` specifies if all elements of a given `run_on` type are selected when a empty list is given as `execute_on` parameter on the `run` method.
 
-    `run_on_result`
-    :
+    `run_on_result: Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
+    :   `run_on_result` specifies for which entity the result is written. 
+        Normally this is the same as the `run_on` value and if `run_on_result` is `None` then the `run_on` value is used. 
+        
+        Example for different values of `run_on` and `run_on_result`:
+        If you build a provider which get facts for interfaces, but those facts are only collectable per device (you always get the facts for all interfaces on this device). 
+        In such a case it could make sense to set `run_on` to `DEVICE` and `run_on_result` to `INTERFACE`, then you got the result per interface and it's visible for which interfaces the facts are collected.
 
     `run_on_strict: bool`
-    :
+    :   `run_on_strict` specifies if we accept loose input entities for the `execute_on_type` and `execute_on` parameters on the `run` method.
+        
+        Example: if `run_on_strict` is false and `run_on` is INTERFACE, then we accept a list of devices on the `run` method and will resolve all interfaces on those devices where the task is executed.
+        This could be a problem for some cases, e.g if you have a configure provider where you prefere to know the exact entities. Because of that `run_on_strict` is true per default.
 
     `short_description: str`
-    :
+    :   A Short description for list views or others.
 
-    `success_message`
-    :
+    `success_message: str`
+    :   The `success_message` is used if no message is set on the results object and if a task is successfully executed on an entity.
 
     `validate_input: bool`
-    :
+    :   `validate_input` specifies if the parameters on the `run` method should by verified against the json schema definitions of the task itself, the provider `run_input_json_schema` and `json_schema`.
 
     ### Static methods
 
@@ -94,49 +107,91 @@ Classes
     :   Merges JSON Schemas: If this method is called on one of the classes children, then
         super().json_schema resolves, else we do a pseudo merge.
         :param json_schema:
-        :return:
+        :return: Dict of merged JSON Schema
 
-    `init_from_task_model(neops_task: neops.core.models.neops_task.NeopsTask, nr: nornir.core.Nornir = None, **kwargs)`
-    :
+    `init_from_task_model(neops_task: neops.core.models.neops_task.NeopsTask, nr: nornir.core.Nornir = None, **kwargs) ‑> neops.core.provider.base.base.NeopsBaseProvider`
+    :   Initialization of the task by a the given `NeopsTask` model and the `Nornir` inventory.
+        
+        :param neops_task: Neops Task Model
+        :param nr: Nornir Inventory
+        
+        :return: Instance of the provider/task itself
 
     `merge_run_input_json_schema(json_schema: Dict = None)`
-    :
+    :   Merges the JSON Schemas of instanciated task and those of this provider
+        
+        :param json_schema:
+        :return: merged JSON Schema
 
     ### Methods
 
-    `add_markdown_helptext(self, md_content: neops.core.libs.helptext.markdown_content.MarkDownContent)`
-    :   Creates additional helptext. Make shure the class is instantiable through import_string method
-        :return: Helptext string
+    `add_markdown_helptext(self, md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) ‑> NoneType`
+    :   Add documentation elements to the generated provider documentations to give a better insight how this provider should work.
+        
+        On the base provider we add only the json schema of the task instantiation to give a better overview which parameters are required for this provider.
+        
+        :param md_content: MarkDownContent of the current documentation of this element.
 
-    `add_nornir_processors(self)`
-    :
+    `add_nornir_processors(self) ‑> List[nornir.core.processor.Processor]`
+    :   Add additional Nornir Processors, for more information see https://nornir.readthedocs.io/en/v2.5.0/tutorials/intro/processors.html
 
     `init_adjust_run_on(self, execute_on: Union[List[int], NoneType] = None, execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None, dry_run: Union[bool, NoneType] = None, task_input_kwargs: Union[Dict[Any, Any], NoneType] = None, search_query: str = '', task_kwargs: Union[Dict[Any, Any], NoneType] = None, **kwargs) ‑> NoneType`
-    :
+    :   Method to overwrite `run_on`, `run_on_strict` and `run_on_result` values on provider initialization based on the given paremeters of the run and the task itself.
+        
+        For example used by generic providers.
+        
+        :param execute_on: List of element IDs to run on
+        :param execute_on_type: Type of those IDs (GROUP, DEVICE, INTERFACE, CLIENT)
+        :param dry_run: Indicates if no configuration changes should be made
+        :param task_input_kwargs: Run input arguments
+        :param task_kwargs: Task arguments
 
     `init_before_run(self, task_input_kwargs: Dict, execute_on: List = None, execute_on_type: neops.core.provider.base.enum.RunOnEnum = device, dry_run: bool = True, search_query: str = '', **kwargs) ‑> NoneType`
-    :
+    :   Initialization of all elements before the task runs. This methots initializes all result objects.
+        
+        :param task_input_kwargs: Run input arguments
+        :param execute_on: List of element IDs to run on
+        :param execute_on_type: Type of those IDs (GROUP, DEVICE, INTERFACE, CLIENT)
+        :param dry_run: Indicates if no configuration changes should be made
+        :param search_query: An optional search query to limit the entities to run on (not yet supported)
 
     `init_without_run(self, **kwargs) ‑> NoneType`
     :
 
     `print_results(self)`
-    :
+    :   prints the current result set.
 
     `run(self, task_input_kwargs: Dict, execute_on: List = None, execute_on_type: neops.core.provider.base.enum.RunOnEnum = device, dry_run: bool = True, search_query: str = '', **kwargs) ‑> NoneType`
-    :
+    :   Runs the provider based on the initialized task.
+        
+        :param task_input_kwargs: Run input arguments
+        :param execute_on: List of element IDs to run on
+        :param execute_on_type: Type of those IDs (GROUP, DEVICE, INTERFACE, CLIENT)
+        :param dry_run: Indicates if no configuration changes should be made
+        :param search_query: An optional search query to limit the entities to run on (not yet supported)
 
     `update_do(self, do: str, append: bool = True) ‑> NoneType`
-    :
+    :   Wrapper method to the execution updater `update_do` method
+        
+        :param do: string what is to do
+        :param append: decides if the do string is appended or replaced
 
     `update_done(self, done: str, append: bool = True) ‑> NoneType`
     :
 
     `update_log(self, log: str, append: bool = True) ‑> NoneType`
-    :
+    :   Wrapper method to the execution updater `update_log` method
+        
+        :param log: the log string
+        :param append: decides if the log string is appended or replaced
 
     `validate_schema(self, task_kwargs: Dict = None) ‑> NoneType`
-    :
+    :   Validates if the parameters of the task
+        
+        :param task_kwargs: task parameters
 
-    `write_results(self, finish: bool = False) ‑> NoneType`
-    :
+    `write_results(self, subtask_finish: bool = False, task_finish: bool = False) ‑> NoneType`
+    :   Write the result states to the database.
+        
+        :param subtask_finish: is true if i am a subtasks (pre/post run task) and the task itself is finished
+        :param task_finish: is true if all subtasks and the task itself is finished

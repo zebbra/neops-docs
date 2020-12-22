@@ -16,44 +16,6 @@ Classes
     * abc.ABC
     * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
 
-    ### Class variables
-
-    `deprecated: bool`
-    :
-
-    `description: str`
-    :
-
-    `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
-    :
-
-    `json_schema: Dict`
-    :
-
-    `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
-    :
-
-    `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
-    :
-
-    `run_input_json_schema: Dict`
-    :
-
-    `run_on: neops.core.provider.base.enum.RunOnEnum`
-    :
-
-    `run_on_all_if_empty: bool`
-    :
-
-    `run_on_strict: bool`
-    :
-
-    `short_description: str`
-    :
-
-    `validate_input: bool`
-    :
-
     ### Methods
 
     `run_on_nornir_device(self, task: nornir.core.task.Task, execute_on: List = None, **kwargs) ‑> NoneType`

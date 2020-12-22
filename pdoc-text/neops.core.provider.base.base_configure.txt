@@ -5,8 +5,9 @@ Classes
 -------
 
 `NeopsConfigureBaseProvider(**kwargs)`
-:   The base neops provider contains all methods and required data processing for a concrete provider.
-    To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+:   This provider extends the NeopsBaseProvider by the functionality of storing configurations (on device results) to the device it self by different apply methods.
+    
+    This provider should be the base for configuration providers. So if you create a new configuration provider with, either extend this `NeopsConfigureBaseProvider` or a concrete configuration provider
 
     ### Ancestors (in MRO)
 
@@ -21,48 +22,9 @@ Classes
     * neops.core.provider.device_configure_from_jinja.DeviceJinjaConfigureProvider
     * neops.core.provider.interface_configure_from_jinja.InterfaceJinjaConfigureProvider
 
-    ### Class variables
-
-    `deprecated: bool`
-    :
-
-    `description: str`
-    :
-
-    `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
-    :
-
-    `json_schema: Dict`
-    :
-
-    `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
-    :
-
-    `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
-    :
-
-    `run_input_json_schema: Dict`
-    :
-
-    `run_on: neops.core.provider.base.enum.RunOnEnum`
-    :
-
-    `run_on_all_if_empty: bool`
-    :
-
-    `run_on_strict: bool`
-    :
-
-    `short_description: str`
-    :
-
-    `success_message`
-    :
-
-    `validate_input: bool`
-    :
-
     ### Methods
 
     `run_on_nornir_device(self, task: nornir.core.task.Task, nornir_device_result: neops.core.provider.base.result.coupled_provider_result_types.ProviderNornirDeviceResult, dry_run: bool = True, **kwargs) ‑> str`
-    :
+    :   `run_on_nornir_device` is called by the run cycle.
+        
+        It takes the result from the `pre_run_on_nornir_device` and from every related device with the `pre_run_on_device` and `run_on_device` methods and writes the configuration to the device.
