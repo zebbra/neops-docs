@@ -39,9 +39,11 @@
 <dd>
 <div class="desc"><p>This Provider is inherited from the <code>NeopsBaseProvider</code>, it brings additional functionality to handle checks.</p>
 <p>Every Task based on this provider needs a check key where the check result is stored in the database per element.</p>
-<p>For providers inherits from this provider the check results are written automatically based on the result set of the pre- and run methods per element.
+<p>For providers inherits from this provider the check results are written automatically based on the result set
+of the pre- and run methods per element.
 It supports check results, boolean values and handels exceptions.</p>
-<p>This provider should be the base for check providers. So if you create a new check provider with, either extend this <code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider" href="#neops.core.provider.base.base_check.NeopsCheckBaseProvider">NeopsCheckBaseProvider</a></code> or a concrete check provider</p></div>
+<p>This provider should be the base for check providers. So if you create a new check provider with, either
+extend this <code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider" href="#neops.core.provider.base.base_check.NeopsCheckBaseProvider">NeopsCheckBaseProvider</a></code> or a concrete check provider</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="neops.core.provider.base.base.NeopsBaseProvider" href="base.html#neops.core.provider.base.base.NeopsBaseProvider">NeopsBaseProvider</a></li>
@@ -65,11 +67,13 @@ It supports check results, boolean values and handels exceptions.</p>
 </dd>
 <dt id="neops.core.provider.base.base_check.NeopsCheckBaseProvider.check_for"><code class="name">var <span class="ident">check_for</span></code></dt>
 <dd>
-<div class="desc"><p>The entity where the checks are for can be different from the <code>run_on</code>, so specify if required otherwise we will use the <code>run_on</code> value.</p></div>
+<div class="desc"><p>The entity where the checks are for can be different from the <code>run_on</code>, so specify if required otherwise we will
+use the <code>run_on</code> value.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base_check.NeopsCheckBaseProvider.related_facts"><code class="name">var <span class="ident">related_facts</span></code></dt>
 <dd>
-<div class="desc"><p>Specify on which facts the check result is based on. This enables tracing when and how the values are stored in neops.io</p></div>
+<div class="desc"><p>Specify on which facts the check result is based on. This enables tracing when and how the values are stored in
+neops.io</p></div>
 </dd>
 </dl>
 <h3>Methods</h3>

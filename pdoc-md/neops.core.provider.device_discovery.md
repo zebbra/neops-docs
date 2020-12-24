@@ -1,7 +1,13 @@
 # neops.core.provider.device_discovery
 ## DeviceDiscoveryProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+Discover a device and populate datastructures.
+
+- `Recursive`: _Try to connect to neighbor devices (found with CDP and LLDP, with the same credentials),
+if the connection is successful add the device to neops_
+- `Interface Discovery`: _Populates and updates the interface data structures_
+- `Neighbor Discovery`: _Set relations between interfaces based on CDP and LLDP neighborships_
+- `Client Discovery`: _Add Clients to neops.io based on Mac Address-Table information_
+- `Get Configuration`: _Backup of Device and Interface Configurations to neops.io_
 
 ----------
 ### JSON Schema
@@ -25,3 +31,7 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 ```python
 run_on_nornir_device(self,task: nornir.core.task.Task,execute_on: List = None,**kwargs) -> NoneType
 ```
+`run_on_nornir_device` is called by the run cycle.
+It discovers the network elements
+
+----------

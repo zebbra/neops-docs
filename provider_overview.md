@@ -1,11 +1,25 @@
 # Provider overview
 
-## Base Providers 
+## Base Providers
 
 - [NeopsBaseProvider](pdoc-md/neops.core.provider.base.base.md)
 - [NeopsCheckBaseProvider](pdoc-md/neops.core.provider.base.base_check.md)
 - [NeopsConfigureBaseProvider](pdoc-md/neops.core.provider.base.base_configure.md)
 - [NeopsFactsBaseProvider](pdoc-md/neops.core.provider.base.base_facts.md)
+
+## Generic Providers
+
+- [GenericCheckAggregation](pdoc-md/neops.core.provider.generic_check_aggregation.md)
+- [GenericFromExcel](pdoc-md/neops.core.provider.generic_from_excel.md)
+- [GenericJinjaCheckProvider](pdoc-md/neops.core.provider.generic_jinja_check.md)
+- [GenericJinjaFactsProvider](pdoc-md/neops.core.provider.generic_jinja_facts.md)
+- [GenericPing](pdoc-md/neops.core.provider.generic_ping.md)
+- [GenericReportProvider](pdoc-md/neops.core.provider.generic_report.md)
+- [GenericRestFactsProvider](pdoc-md/neops.core.provider.generic_rest_facts.md)
+- [GenericSimpleWorkflow](pdoc-md/neops.core.provider.generic_simple_workflow.md)
+- [GenericTestProvider](pdoc-md/neops.core.provider.generic_test_provider.md)
+- [GenericTextFSMFacts](pdoc-md/neops.core.provider.generic_textfsm_facts.md)
+- [GenericTextFSMFactsV2](pdoc-md/neops.core.provider.generic_textfsm_facts_v2.md)
 
 ## Device Providers
 
@@ -24,20 +38,6 @@
 - [DeviceUpgradeDirectProvider](pdoc-md/neops.core.provider.device_upgrade_direct.md)
 - [DeviceUpgradeUnattendedProvider](pdoc-md/neops.core.provider.device_upgrade_unattended.md)
 
-## Generic Providers
-
-- [GenericCheckAggregation](pdoc-md/neops.core.provider.generic_check_aggregation.md)
-- [GenericFromExcel](pdoc-md/neops.core.provider.generic_from_excel.md)
-- [GenericJinjaCheckProvider](pdoc-md/neops.core.provider.generic_jinja_check.md)
-- [GenericJinjaFactsProvider](pdoc-md/neops.core.provider.generic_jinja_facts.md)
-- [GenericPing](pdoc-md/neops.core.provider.generic_ping.md)
-- [GenericReportProvider](pdoc-md/neops.core.provider.generic_report.md)
-- [GenericRestFactsProvider](pdoc-md/neops.core.provider.generic_rest_facts.md)
-- [GenericSimpleWorkflow](pdoc-md/neops.core.provider.generic_simple_workflow.md)
-- [GenericTestProvider](pdoc-md/neops.core.provider.generic_test_provider.md)
-- [GenericTextFSMFacts](pdoc-md/neops.core.provider.generic_textfsm_facts.md)
-- [GenericTextFSMFactsV2](pdoc-md/neops.core.provider.generic_textfsm_facts_v2.md)
-
 ## Interface Providers
 
 - [InterfaceJinjaConfigureProvider](pdoc-md/neops.core.provider.interface_configure_from_jinja.md)
@@ -45,4 +45,3 @@
 ## Global Providers
 
 - [GlobalMail](pdoc-md/neops.core.provider.global_mail.md)
-  
