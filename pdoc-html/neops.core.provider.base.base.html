@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.1" />
+<meta name="generator" content="pdoc 0.9.2" />
 <title>neops.core.provider.base.base API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
@@ -37,12 +37,13 @@
 <span>(</span><span>**kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider</p></div>
+<div class="desc"><p>The neops base provider contains all methods and required data processing for a concrete provider.
+To create a new provider, either extend this NeopsBaseProvider or a concrete provider</p>
+<p>the neops base provider is inherited from the <a href="pdoc-md/neops.core.provider.base.base_run_cycle">BaseRunCycle</a></p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle">BaseRunCycle</a></li>
-<li><a title="neops.core.provider.base.base_process_options.BaseProcessOptions" href="base_process_options.html#neops.core.provider.base.base_process_options.BaseProcessOptions">BaseProcessOptions</a></li>
+<li><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle">BaseProcessResultCycle</a></li>
 <li>abc.ABC</li>
 <li>neops.core.libs.helptext.help_text_resolver.HelpTextResolver</li>
 </ul>
@@ -71,6 +72,7 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 <li><a title="neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow" href="../generic_simple_workflow.html#neops.core.provider.generic_simple_workflow.GenericSimpleWorkflow">GenericSimpleWorkflow</a></li>
 <li><a title="neops.core.provider.generic_test_provider.GenericTestProvider" href="../generic_test_provider.html#neops.core.provider.generic_test_provider.GenericTestProvider">GenericTestProvider</a></li>
 <li><a title="neops.core.provider.global_mail.GlobalMail" href="../global_mail.html#neops.core.provider.global_mail.GlobalMail">GlobalMail</a></li>
+<li><a title="neops.core.provider.interface_rollback.InterfaceRollbackProvider" href="../interface_rollback.html#neops.core.provider.interface_rollback.InterfaceRollbackProvider">InterfaceRollbackProvider</a></li>
 <li>neops.customer.migros.provider.global_pom_import.GlobalImportLocationsFromPOMProvider</li>
 <li>neops.customer.migros.provider.location_bluecat_import_networks.LocationImportNetworksFromBluecatProvider</li>
 <li>neops.customer.migros.provider.location_pom_import_clients.LocationImportClientsFromPOMProvider</li>
@@ -79,59 +81,68 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 <dl>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.deprecated"><code class="name">var <span class="ident">deprecated</span> : bool</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Indicates if this provider will no longer be supported in the future.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.description"><code class="name">var <span class="ident">description</span> : str</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Description String, to give the user an indication of the purpose of this provider</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.execution_updater"><code class="name">var <span class="ident">execution_updater</span> : <a title="neops.core.provider.base.execution_updater.ExecutionUpdater" href="execution_updater.html#neops.core.provider.base.execution_updater.ExecutionUpdater">ExecutionUpdater</a></code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>class to update logs of the current execution (is set by initialization)</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.json_schema"><code class="name">var <span class="ident">json_schema</span> : Dict</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>The <code>json_schema</code> specifies the required input values to instantiate the provider as a task.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.provider_type"><code class="name">var <span class="ident">provider_type</span> : <a title="neops.core.provider.base.enum.ProviderTypeEnum" href="enum.html#neops.core.provider.base.enum.ProviderTypeEnum">ProviderTypeEnum</a></code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p><code>provider_type</code> specifices the provider type, currently we are suppoting vor different types of providers <code>CONFIGURE</code>, <code>FACTS</code>, <code>CHECK</code> and <code>EXECUTE</code>.
+The provider type can be used by "frontend" applications to have different processes for the provider types. The neops.io frontend the normal handels for example <code>CONFIGURE</code> provider types with a two step run, first dry run then apply.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.result_writer"><code class="name">var <span class="ident">result_writer</span> : <a title="neops.core.provider.base.base_result_writer.BaseResultWriter" href="base_result_writer.html#neops.core.provider.base.base_result_writer.BaseResultWriter">BaseResultWriter</a></code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>class to write results (is set by initialization)</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.run_input_json_schema"><code class="name">var <span class="ident">run_input_json_schema</span> : Dict</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>The <code>run_input_json_schema</code> specifies the required parameter a provider uses to run, but they must be given on every run and not on task instantination. </p>
+<p>On a task instantination additional parameters can be requested as input values on a task run. They are merged with the <code>run_input_json_schema</code> values.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.run_on"><code class="name">var <span class="ident">run_on</span> : <a title="neops.core.provider.base.enum.RunOnEnum" href="enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a></code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p><code>run_on</code> specifies on which entity the provider runs, possible values are <code>GLOBAL</code>, <code>GROUP</code>, <code>DEVICE</code>, <code>INTERFACE</code>, <code>CLIENT</code> and <code>GENERIC</code>.
+On <code>GENERIC</code> the task instance must overwrite the run on value with the <code>init_adjust_run_on</code> method, to specify the excact run_on.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.run_on_all_if_empty"><code class="name">var <span class="ident">run_on_all_if_empty</span> : bool</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p><code>run_on_all_if_empty</code> specifies if all elements of a given <code>run_on</code> type are selected when a empty list is given as <code>execute_on</code> parameter on the <code>run</code> method.</p></div>
 </dd>
-<dt id="neops.core.provider.base.base.NeopsBaseProvider.run_on_result"><code class="name">var <span class="ident">run_on_result</span></code></dt>
+<dt id="neops.core.provider.base.base.NeopsBaseProvider.run_on_result"><code class="name">var <span class="ident">run_on_result</span> : Union[<a title="neops.core.provider.base.enum.RunOnEnum" href="enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a>, NoneType]</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p><code>run_on_result</code> specifies for which entity the result is written.
+Normally this is the same as the <code>run_on</code> value and if <code>run_on_result</code> is <code>None</code> then the <code>run_on</code> value is used. </p>
+<p>Example for different values of <code>run_on</code> and <code>run_on_result</code>:
+If you build a provider which get facts for interfaces, but those facts are only collectable per device (you always get the facts for all interfaces on this device).
+In such a case it could make sense to set <code>run_on</code> to <code>DEVICE</code> and <code>run_on_result</code> to <code>INTERFACE</code>, then you got the result per interface and it's visible for which interfaces the facts are collected.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.run_on_strict"><code class="name">var <span class="ident">run_on_strict</span> : bool</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p><code>run_on_strict</code> specifies if we accept loose input entities for the <code>execute_on_type</code> and <code>execute_on</code> parameters on the <code>run</code> method.</p>
+<p>Example: if <code>run_on_strict</code> is false and <code>run_on</code> is INTERFACE, then we accept a list of devices on the <code>run</code> method and will resolve all interfaces on those devices where the task is executed.
+This could be a problem for some cases, e.g if you have a configure provider where you prefere to know the exact entities. Because of that <code>run_on_strict</code> is true per default.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.short_description"><code class="name">var <span class="ident">short_description</span> : str</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>A Short description for list views or others.</p></div>
 </dd>
-<dt id="neops.core.provider.base.base.NeopsBaseProvider.success_message"><code class="name">var <span class="ident">success_message</span></code></dt>
+<dt id="neops.core.provider.base.base.NeopsBaseProvider.success_message"><code class="name">var <span class="ident">success_message</span> : str</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>The <code>success_message</code> is used if no message is set on the results object and if a task is successfully executed on an entity.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.validate_input"><code class="name">var <span class="ident">validate_input</span> : bool</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p><code>validate_input</code> specifies if the parameters on the <code>run</code> method should by verified against the json schema definitions of the task itself, the provider <code>run_input_json_schema</code> and <code>json_schema</code>.</p></div>
 </dd>
 </dl>
 <h3>Static methods</h3>
@@ -143,47 +154,64 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 <div class="desc"><p>Merges JSON Schemas: If this method is called on one of the classes children, then
 super().json_schema resolves, else we do a pseudo merge.
 :param json_schema:
-:return:</p></div>
+:return: Dict of merged JSON Schema</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.init_from_task_model"><code class="name flex">
-<span>def <span class="ident">init_from_task_model</span></span>(<span>neops_task: neops.core.models.neops_task.NeopsTask, nr: nornir.core.Nornir = None, **kwargs)</span>
+<span>def <span class="ident">init_from_task_model</span></span>(<span>neops_task: neops.core.models.neops_task.NeopsTask, nr: nornir.core.Nornir = None, **kwargs) ‑> <a title="neops.core.provider.base.base.NeopsBaseProvider" href="#neops.core.provider.base.base.NeopsBaseProvider">NeopsBaseProvider</a></span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Initialization of the task by a the given <code>NeopsTask</code> model and the <code>Nornir</code> inventory.</p>
+<p>:param neops_task: Neops Task Model
+:param nr: Nornir Inventory</p>
+<p>:return: Instance of the provider/task itself</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.merge_run_input_json_schema"><code class="name flex">
 <span>def <span class="ident">merge_run_input_json_schema</span></span>(<span>json_schema: Dict = None)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Merges the JSON Schemas of instanciated task and those of this provider</p>
+<p>:param json_schema:
+:return: merged JSON Schema</p></div>
 </dd>
 </dl>
 <h3>Methods</h3>
 <dl>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.add_markdown_helptext"><code class="name flex">
-<span>def <span class="ident">add_markdown_helptext</span></span>(<span>self, md_content: neops.core.libs.helptext.markdown_content.MarkDownContent)</span>
+<span>def <span class="ident">add_markdown_helptext</span></span>(<span>self, md_content: neops.core.libs.helptext.markdown_content.MarkDownContent) ‑> NoneType</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Creates additional helptext. Make shure the class is instantiable through import_string method
-:return: Helptext string</p></div>
+<div class="desc"><p>Add documentation elements to the generated provider documentations to give a better insight how this provider should work.</p>
+<p>On the base provider we add only the json schema of the task instantiation to give a better overview which parameters are required for this provider.</p>
+<p>:param md_content: MarkDownContent of the current documentation of this element.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.add_nornir_processors"><code class="name flex">
-<span>def <span class="ident">add_nornir_processors</span></span>(<span>self)</span>
+<span>def <span class="ident">add_nornir_processors</span></span>(<span>self) ‑> List[nornir.core.processor.Processor]</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add additional Nornir Processors, for more information see <a href="https://nornir.readthedocs.io/en/v2.5.0/tutorials/intro/processors.html">https://nornir.readthedocs.io/en/v2.5.0/tutorials/intro/processors.html</a></p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.init_adjust_run_on"><code class="name flex">
 <span>def <span class="ident">init_adjust_run_on</span></span>(<span>self, execute_on: Union[List[int], NoneType] = None, execute_on_type: Union[<a title="neops.core.provider.base.enum.RunOnEnum" href="enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a>, NoneType] = None, dry_run: Union[bool, NoneType] = None, task_input_kwargs: Union[Dict[Any, Any], NoneType] = None, search_query: str = '', task_kwargs: Union[Dict[Any, Any], NoneType] = None, **kwargs) ‑> NoneType</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Method to overwrite <code>run_on</code>, <code>run_on_strict</code> and <code>run_on_result</code> values on provider initialization based on the given paremeters of the run and the task itself.</p>
+<p>For example used by generic providers.</p>
+<p>:param execute_on: List of element IDs to run on
+:param execute_on_type: Type of those IDs (GROUP, DEVICE, INTERFACE, CLIENT)
+:param dry_run: Indicates if no configuration changes should be made
+:param task_input_kwargs: Run input arguments
+:param task_kwargs: Task arguments</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.init_before_run"><code class="name flex">
 <span>def <span class="ident">init_before_run</span></span>(<span>self, task_input_kwargs: Dict, execute_on: List = None, execute_on_type: <a title="neops.core.provider.base.enum.RunOnEnum" href="enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a> = device, dry_run: bool = True, search_query: str = '', **kwargs) ‑> NoneType</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Initialization of all elements before the task runs. This methots initializes all result objects.</p>
+<p>:param task_input_kwargs: Run input arguments
+:param execute_on: List of element IDs to run on
+:param execute_on_type: Type of those IDs (GROUP, DEVICE, INTERFACE, CLIENT)
+:param dry_run: Indicates if no configuration changes should be made
+:param search_query: An optional search query to limit the entities to run on (not yet supported)</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.init_without_run"><code class="name flex">
 <span>def <span class="ident">init_without_run</span></span>(<span>self, **kwargs) ‑> NoneType</span>
@@ -195,19 +223,26 @@ super().json_schema resolves, else we do a pseudo merge.
 <span>def <span class="ident">print_results</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>prints the current result set.</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.run"><code class="name flex">
 <span>def <span class="ident">run</span></span>(<span>self, task_input_kwargs: Dict, execute_on: List = None, execute_on_type: <a title="neops.core.provider.base.enum.RunOnEnum" href="enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a> = device, dry_run: bool = True, search_query: str = '', **kwargs) ‑> NoneType</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Runs the provider based on the initialized task.</p>
+<p>:param task_input_kwargs: Run input arguments
+:param execute_on: List of element IDs to run on
+:param execute_on_type: Type of those IDs (GROUP, DEVICE, INTERFACE, CLIENT)
+:param dry_run: Indicates if no configuration changes should be made
+:param search_query: An optional search query to limit the entities to run on (not yet supported)</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.update_do"><code class="name flex">
 <span>def <span class="ident">update_do</span></span>(<span>self, do: str, append: bool = True) ‑> NoneType</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Wrapper method to the execution updater <code>update_do</code> method</p>
+<p>:param do: string what is to do
+:param append: decides if the do string is appended or replaced</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.update_done"><code class="name flex">
 <span>def <span class="ident">update_done</span></span>(<span>self, done: str, append: bool = True) ‑> NoneType</span>
@@ -219,21 +254,62 @@ super().json_schema resolves, else we do a pseudo merge.
 <span>def <span class="ident">update_log</span></span>(<span>self, log: str, append: bool = True) ‑> NoneType</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Wrapper method to the execution updater <code>update_log</code> method</p>
+<p>:param log: the log string
+:param append: decides if the log string is appended or replaced</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.validate_schema"><code class="name flex">
 <span>def <span class="ident">validate_schema</span></span>(<span>self, task_kwargs: Dict = None) ‑> NoneType</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Validates if the parameters of the task</p>
+<p>:param task_kwargs: task parameters</p></div>
 </dd>
 <dt id="neops.core.provider.base.base.NeopsBaseProvider.write_results"><code class="name flex">
-<span>def <span class="ident">write_results</span></span>(<span>self, finish: bool = False) ‑> NoneType</span>
+<span>def <span class="ident">write_results</span></span>(<span>self, subtask_finish: bool = False, task_finish: bool = False) ‑> NoneType</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Write the result states to the database.</p>
+<p>:param subtask_finish: is true if i am a subtasks (pre/post run task) and the task itself is finished
+:param task_finish: is true if all subtasks and the task itself is finished</p></div>
 </dd>
 </dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle">BaseRunCycle</a></b></code>:
+<ul class="hlist">
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_global" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_global">pre_run_global</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_interface" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_interface">pre_run_on_client_of_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_location" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_location">pre_run_on_client_of_location</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device">pre_run_on_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device_group" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device_group">pre_run_on_device_group</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_interface" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_interface">pre_run_on_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_nornir_device" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_nornir_device">pre_run_on_nornir_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_global" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_global">run_global</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_interface" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_interface">run_on_client_of_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_location" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_location">run_on_client_of_location</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device">run_on_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device_group" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device_group">run_on_device_group</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_interface" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_interface">run_on_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_nornir_device" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_nornir_device">run_on_nornir_device</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle">BaseProcessResultCycle</a></b></code>:
+<ul class="hlist">
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_client_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_client_result">process_client_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_client_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_client_results">process_client_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_group_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_group_result">process_device_group_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_group_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_group_results">process_device_group_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_result">process_device_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_results">process_device_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_global_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_global_result">process_global_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_interface_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_interface_result">process_interface_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_interface_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_interface_results">process_interface_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_result">process_nornir_device_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_results">process_nornir_device_results</a></code></li>
+</ul>
+</li>
+</ul>
 </dd>
 </dl>
 </section>
@@ -291,7 +367,7 @@ super().json_schema resolves, else we do a pseudo merge.
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
 </footer>
 </body>
 </html>

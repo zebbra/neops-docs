@@ -22,7 +22,7 @@ Classes
     `set_location(self, location: ProviderDeviceGroupResult, reverse: bool = True) ‑> NoneType`
     :
 
-    `write_result(self, execution_id: int)`
+    `write_result(self, execution_id: int, neops_task_id: Optional[int] = None, granularity: int = 5)`
     :
 
 `ProviderDeviceGroupResult(device_group_id: int, **kwargs)`
@@ -43,7 +43,7 @@ Classes
     `get_ran_on(self) ‑> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
     :
 
-    `write_result(self, execution_id: int)`
+    `write_result(self, execution_id: int, neops_task_id: Optional[int] = None, granularity: int = 5)`
     :
 
 `ProviderDeviceResult(device_id: int, **kwargs)`
@@ -67,7 +67,7 @@ Classes
     `set_nornir_device(self, nornir_device: "'ProviderNornirDeviceResult'", reverse: bool = True) ‑> NoneType`
     :
 
-    `write_result(self, execution_id: int)`
+    `write_result(self, execution_id: int, neops_task_id: Optional[int] = None, granularity: int = 5)`
     :
 
 `ProviderInterfaceResult(interface_id: int, **kwargs)`
@@ -88,7 +88,7 @@ Classes
     `set_device(self, device: "'ProviderDeviceResult'", reverse: bool = True) ‑> NoneType`
     :
 
-    `write_result(self, execution_id: int)`
+    `write_result(self, execution_id: int, neops_task_id: Optional[int] = None, granularity: int = 5)`
     :
 
 `ProviderNornirDeviceResult(nornir_device_id: int, **kwargs)`
@@ -106,5 +106,5 @@ Classes
     `get_ran_on(self) ‑> Union[neops.core.provider.base.enum.RunOnEnum, NoneType]`
     :
 
-    `write_result(self, execution_id: int)`
+    `write_result(self, execution_id: int, neops_task_id: Optional[int] = None, granularity: int = 5)`
     :

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.1" />
+<meta name="generator" content="pdoc 0.9.2" />
 <title>neops.core.provider.deprecated.interface_check API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
@@ -37,84 +37,85 @@
 <span>(</span><span>**kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider</p></div>
+<div class="desc"><p>This Provider is inherited from the <code>NeopsBaseProvider</code>, it brings additional functionality to handle checks.</p>
+<p>Every Task based on this provider needs a check key where the check result is stored in the database per element.</p>
+<p>For providers inherits from this provider the check results are written automatically based on the result set
+of the pre- and run methods per element.
+It supports check results, boolean values and handels exceptions.</p>
+<p>This provider should be the base for check providers. So if you create a new check provider with, either
+extend this <code>NeopsCheckBaseProvider</code> or a concrete check provider</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider">NeopsCheckBaseProvider</a></li>
 <li><a title="neops.core.provider.base.base.NeopsBaseProvider" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider">NeopsBaseProvider</a></li>
 <li><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle">BaseRunCycle</a></li>
-<li><a title="neops.core.provider.base.base_process_options.BaseProcessOptions" href="../base/base_process_options.html#neops.core.provider.base.base_process_options.BaseProcessOptions">BaseProcessOptions</a></li>
+<li><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle" href="../base/base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle">BaseProcessResultCycle</a></li>
 <li>abc.ABC</li>
 <li>neops.core.libs.helptext.help_text_resolver.HelpTextResolver</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.deprecated"><code class="name">var <span class="ident">deprecated</span> : bool</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.description"><code class="name">var <span class="ident">description</span> : str</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.execution_updater"><code class="name">var <span class="ident">execution_updater</span> : <a title="neops.core.provider.base.execution_updater.ExecutionUpdater" href="../base/execution_updater.html#neops.core.provider.base.execution_updater.ExecutionUpdater">ExecutionUpdater</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.json_schema"><code class="name">var <span class="ident">json_schema</span> : Dict</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.provider_type"><code class="name">var <span class="ident">provider_type</span> : <a title="neops.core.provider.base.enum.ProviderTypeEnum" href="../base/enum.html#neops.core.provider.base.enum.ProviderTypeEnum">ProviderTypeEnum</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.result_writer"><code class="name">var <span class="ident">result_writer</span> : <a title="neops.core.provider.base.base_result_writer.BaseResultWriter" href="../base/base_result_writer.html#neops.core.provider.base.base_result_writer.BaseResultWriter">BaseResultWriter</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_input_json_schema"><code class="name">var <span class="ident">run_input_json_schema</span> : Dict</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on"><code class="name">var <span class="ident">run_on</span> : <a title="neops.core.provider.base.enum.RunOnEnum" href="../base/enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on_all_if_empty"><code class="name">var <span class="ident">run_on_all_if_empty</span> : bool</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on_strict"><code class="name">var <span class="ident">run_on_strict</span> : bool</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.short_description"><code class="name">var <span class="ident">short_description</span> : str</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.validate_input"><code class="name">var <span class="ident">validate_input</span> : bool</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-<h3>Methods</h3>
-<dl>
-<dt id="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on_interface"><code class="name flex">
-<span>def <span class="ident">run_on_interface</span></span>(<span>self, interface_id, task, **kwargs) ‑> Any</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Inherited members</h3>
 <ul class="hlist">
 <li><code><b><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider">NeopsCheckBaseProvider</a></b></code>:
 <ul class="hlist">
 <li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.add_markdown_helptext" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.add_markdown_helptext">add_markdown_helptext</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.add_nornir_processors" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.add_nornir_processors">add_nornir_processors</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.based_on_checks" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider.based_on_checks">based_on_checks</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.check_for" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider.check_for">check_for</a></code></li>
 <li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.inherit_json_schema" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.inherit_json_schema">inherit_json_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.init_adjust_run_on" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.init_adjust_run_on">init_adjust_run_on</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.init_before_run" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.init_before_run">init_before_run</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.init_from_task_model" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.init_from_task_model">init_from_task_model</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.merge_run_input_json_schema" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.merge_run_input_json_schema">merge_run_input_json_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.pre_run_global" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_global">pre_run_global</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.pre_run_on_client_of_interface" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_interface">pre_run_on_client_of_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.pre_run_on_client_of_location" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_location">pre_run_on_client_of_location</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.pre_run_on_device" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device">pre_run_on_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.pre_run_on_device_group" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device_group">pre_run_on_device_group</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.pre_run_on_interface" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_interface">pre_run_on_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.pre_run_on_nornir_device" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_nornir_device">pre_run_on_nornir_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.print_results" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.print_results">print_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_client_result" href="../base/base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_client_result">process_client_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_client_results" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_client_results">process_client_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_device_group_result" href="../base/base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_group_result">process_device_group_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_device_group_results" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_device_group_results">process_device_group_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_device_result" href="../base/base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_result">process_device_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_device_results" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_device_results">process_device_results</a></code></li>
 <li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_global_result" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_global_result">process_global_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_interface_result" href="../base/base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_interface_result">process_interface_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_interface_results" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_interface_results">process_interface_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_nornir_device_result" href="../base/base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_result">process_nornir_device_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.process_nornir_device_results" href="../base/base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_results">process_nornir_device_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.related_facts" href="../base/base_check.html#neops.core.provider.base.base_check.NeopsCheckBaseProvider.related_facts">related_facts</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.run" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run">run</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.run_global" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_global">run_global</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.run_on_client_of_interface" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_interface">run_on_client_of_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.run_on_client_of_location" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_location">run_on_client_of_location</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.run_on_device" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device">run_on_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.run_on_device_group" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device_group">run_on_device_group</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.run_on_interface" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_interface">run_on_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.run_on_nornir_device" href="../base/base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_nornir_device">run_on_nornir_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.update_do" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.update_do">update_do</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.update_log" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.update_log">update_log</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.validate_schema" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.validate_schema">validate_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base_check.NeopsCheckBaseProvider.write_results" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.write_results">write_results</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="neops.core.provider.base.base.NeopsBaseProvider" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider">NeopsBaseProvider</a></b></code>:
+<ul class="hlist">
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.deprecated" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.deprecated">deprecated</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.description" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.description">description</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.execution_updater" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.execution_updater">execution_updater</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.json_schema" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.json_schema">json_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.provider_type" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.provider_type">provider_type</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.result_writer" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.result_writer">result_writer</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_input_json_schema" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_input_json_schema">run_input_json_schema</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_on" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_on">run_on</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_on_all_if_empty" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_on_all_if_empty">run_on_all_if_empty</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_on_result" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_on_result">run_on_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.run_on_strict" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.run_on_strict">run_on_strict</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.short_description" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.short_description">short_description</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.success_message" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.success_message">success_message</a></code></li>
+<li><code><a title="neops.core.provider.base.base.NeopsBaseProvider.validate_input" href="../base/base.html#neops.core.provider.base.base.NeopsBaseProvider.validate_input">validate_input</a></code></li>
 </ul>
 </li>
 </ul>
@@ -137,21 +138,6 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 <ul>
 <li>
 <h4><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider">InterfaceCheckProvider</a></code></h4>
-<ul class="">
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.deprecated" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.deprecated">deprecated</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.description" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.description">description</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.execution_updater" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.execution_updater">execution_updater</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.json_schema" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.json_schema">json_schema</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.provider_type" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.provider_type">provider_type</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.result_writer" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.result_writer">result_writer</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_input_json_schema" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_input_json_schema">run_input_json_schema</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on">run_on</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on_all_if_empty" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on_all_if_empty">run_on_all_if_empty</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on_interface" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on_interface">run_on_interface</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on_strict" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.run_on_strict">run_on_strict</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.short_description" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.short_description">short_description</a></code></li>
-<li><code><a title="neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.validate_input" href="#neops.core.provider.deprecated.interface_check.InterfaceCheckProvider.validate_input">validate_input</a></code></li>
-</ul>
 </li>
 </ul>
 </li>
@@ -159,7 +145,7 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
 </footer>
 </body>
 </html>

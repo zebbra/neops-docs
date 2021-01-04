@@ -5,59 +5,20 @@ Classes
 -------
 
 `GenericFromExcel(**kwargs)`
-:   The base neops provider contains all methods and required data processing for a concrete provider.
-    To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+:   Provider to summarize other tasks and take input values from excel.
+    
+    Every other task is called by its id or uniquetaskname,
+    it has two templates on to set the entities on which the task is called and one to pass the input values.
 
     ### Ancestors (in MRO)
 
     * neops.core.provider.base.base.NeopsBaseProvider
     * neops.core.provider.base.base_run_cycle.BaseRunCycle
-    * neops.core.provider.base.base_process_options.BaseProcessOptions
+    * neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle
     * abc.ABC
     * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
 
-    ### Class variables
-
-    `deprecated: bool`
-    :
-
-    `description: str`
-    :
-
-    `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
-    :
-
-    `json_schema: Dict`
-    :
-
-    `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
-    :
-
-    `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
-    :
-
-    `run_input_json_schema: Dict`
-    :
-
-    `run_on: neops.core.provider.base.enum.RunOnEnum`
-    :
-
-    `run_on_all_if_empty: bool`
-    :
-
-    `run_on_strict: bool`
-    :
-
-    `short_description: str`
-    :
-
-    `validate_input: bool`
-    :
-
     ### Methods
 
-    `init_adjust_run_on(self, execute_on: Union[List[int], NoneType] = None, execute_on_type: Union[neops.core.provider.base.enum.RunOnEnum, NoneType] = None, dry_run: Union[bool, NoneType] = None, task_input_kwargs: Union[Dict[Any, Any], NoneType] = None, search_query: str = '', task_kwargs: Union[Dict[Any, Any], NoneType] = None, **kwargs) ‑> NoneType`
-    :
-
     `run_global(self, execute_on: List[int], execute_on_type: neops.core.provider.base.enum.RunOnEnum, dry_run: bool, task_input_kwargs: Dict[Any, Any], search_query: str, task_kwargs: Dict[Any, Any], result=neops.core.provider.base.result.provider_global_result.ProviderGlobalResult, **kwargs) ‑> Any`
-    :
+    :   Process all subtasks

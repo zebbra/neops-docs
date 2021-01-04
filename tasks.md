@@ -11,21 +11,19 @@ There are currently 4 types of tasks implemented
 
 All Tasks are based on [providers](#providers) that execute the tasks. A task is a parameterized provider instance.
 
-A task or check passes the required configuration (parameterized) to a provider to make it runnable. These requirements are defined in a providers [json schema](https://link) 
+A task passes the required configuration (parameterized) to a provider to make it runnable. These requirements are defined in a providers [json schema](/appendix_sub/appendix_jsonform). A list of the providers and their required configuration json schema is [here](/provider_overview).
 
 **A check is a task, which does not manipulate the network state in any way.**
 
-
 ## Create new task or check
 
-To create a new task navigate to the task menu in the main navigation and click on __create__.
+To create a new task navigate to the task menu in the main navigation and click on **create**.
 
 ![Search Elements](../_media/screenshots/tasks-empty.png)
 
-------------
+---
 
 ![Search Elements](../_media/screenshots/edit-task-1.png)
-
 
 The task form consists of general task fields and specific fields depending on the provider (read more on how to to create your own provider and add form fields using JSON Form)
 
@@ -33,9 +31,9 @@ The task form consists of general task fields and specific fields depending on t
 
 <!-- ![Search Elements](../_media/screenshots/edit-task-3.png) -->
 
-------------
+---
 
-After saving the task, it will appear in your task list. 
+After saving the task, it will appear in your task list.
 
 ![Search Elements](../_media/screenshots/menu-tasks.png)
 
@@ -45,29 +43,29 @@ Navigate to your network, and select the elements you want to run the task on.
 
 ![Search Elements](../_media/screenshots/devices-run-task-1.png)
 
-Select the task in the bottom bar and click on __preview__. Enter a description for the process and start.
+Select the task in the bottom bar and click on **preview**. Enter a description for the process and start.
 
 ![Search Elements](../_media/screenshots/devices-run-task-2.png)
 
 You can learn more about how network elements are resolved in the provider section.
 
+Depending on the options set within the provider it is possible that it is supported to run from all entities or only from one entity. For example if you have a configure task on a interface, it's better you select only the target interfaces than select a device group and run the task on all interfaces of the devices in this device group. For more information see the [provider properties](/provider?id=properties).
 
 ## Task parameters
 
 Task parameters are used to describe the task itself and how it is acting.
 
-General task parameters are available in each task. Fields written in **bold** are mandatory. 
+General task parameters are available in each task. Fields written in **bold** are mandatory.
 
-| Field                  | Description                                                                    |
-|------------------------|--------------------------------------------------------------------------------|
-| **Name**                   | A human readable name for the task                                             |
-| Description            | A human readable description for the task                                      |
-| Unique task identifier | Can be assigned to use the task over our API                                   |
-| Run Filter             | Additional filter, using the elastic query style                               |
-| **Provider**               | The provider (will expand the form with dynamic parameters from the provider)  |
+| Field                  | Description                                                                                              |
+| ---------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Name**               | A human readable name for the task                                                                       |
+| Description            | A human readable description for the task                                                                |
+| Unique task identifier | Can be assigned to use the task over our API                                                             |
+| Run Filter             | Additional filter, using the elastic query style                                                         |
+| **Provider**           | The provider (will expand the form with dynamic parameters from the provider)                            |
 | Pre run tasks          | Tasks which have to run before this task (see [task graph](./usage_tasks_graph.md) for more information) |
 | Post run tasks         | Tasks which have to run after this task (see [task graph](./usage_tasks_graph.md) for more information)  |
-
 
 ### Additional input parameters (JSON scheme for running the task)
 
@@ -76,7 +74,6 @@ Providers describe additional input parameters as [JSON Schema](https://json-sch
 When creating a task, a web Form is rendered based on the task JSON schema to get the required input values.
 
 For more information how to build such a JSON Schema look in [Appendix under JSON Form](appendix.md#json-form)
-
 
 ## Pre and post running tasks (task graph)
 
@@ -91,6 +88,7 @@ Consider the case where you want to run two tasks, and perform an integrity chec
 #### Independent tasks
 
 If the tasks are completely independent, you may run them independently:
+
 ```mermaid
 graph LR
     A[Task 1: Collect Facts]
@@ -109,7 +107,7 @@ graph LR
 
 #### Dependent tasks
 
-However, if you have dependencies between 2 or more task, you can specify pre and post run tasks accordingly. 
+However, if you have dependencies between 2 or more task, you can specify pre and post run tasks accordingly.
 
 Here, a dependency of task 1 and task 2 is configured by setting task 1 as a pre run task of task 2.
 
@@ -171,6 +169,7 @@ graph LR
     C -- pre --> A2
     A2 -- post --> C
 ```
+
 which expands to:
 
 ```mermaid
@@ -184,10 +183,9 @@ graph LR
 
 Setting Task 1 as **pre run task** of Task 2, the following task graph is produced:
 
-
 ```mermaid
 graph LR
-    A1[Task 1: Collect Facts]    
+    A1[Task 1: Collect Facts]
     A2[Task 3: Configuration Task]
     C[Task 2: Integrity Check]
     C -- pre --> A1
@@ -201,7 +199,7 @@ which expands to:
 
 ```mermaid
 graph LR
-    A1[Task 1: Collect Facts]    
+    A1[Task 1: Collect Facts]
     A2[Task 3: Configuration Task]
     C11[Task 2: Integrity Check]
     C12[Task 2: Integrity Check]
@@ -214,11 +212,11 @@ graph LR
     A1 --> A2
 ```
 
-In this example, a sequencing would result in performing the __integrity check__ two times in a row (as we have 2 tasks and 4 integrity checks):
+In this example, a sequencing would result in performing the **integrity check** two times in a row (as we have 2 tasks and 4 integrity checks):
 
 ```mermaid
 graph LR
-    A1[Task 1: Collect Facts]    
+    A1[Task 1: Collect Facts]
     A2[Task 3: Configuration Task]
     C11[Task 2: Integrity Check]
     C12[Task 2: Integrity Check]
@@ -235,7 +233,7 @@ Here, the sequence is optimized, such that no duplicates exist and task definiti
 
 ```mermaid
 graph LR
-    A1[Task 1: Collect Facts]    
+    A1[Task 1: Collect Facts]
     A2[Task 3: Configuration Task]
     C11[Task 2: Integrity Check]
     C12[Task 2: Integrity Check]
@@ -246,15 +244,13 @@ graph LR
     A2 -- post task 2 --> C22
 ```
 
-
 ##### Optimize task sequence by finding shortest path
 
 Consider the previous example with an added post run task (task 4) to task 1. Task 4 has no dependencies.
 
-
 ```mermaid
 graph LR
-    A1[Task 1: Collect Facts]    
+    A1[Task 1: Collect Facts]
     A2[Task 3: Configuration Task]
     C[Task 2: Integrity Check]
     A3[Task 4: Renaming task]
@@ -272,7 +268,7 @@ Here, a second possible path fulfilling the requirements is introduced. Neops wi
 
 ```mermaid
 graph LR
-    A1[Task 1: Collect Facts]    
+    A1[Task 1: Collect Facts]
     A2[Task 3: Configuration Task]
     A3[Task 4: Renaming task]
     C11[Task 2: Integrity Check]
@@ -289,7 +285,7 @@ graph LR
 
 ```mermaid
 graph LR
-    A1[Task 1: Collect Facts]    
+    A1[Task 1: Collect Facts]
     A2[Task 3: Configuration Task]
     A3[Task 4: Renaming task]
     C11[Task 2: Integrity Check]
@@ -304,5 +300,3 @@ graph LR
     C21 -- pre task 2 --> A2
     A2 -- post task 2 --> C22
 ```
-
-

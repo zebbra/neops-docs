@@ -16,80 +16,15 @@ Classes
 -------
 
 `GroupTestProvider(**kwargs)`
-:   The base neops provider contains all methods and required data processing for a concrete provider.
+:   The neops base provider contains all methods and required data processing for a concrete provider.
     To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+    
+    the neops base provider is inherited from the [BaseRunCycle](pdoc-md/neops.core.provider.base.base_run_cycle)
 
     ### Ancestors (in MRO)
 
     * neops.core.provider.base.base.NeopsBaseProvider
     * neops.core.provider.base.base_run_cycle.BaseRunCycle
-    * neops.core.provider.base.base_process_options.BaseProcessOptions
+    * neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle
     * abc.ABC
     * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
-
-    ### Class variables
-
-    `deprecated: bool`
-    :
-
-    `description: str`
-    :
-
-    `execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater`
-    :
-
-    `json_schema: Dict`
-    :
-
-    `provider_type: neops.core.provider.base.enum.ProviderTypeEnum`
-    :
-
-    `result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter`
-    :
-
-    `run_input_json_schema: Dict`
-    :
-
-    `run_on: neops.core.provider.base.enum.RunOnEnum`
-    :
-
-    `run_on_all_if_empty: bool`
-    :
-
-    `run_on_strict: bool`
-    :
-
-    `short_description: str`
-    :
-
-    `validate_input: bool`
-    :
-
-    ### Methods
-
-    `pre_run_global(self, **kwargs) ‑> Any`
-    :
-
-    `pre_run_on_device(self, **kwargs) ‑> Any`
-    :
-
-    `pre_run_on_device_group(self, **kwargs) ‑> Any`
-    :
-
-    `pre_run_on_nornir_device(self, **kwargs) ‑> Any`
-    :
-
-    `run_global(self, **kwargs) ‑> Any`
-    :
-
-    `run_on_device(self, **kwargs) ‑> Any`
-    :
-
-    `run_on_device_group(self, **kwargs) ‑> Any`
-    :
-
-    `run_on_interface(self, **kwargs) ‑> Any`
-    :
-
-    `run_on_nornir_device(self, **kwargs) ‑> Any`
-    :

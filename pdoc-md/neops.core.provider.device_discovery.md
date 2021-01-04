@@ -1,7 +1,13 @@
 # neops.core.provider.device_discovery
 ## DeviceDiscoveryProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+Discover a device and populate datastructures.
+
+- `Recursive`: _Try to connect to neighbor devices (found with CDP and LLDP, with the same credentials),
+if the connection is successful add the device to neops_
+- `Interface Discovery`: _Populates and updates the interface data structures_
+- `Neighbor Discovery`: _Set relations between interfaces based on CDP and LLDP neighborships_
+- `Client Discovery`: _Add Clients to neops.io based on Mac Address-Table information_
+- `Get Configuration`: _Backup of Device and Interface Configurations to neops.io_
 
 ----------
 ### JSON Schema
@@ -21,44 +27,11 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 
 - **`get_config`** *(boolean)*: get the configuration and update database. Default: `True`.
 
-### Class variables
-```python
-deprecated: bool
-```
-```python
-description: str
-```
-```python
-execution_updater: neops.core.provider.base.execution_updater.ExecutionUpdater
-```
-```python
-json_schema: Dict
-```
-```python
-provider_type: neops.core.provider.base.enum.ProviderTypeEnum
-```
-```python
-result_writer: neops.core.provider.base.base_result_writer.BaseResultWriter
-```
-```python
-run_input_json_schema: Dict
-```
-```python
-run_on: neops.core.provider.base.enum.RunOnEnum
-```
-```python
-run_on_all_if_empty: bool
-```
-```python
-run_on_strict: bool
-```
-```python
-short_description: str
-```
-```python
-validate_input: bool
-```
 ### Methods
 ```python
 run_on_nornir_device(self,task: nornir.core.task.Task,execute_on: List = None,**kwargs) -> NoneType
 ```
+`run_on_nornir_device` is called by the run cycle.
+It discovers the network elements
+
+----------

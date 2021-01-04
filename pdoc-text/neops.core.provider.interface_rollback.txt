@@ -1,0 +1,19 @@
+Module neops.core.provider.interface_rollback
+=============================================
+
+Classes
+-------
+
+`InterfaceRollbackProvider(**kwargs)`
+:   The neops base provider contains all methods and required data processing for a concrete provider.
+    To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+    
+    the neops base provider is inherited from the [BaseRunCycle](pdoc-md/neops.core.provider.base.base_run_cycle)
+
+    ### Ancestors (in MRO)
+
+    * neops.core.provider.base.base.NeopsBaseProvider
+    * neops.core.provider.base.base_run_cycle.BaseRunCycle
+    * neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle
+    * abc.ABC
+    * neops.core.libs.helptext.help_text_resolver.HelpTextResolver

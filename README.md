@@ -2,20 +2,15 @@
   <img alt="neops" width="400px" src="https://docs.neops.io/_media/logo-dark-horizontal.svg" />
 </p>
 
-[![Build Status](https://drone.zebbra.ch/api/badges/zebbra/neops-core/status.svg)](https://drone.zebbra.ch/zebbra/neops-core)
-
-
-!> **Getting ready for Version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Until then, this documentation is incomplete. Stay tuned by the end of the year and subscribe to updates on [neops.io](https://www.neops.io/#contact)!
+[![Build Status](https://drone.zebbra.ch/api/badges/zebbra/neops-core/status.svg?ref=refs/heads/master)](https://drone.zebbra.ch/zebbra/neops-core)
 
 ## About
 
 **neops.io, the smart way to network programmability.**
 
-
 The key to be competitive tomorrow lies in an effective network automation that is closely integrated into your business processes. neops.io was built for complex enterprise and MSP environments and empowers you to automate and integrate on the fast-track. Many organizations invest heavily in enabling their network teams to learn to code and to automate. neops.io builds on those skills and helps to realize value faster by providing a modular platform that takes care of the heavy lifting. This lets your engineers focus on creating custom network & business logic, while neops.io provides the overview, tools and mechanisms to handle the management part.
 
 For more information visit [neops.io](https://neops.io)
-
 
 ## Resources
 
@@ -36,7 +31,6 @@ We are currently working hard on the v1.0 release. Stay tuned!
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/zebbra/neops-core/tags).
 
-
 **Note: Upgrading Neops requires you to sequentially install all minor releases, if not stated otherwise**
 
 Examples:
@@ -53,17 +47,16 @@ Examples:
   - **Marcel Wälti Rettenmund** - _UX_ - [waleburg](https://github.com/waleburg)
   - **Roland Mamie** - _Networking and backend_ - [rmamie](https://github.com/rmamie)
   - **Simon Obi** - _Backend_ - [obisimon](https://github.com/obisimon)
-  
 
 And the whole [Zebbra Team](https://zebbra.ch/#team)!
 
 ## License
 
-Currently neops.io is released under a proprietary license, we have planned to release the core of neops.io under a copy left or noncomercial license.
+Currently neops.io is released under a proprietary license, we have planned to release the core of neops.io under a copy left or noncommercial license.
 
 ## Contributing
 
-At this time, we are not set up to handle contributions. However, we appreciate any ideas or inputs. Please don't hesistate to contact us via [neops.io](https://neops.io). 
+At this time, we are not set up to handle contributions. However, we appreciate any ideas or inputs. Please don't hesitate to contact us via [neops.io](https://neops.io).
 
 If you are a developer, you can also read our [private contribution guidelines](CONTRIBUTING.md) for details on our code of conduct.
 

@@ -1,6 +1,7 @@
 - [Overview](README.md)
 - [Usage](usage.md)
 - [Facts](facts.md)
+- [Checks](checks.md)
 - [Tasks](tasks.md)
 - [Provider](provider.md)
 - [Provider overview](provider_overview.md)
