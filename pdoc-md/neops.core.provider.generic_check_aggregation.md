@@ -19,11 +19,3 @@ Aggregate Check Results to an other entity
 - **`aggregate_to`** *(string)*: Aggregate to entity Type. Must be one of: `['GROUP', 'DEVICE']`.
 
 - **`percent`** *(integer)*: . Default: `100`.
-
-### Methods
-```python
-run_on_device(self,device_id: int,aggregate_from: str,aggregate_to: str,check_key_from: str,percent: int = 100,**kwargs) -> Any
-```
-```python
-run_on_device_group(self,device_group_id: int,aggregate_from: str,aggregate_to: str,check_key_from: str,percent: int = 100,**kwargs) -> Any
-```

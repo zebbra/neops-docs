@@ -1,7 +1,9 @@
 # neops.core.provider.deprecated.global_from_excel
 ## GlobalFromExcel
-The base neops provider contains all methods and required data processing for a concrete provider.
+The neops base provider contains all methods and required data processing for a concrete provider.
 To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+
+the neops base provider is inherited from the [BaseRunCycle](pdoc-md/neops.core.provider.base.base_run_cycle)
 
 ----------
 ### JSON Schema
@@ -22,8 +24,3 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
     - **`task_id`** *(number)*: Default: `0`.
 
     - **`task_template`** *(string)*: parse excel content (given as excel var to jinja) and provide the data structure for the task. Default: ``.
-
-### Methods
-```python
-run_global(self,**kwargs) -> Any
-```

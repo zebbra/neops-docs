@@ -27,8 +27,3 @@ This provider should be the base for fact providers. So if you create a new fact
                 (access to device facts use facts. as initial key). Default: ``.
 
 - **`textfsm`** *(string)*: TextFSM Template to parse the show output.
-
-### Methods
-```python
-run_on_device(self,task: nornir.core.task.Task,device_id: int,**kwargs) -> Any
-```

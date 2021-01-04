@@ -29,8 +29,3 @@ Provider to upgrade rommon of a Cisco device (Unattended, define the values in t
     - **`overwrite`** *(boolean)*: overwrite image if file exists on device. Default: `False`.
 
     - **`restart`** *(boolean)*: restart device when image is copied and installed. Default: `False`.
-
-### Methods
-```python
-run_on_nornir_device(self,task: nornir.core.task.Task,nornir_device_id: int,**kwargs) -> Any
-```

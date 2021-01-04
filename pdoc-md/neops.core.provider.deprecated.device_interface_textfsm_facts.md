@@ -24,8 +24,3 @@ This provider should be the base for fact providers. So if you create a new fact
 - **`interface_name`** *(string)*: Add a JMES Path to the interface name of the result for the mapping. Default: ``.
 
 - **`textfsm`** *(string)*: TextFSM Template to parse the show output.
-
-### Methods
-```python
-run_on_device(self,task: nornir.core.task.Task,device_id: int,execute_on: List = None,**kwargs) -> Any
-```

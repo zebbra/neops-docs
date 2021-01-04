@@ -30,8 +30,3 @@ see below
   - **Items** *(object)*
 
     - **`element`** *(object)*
-
-### Methods
-```python
-run_on_device(self,device_id,task,**kwargs) -> Any
-```

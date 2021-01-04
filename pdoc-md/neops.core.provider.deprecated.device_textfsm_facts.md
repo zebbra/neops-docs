@@ -24,8 +24,3 @@ This provider should be the base for fact providers. So if you create a new fact
 - **`textfsm`** *(string)*: TextFSM Template to parse the show output.
 
 - **`slow_device`** *(integer)*: Add a factor for longer wait times for heavy loaded devices. Default: `0`.
-
-### Methods
-```python
-run_on_device(self,task: nornir.core.task.Task,device_id: int,**kwargs) -> Any
-```

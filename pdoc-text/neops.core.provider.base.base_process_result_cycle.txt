@@ -1,0 +1,75 @@
+Module neops.core.provider.base.base_process_result_cycle
+=========================================================
+
+Classes
+-------
+
+`BaseProcessResultCycle()`
+:   This class describes the methods provided to process different result objects.
+    
+    They are used for example by the facts or check base providers to save the results to the database.
+
+    ### Ancestors (in MRO)
+
+    * abc.ABC
+
+    ### Descendants
+
+    * neops.core.provider.base.base.NeopsBaseProvider
+
+    ### Methods
+
+    `process_client_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult) ‑> NoneType`
+    :   This method is called for every client result (does not matters if ran on interface or on group).
+        
+        :param result (ProviderClientResult): client result object.
+
+    `process_client_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderClientResult]) ‑> NoneType`
+    :   This method is called once with a list of all client results (does not matters if ran on interface or on group).
+        
+        :param results (List[ProviderClientResult]): list of client result objects.
+
+    `process_device_group_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceGroupResult) ‑> NoneType`
+    :   This method is called for every device group result.
+        
+        :param result (ProviderDeviceGroupResult): device group result object.
+
+    `process_device_group_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceGroupResult]) ‑> NoneType`
+    :   This method is called once with a list of all device group results.
+        
+        :param results (List[ProviderDeviceGroupResult]): list of device group result objects.
+
+    `process_device_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceResult) ‑> NoneType`
+    :   This method is called for every device result.
+        
+        :param result (ProviderDeviceResult): device result object.
+
+    `process_device_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderDeviceResult]) ‑> NoneType`
+    :   This method is called once with a list of all device results.
+        
+        :param results (List[ProviderDeviceResult]): list of device result objects.
+
+    `process_global_result(self, result: neops.core.provider.base.result.provider_result.ProviderResult) ‑> NoneType`
+    :   This method is called once for the global result.
+        
+        :param result (ProviderResult): global result object.
+
+    `process_interface_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult) ‑> NoneType`
+    :   This method is called for every interface result.
+        
+        :param result (ProviderInterfaceResult): interface result object.
+
+    `process_interface_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderInterfaceResult]) ‑> NoneType`
+    :   This method is called once with a list of all interface results.
+        
+        :param results (List[ProviderInterfaceResult]): list of interface result objects.
+
+    `process_nornir_device_result(self, result: neops.core.provider.base.result.coupled_provider_result_types.ProviderNornirDeviceResult) ‑> NoneType`
+    :   This method is called for every nornir device result.
+        
+        :param result (ProviderNornirDeviceResult): nornir device result object.
+
+    `process_nornir_device_results(self, results: List[neops.core.provider.base.result.coupled_provider_result_types.ProviderNornirDeviceResult]) ‑> NoneType`
+    :   This method is called once with a list of all nornir device results.
+        
+        :param results (List[ProviderNornirDeviceResult]): list of nornir device result objects.

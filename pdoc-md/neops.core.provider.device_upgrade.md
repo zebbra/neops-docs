@@ -34,8 +34,3 @@ Provider to upgrade device images
 - **`vrf`** *(string)*: VRF where we should copy. Default: ``.
 
 - **`save_config_if_required`** *(boolean)*: Save config before restart if asked so. Default: `True`.
-
-### Methods
-```python
-run_on_nornir_device(self,task: Union[nornir.core.task.Task, Callable[..., Any]],dry_run: bool = True,**kwargs) -> Any
-```

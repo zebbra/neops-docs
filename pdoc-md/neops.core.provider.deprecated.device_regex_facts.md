@@ -33,8 +33,3 @@ This provider should be the base for fact providers. So if you create a new fact
                 if multiple (for OR in regex without match use (?:expr1|expr2) ).
 
   - **Items** *(string)*
-
-### Methods
-```python
-run_on_device(self,task: nornir.core.task.Task,device_id: int,**kwargs) -> Any
-```

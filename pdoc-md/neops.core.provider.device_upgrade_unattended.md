@@ -33,8 +33,3 @@ Provider to upgrade device image (Unattended, define the values in the task and 
     - **`save_config_if_required`** *(boolean)*: Save config before restart if asked so. Default: `True`.
 
     - **`reload_wait_time`** *(number)*: How long should the process wait at reload after upgrade. Default: `1200`.
-
-### Methods
-```python
-run_on_nornir_device(self,task: nornir.core.task.Task,nornir_device_id: int,**kwargs) -> Any
-```

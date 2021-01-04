@@ -32,8 +32,3 @@ Provider to Upgrade Rommon of Cisco Devices
 - **`restart`** *(boolean)*: restart device when image is copied and installed. Default: `False`.
 
 - **`vrf`** *(string)*: VRF where we should copy. Default: ``.
-
-### Methods
-```python
-run_on_nornir_device(self,task: nornir.core.task.Task,dry_run: bool = True,execute_on: List = None,**kwargs) -> NoneType
-```

@@ -12,14 +12,6 @@ Classes
     * neops.core.provider.base.base_check.NeopsCheckBaseProvider
     * neops.core.provider.base.base.NeopsBaseProvider
     * neops.core.provider.base.base_run_cycle.BaseRunCycle
-    * neops.core.provider.base.base_process_options.BaseProcessOptions
+    * neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle
     * abc.ABC
     * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
-
-    ### Methods
-
-    `run_on_device(self, device_id: int, aggregate_from: str, aggregate_to: str, check_key_from: str, percent: int = 100, **kwargs) ‑> Any`
-    :
-
-    `run_on_device_group(self, device_group_id: int, aggregate_from: str, aggregate_to: str, check_key_from: str, percent: int = 100, **kwargs) ‑> Any`
-    :

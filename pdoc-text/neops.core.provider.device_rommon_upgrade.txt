@@ -11,11 +11,6 @@ Classes
 
     * neops.core.provider.base.base.NeopsBaseProvider
     * neops.core.provider.base.base_run_cycle.BaseRunCycle
-    * neops.core.provider.base.base_process_options.BaseProcessOptions
+    * neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle
     * abc.ABC
     * neops.core.libs.helptext.help_text_resolver.HelpTextResolver
-
-    ### Methods
-
-    `run_on_nornir_device(self, task: nornir.core.task.Task, dry_run: bool = True, execute_on: List = None, **kwargs) ‑> NoneType`
-    :

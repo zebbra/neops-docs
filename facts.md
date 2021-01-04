@@ -8,7 +8,7 @@ Examples of facts:
 
 - Software release running on a network device
 - A configuration parameter eg. the log server
-- State of a routing protocol neighborship
+- State of a routing protocol neighbor ship
 - Information from peripheral systems, like CMDB and others
   - Information about service SLA
   - Information about physical device access
@@ -18,7 +18,7 @@ Facts can be stored on every entity known in neops.io
 
 Data structures of facts are **searchable**.
 
-They are collected by [FACTS Tasks](#tasks) and they need a key to be stored.
+They are collected by [FACTS Tasks/Providers](/provider_overview) and they need a key to be stored.
 
 !> Choose the facts key wisely, because if the key contains ip (pattern `*.ip.*`) an ip address (yes ipv6 as well) or an empty string is expected. otherwise the content is skipped for searching.
 

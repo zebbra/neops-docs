@@ -37,12 +37,13 @@
 <span>(</span><span>**kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider</p></div>
+<div class="desc"><p>The neops base provider contains all methods and required data processing for a concrete provider.
+To create a new provider, either extend this NeopsBaseProvider or a concrete provider</p>
+<p>the neops base provider is inherited from the <a href="pdoc-md/neops.core.provider.base.base_run_cycle">BaseRunCycle</a></p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle">BaseRunCycle</a></li>
-<li><a title="neops.core.provider.base.base_process_options.BaseProcessOptions" href="base_process_options.html#neops.core.provider.base.base_process_options.BaseProcessOptions">BaseProcessOptions</a></li>
+<li><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle">BaseProcessResultCycle</a></li>
 <li>abc.ABC</li>
 <li>neops.core.libs.helptext.help_text_resolver.HelpTextResolver</li>
 </ul>
@@ -273,6 +274,42 @@ super().json_schema resolves, else we do a pseudo merge.
 :param task_finish: is true if all subtasks and the task itself is finished</p></div>
 </dd>
 </dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle">BaseRunCycle</a></b></code>:
+<ul class="hlist">
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_global" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_global">pre_run_global</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_interface" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_interface">pre_run_on_client_of_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_location" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_client_of_location">pre_run_on_client_of_location</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device">pre_run_on_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device_group" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_device_group">pre_run_on_device_group</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_interface" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_interface">pre_run_on_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_nornir_device" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.pre_run_on_nornir_device">pre_run_on_nornir_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_global" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_global">run_global</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_interface" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_interface">run_on_client_of_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_location" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_client_of_location">run_on_client_of_location</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device">run_on_device</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device_group" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_device_group">run_on_device_group</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_interface" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_interface">run_on_interface</a></code></li>
+<li><code><a title="neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_nornir_device" href="base_run_cycle.html#neops.core.provider.base.base_run_cycle.BaseRunCycle.run_on_nornir_device">run_on_nornir_device</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle">BaseProcessResultCycle</a></b></code>:
+<ul class="hlist">
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_client_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_client_result">process_client_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_client_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_client_results">process_client_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_group_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_group_result">process_device_group_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_group_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_group_results">process_device_group_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_result">process_device_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_device_results">process_device_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_global_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_global_result">process_global_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_interface_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_interface_result">process_interface_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_interface_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_interface_results">process_interface_results</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_result" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_result">process_nornir_device_result</a></code></li>
+<li><code><a title="neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_results" href="base_process_result_cycle.html#neops.core.provider.base.base_process_result_cycle.BaseProcessResultCycle.process_nornir_device_results">process_nornir_device_results</a></code></li>
+</ul>
+</li>
+</ul>
 </dd>
 </dl>
 </section>

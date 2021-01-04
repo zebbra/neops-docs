@@ -97,17 +97,16 @@ For scaling and/or redundancy setup of 3rd party applications (Postgres, Elastic
 
 In reference to network components neops.io is currently working with the following entities:
 
-- Interfaces - _Entity for interconnecting Devices_
+- Device Groups - _Entity to group devices_
 - Devices - _Main entity to access network components_
-- Device Groups - _Entity to structure devices_
-
-We try to keep elements in neops.io clear and simple.
+- Interfaces - _Entity for interconnecting Devices_
+- Clients - _Entity connected to the network_
 
 Locations are Device Groups with additional properties like address and coordinates.
 
 ## Frontend
 
-!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
+The frontend is build with [Vue.js](https://vuejs.org) and accesses the backend over a GraphQL API.
 
 ## Backend
 
@@ -124,31 +123,68 @@ classDiagram
     Device "n" -- "1" Platform
     Platform "n" -- "n" Library
     DeviceGroup "n" -- "n" Device
-    DeviceGroup <|-- Location
+    DeviceGroup -- Location
     ProcessExecution "1" -- "n" Execution
     Execution "1" -- "n" DeviceExecution
     Execution "n" -- "1" Task
     DeviceExecution "n" -- "1" Device
+    Execution "1" -- "n" DeviceExecutionResult
+    Device "1" -- "n" DeviceExecutionResult
+    Execution "1" -- "n" DeviceGroupExecutionResult
+    DeviceGroup "1" -- "n" DeviceGroupExecutionResult
+    Execution "1" -- "n" InterfaceExecutionResult
+    Interface "1" -- "n" InterfaceExecutionResult
+    Execution "1" -- "n" ClientExecutionResult
+    Client "1" -- "n" ClientExecutionResult
     Device "1" -- "n" DeviceConfiguration
     Interface "1" -- "n" InterfaceConfiguration
+    Client "1" -- "n" Interface
+    Client "n" -- "1" Location
 
+    class ProcessExecution{
+        name
+    }
+    class Execution{
+        state
+    }
+    class DeviceExecution{
+        state
+        log
+    }
+    class DeviceExecutionResult{
+        state
+        message
+    }
+    class DeviceGroupExecutionResult{
+        state
+        message
+    }
+    class InterfaceExecutionResult{
+        state
+        message
+    }
+    class ClientExecutionResult{
+        state
+        message
+    }
     class Device{
         hostname
         ip
         facts
     }
-
     class Platform{
         name
     }
-
     class Library{
         name
     }
-
     class Interface{
         name
         neighbor
+        facts
+    }
+    class Client{
+        mac
         facts
     }
     class DeviceGroup{
@@ -159,16 +195,6 @@ classDiagram
         name
         provider
         task arguments
-    }
-    class ProcessExecution{
-        name
-    }
-    class Execution{
-        state
-    }
-    class DeviceExecution{
-        state
-        log
     }
     class DeviceConfiguration{
         date
@@ -187,24 +213,21 @@ classDiagram
 
 #### Documents
 
-Interface, Device, DeviceGroup including their facts are stored as separated Indexes in Elastic Search
+DeviceGroup, Device, Interface and Clients including their facts are stored as separated Indexes in Elastic Search
 
 ### Workers/Celery
 
-!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
+Celery is used for the Workers they are executing the neops.io [Tasks/Providers](/provider).
+The workers have direct access to the databases. Scheduled tasks are distributed with a redis queue. To inform the Frontend about updated information GraphQL subscription updates are triggered over different redis queues.
+
+### GraphQL API
+
+All backend Operations are available over the GraphQL API. Testing and Documentation of the API is provided by [GraphiQL](https://github.com/graphql/graphiql) on your installation under `http(s)://NEOPS_URL/graphiql/`
 
 ### nornir/Tasks/Providers
 
-!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
+see [provider](/provider)
 
 ## Style Guide
 
-!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
-
-## Testing
-
-!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
-
-## Documentation
-
-!> **Coming with version 1.0** We are standardizing last things under the hood to fulfill our **backwards compatibility commitment** according to [SemVer](semver.org). Stay tuned!
+We use flake8 linting and black formatting in the backend and eslint in the frontend to style our code.
