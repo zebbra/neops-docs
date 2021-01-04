@@ -1,7 +1,6 @@
 # neops.core.provider.device_rommon_upgrade_unattended
 ## DeviceRommonUpgradeUnattendedProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+Provider to upgrade rommon of a Cisco device (Unattended, define the values in the task and don't do a dry run)
 
 ----------
 ### JSON Schema

@@ -1,7 +1,6 @@
 # neops.core.provider.device_restart
 ## DeviceRestartProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+Provider to restart a device (for example after upgrade)
 
 ----------
 ### JSON Schema

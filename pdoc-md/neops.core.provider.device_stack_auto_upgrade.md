@@ -1,7 +1,6 @@
 # neops.core.provider.device_stack_auto_upgrade
 ## DeviceStackAutoUpgradeUnattendedProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+Provider to enable stack auto upgrade functionality (for staging purpose)
 
 ----------
 ### JSON Schema

@@ -1,12 +1,22 @@
 # neops.core.provider.device_rollback
 ## DeviceRollbackProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+Provider to rollback configuration to version from a given date
 
 ----------
 ### JSON Schema
 #### JSON Schema
 
+
+
+----------
+### Run Input JSON Schema
+#### Interface Rollback
+
+
+##### Properties
+
+
+- **`rollback_date`** *(string)*
 
 ### Methods
 ```python

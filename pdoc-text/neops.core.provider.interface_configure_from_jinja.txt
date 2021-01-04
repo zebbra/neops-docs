@@ -5,11 +5,7 @@ Classes
 -------
 
 `InterfaceJinjaConfigureProvider(**kwargs)`
-:   This provider extends the NeopsBaseProvider by the functionality of storing configurations (on device results)
-    to the device it self by different apply methods.
-    
-    This provider should be the base for configuration providers. So if you create a new configuration provider with,
-    either extend this `NeopsConfigureBaseProvider` or a concrete configuration provider
+:   Provider to configure a device based on the passed interface selection to a jinja template
 
     ### Ancestors (in MRO)
 
@@ -23,4 +19,4 @@ Classes
     ### Methods
 
     `run_on_device(self, task: nornir.core.task.Task, device_id: int, execute_on: List[int], execute_on_type: neops.core.provider.base.enum.RunOnEnum, **kwargs) ‑> nornir.core.task.Result`
-    :
+    :   Process the template and apply the configuration to the device

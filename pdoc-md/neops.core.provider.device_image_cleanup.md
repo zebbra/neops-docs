@@ -1,7 +1,6 @@
 # neops.core.provider.device_image_cleanup
 ## DeviceImageCleanUpProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+Clean up old images on devices
 
 ----------
 ### JSON Schema

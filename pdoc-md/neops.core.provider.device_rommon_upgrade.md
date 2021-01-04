@@ -1,7 +1,6 @@
 # neops.core.provider.device_rommon_upgrade
 ## DeviceRommonUpgradeProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+Provider to Upgrade Rommon of Cisco Devices
 
 ----------
 ### JSON Schema
@@ -12,6 +11,27 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 
 
 - **`source_url`** *(string)*: from this URL the image will be loaded.
+
+
+----------
+### Run Input JSON Schema
+#### Device Upgrade ROMMON
+
+
+##### Properties
+
+
+- **`image`** *(string)*: from this URL the image will be loaded.
+
+- **`md5`** *(string)*: MD5 sum to verify. Default: ``.
+
+- **`min_space`** *(integer)*: minimum file size required. Default: `0`.
+
+- **`overwrite`** *(boolean)*: overwrite image if file exists on device. Default: `False`.
+
+- **`restart`** *(boolean)*: restart device when image is copied and installed. Default: `False`.
+
+- **`vrf`** *(string)*: VRF where we should copy. Default: ``.
 
 ### Methods
 ```python

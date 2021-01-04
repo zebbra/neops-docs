@@ -37,8 +37,7 @@
 <span>(</span><span>**kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider</p></div>
+<div class="desc"><p>Provider to generate a custom output to copy pase to an other application</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="neops.core.provider.base.base.NeopsBaseProvider" href="base/base.html#neops.core.provider.base.base.NeopsBaseProvider">NeopsBaseProvider</a></li>
@@ -49,23 +48,29 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 </ul>
 <h3>Methods</h3>
 <dl>
+<dt id="neops.core.provider.generic_report.GenericReportProvider.run_on_client_of_interface"><code class="name flex">
+<span>def <span class="ident">run_on_client_of_interface</span></span>(<span>self, execute_on: List[int], execute_on_type: <a title="neops.core.provider.base.enum.RunOnEnum" href="base/enum.html#neops.core.provider.base.enum.RunOnEnum">RunOnEnum</a>, dry_run: bool, task_input_kwargs: Dict[Any, Any], search_query: str, task_kwargs: Dict[Any, Any], task: nornir.core.task.Task, nornir_device_id: int, device_id: int, interface_id: int, client_id: int, report_for: str, **kwargs) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Process report on CLIENT</p></div>
+</dd>
 <dt id="neops.core.provider.generic_report.GenericReportProvider.run_on_device"><code class="name flex">
 <span>def <span class="ident">run_on_device</span></span>(<span>self, task: nornir.core.task.Task, device_id: int, report_for: str, template: str, **kwargs) ‑> Any</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Process report on DEVICE</p></div>
 </dd>
 <dt id="neops.core.provider.generic_report.GenericReportProvider.run_on_device_group"><code class="name flex">
 <span>def <span class="ident">run_on_device_group</span></span>(<span>self, device_group_id: int, report_for: str, template: str, **kwargs) ‑> Any</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Process report on GROUP</p></div>
 </dd>
 <dt id="neops.core.provider.generic_report.GenericReportProvider.run_on_interface"><code class="name flex">
 <span>def <span class="ident">run_on_interface</span></span>(<span>self, task: nornir.core.task.Task, device_id: int, interface_id: int, report_for: str, template: str, **kwargs) ‑> Any</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Process report on INTERFACE</p></div>
 </dd>
 </dl>
 <h3>Inherited members</h3>
@@ -122,6 +127,7 @@ To create a new provider, either extend this NeopsBaseProvider or a concrete pro
 <li>
 <h4><code><a title="neops.core.provider.generic_report.GenericReportProvider" href="#neops.core.provider.generic_report.GenericReportProvider">GenericReportProvider</a></code></h4>
 <ul class="">
+<li><code><a title="neops.core.provider.generic_report.GenericReportProvider.run_on_client_of_interface" href="#neops.core.provider.generic_report.GenericReportProvider.run_on_client_of_interface">run_on_client_of_interface</a></code></li>
 <li><code><a title="neops.core.provider.generic_report.GenericReportProvider.run_on_device" href="#neops.core.provider.generic_report.GenericReportProvider.run_on_device">run_on_device</a></code></li>
 <li><code><a title="neops.core.provider.generic_report.GenericReportProvider.run_on_device_group" href="#neops.core.provider.generic_report.GenericReportProvider.run_on_device_group">run_on_device_group</a></code></li>
 <li><code><a title="neops.core.provider.generic_report.GenericReportProvider.run_on_interface" href="#neops.core.provider.generic_report.GenericReportProvider.run_on_interface">run_on_interface</a></code></li>

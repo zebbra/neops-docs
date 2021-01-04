@@ -1,7 +1,6 @@
 # neops.core.provider.device_upgrade_unattended
 ## DeviceUpgradeUnattendedProvider
-The base neops provider contains all methods and required data processing for a concrete provider.
-To create a new provider, either extend this NeopsBaseProvider or a concrete provider
+Provider to upgrade device image (Unattended, define the values in the task and don't do a dry run)
 
 ----------
 ### JSON Schema
