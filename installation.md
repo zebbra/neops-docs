@@ -58,7 +58,7 @@ Deploy the elastic indexes
 
 ```shell
 cd neops-core/backend
-pipenv run ./manage.py search_index --rebuild
+pipenv run ./manage.py elastic_index --rebuild
 ```
 
 Create a superuser for the backend
