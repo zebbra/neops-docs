@@ -129,6 +129,82 @@ To easily reuse complex search terms, you can save and name them with the disk s
 
 To find the saved search term, enter the defined name. Saved searches are per default added in front of the term with the `AND` operator added.
 
+# Execute/Create Tasks
+
+see [tasks](/tasks)
+
 # Tasks of Implemented Providers
 
 see [tasks](/tasks), [providers](/provider) and [provider overview](/provider_overview)
+
+# Configuration History and Rollback
+
+The [Discovery Provider](/pdoc-md/neops.core.provider.device_discovery) saves the configuration for Devices and Interfaces to neops.
+
+The Configuration History can be accessed over the Device List and the Edit Button
+
+![Device Edit](./_media/screenshots/device-edit.png)
+
+The you have an overview of the saved configurations and the ability to compare them.
+
+![Device Configuration](./_media/screenshots/device-configuration.png)
+
+To Rollback a Device to a given state push the time backwards button, the device will be set to the state of the configuration on the right side.
+The Rollback operation is performed by the [Device Rollback Provider](/pdoc-md/neops.core.provider.device_rollback)
+
+!> use this functionality with caution
+
+# Authentication, Roles, Rights and Permissions
+
+## Authentication
+
+neops.io supports 3 different Authentication Providers:
+
+- no Authentication
+- Authentication against Local User Database (Django)
+- Authentication against Keycloak, with OAuth2.0 (Backends like Oauth, LDAP and others supported by [Keycloak](https://www.keycloak.org/))
+
+## Roles, Rights and Permissions
+
+neops.io has it's own permission system. We grant access based on roles (Role assignments are set in Keycloak or in the Local User Database).
+Roles are linked to Tasks and Device Groups with three different type of permissions (Read, Execute, Write). Those Permissions are implicit as soon you have write permissions to an element you will have permissions to read and execute as well.
+That a user is able to execute or modify a Task on a given Device he need at least execute or write permission on both Elements with any given role.
+
+To grant access to permission management or other functionality there are dedicated permission elements to grant access on (such as can a user create a task).
+
+### Permission Management
+
+To edit permissions go to Settings -> Permissions.
+
+#### Role Permissions
+
+![Role Permissions](./_media/screenshots/permission-roles.png)
+
+In the first tab you have all existent roles with their default permissions if a element (Task, Device Group or Permission Element) does not have an explicit set permission the default permission are set.
+With those default permissions you have the ability to go with the least privilege principle (no default permission) or not (set default permissions)
+
+#### Permission Elements
+
+![Permission Elements](./_media/screenshots/permission-elements.png)
+
+To grant access to task creation, permission settings or any other base functionally use the "UI Elements" tab.
+The needed permission (read, write, execute) for an action is related to the implementation. But basicity it should be self explained such as for the permission settings only read and write are used.
+
+Those permissions are always related to roles.
+
+#### Permission on Tasks
+
+![Permission Elements](./_media/screenshots/permission-tasks.png)
+
+Grant access to a task, read, execute or edit (write) the task.
+
+Those permissions are always related to roles.
+
+#### Permission on Device Groups
+
+![Permission Elements](./_media/screenshots/permission-groups.png)
+
+Grant access to a Device Groups, Devices, Interfaces and Clients.
+As soon as a Device is in a permitted Device Group for a given role, those person has access to any Device related Interfaces or Clients as well.
+
+Those permissions are always related to roles.
