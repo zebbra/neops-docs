@@ -10,13 +10,12 @@
 
 The key to be competitive tomorrow lies in an effective network automation that is closely integrated into your business processes. neops.io was built for complex enterprise and MSP environments and empowers you to automate and integrate on the fast-track. Many organizations invest heavily in enabling their network teams to learn to code and to automate. neops.io builds on those skills and helps to realize value faster by providing a modular platform that takes care of the heavy lifting. This lets your engineers focus on creating custom network & business logic, while neops.io provides the overview, tools and mechanisms to handle the management part.
 
-For more information visit [neops.io](https://neops.io)
+For more information request a demo [here](https://outlook.office365.com/owa/calendar/neopsio@zebbra.ch/bookings/)
 
 ## Resources
 
 Below you can find links to other resources related to neops:
 
-- [neops.io Website](https://neops.io)
 - [zebbra](https://zebbra.ch) has built neops.io
 - [Demo](https://demo.neops.io) (Username: demo, Password: demodemo)
 - [Acknowledgments](#acknowledgments) for documentation of used projects at neops.io.
@@ -25,7 +24,7 @@ Below you can find links to other resources related to neops:
 
 ## Roadmap
 
-We are currently working hard on the v1.0 release. Stay tuned!
+We are currently working hard on the roadmap for 2021/2022. Stay tuned!
 
 ## Versioning
 
@@ -52,11 +51,11 @@ And the whole [Zebbra Team](https://zebbra.ch/#team)!
 
 ## License
 
-Currently neops.io is released under a proprietary license, we have planned to release the core of neops.io under a copy left or noncommercial license.
+Currently neops.io is released under a proprietary license.
 
 ## Contributing
 
-At this time, we are not set up to handle contributions. However, we appreciate any ideas or inputs. Please don't hesitate to contact us via [neops.io](https://neops.io).
+At this time, we are not set up to handle contributions. However, we appreciate any ideas or inputs. Please don't hesitate to contact us via [e-mail](mailto:hello@neops.io).
 
 If you are a developer, you can also read our [private contribution guidelines](CONTRIBUTING.md) for details on our code of conduct.
 
