@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="neops" width="400px" src="https://neops.io/_media/logo-dark-horizontal.svg" />
+  <img alt="neops" width="400px" src="https://docs.neops.io/_media/logo-dark-horizontal.svg" />
 </p>
 
 [![Build Status](https://drone.zebbra.ch/api/badges/zebbra/neops-core/status.svg?ref=refs/heads/master)](https://drone.zebbra.ch/zebbra/neops-core)
