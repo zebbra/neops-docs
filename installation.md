@@ -405,7 +405,7 @@ sudo apt -y install nodejs
 
 ## Documentation
 
-We are using [docsify.js](https://docsify.js.org/) to generate the documentation available at https://docs.neops.io.
+We are using [docsify.js](https://docsify.js.org/) to generate the documentation available here.
 
 The source is located in the [`/docs`](https://github.com/zebbra/neops-core/tree/master/docs) folder of the project and served using Github Pages.
 

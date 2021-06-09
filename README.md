@@ -20,7 +20,6 @@ Below you can find links to other resources related to neops:
 - [Demo](https://demo.neops.io) (Username: demo, Password: demodemo)
 - [Acknowledgments](#acknowledgments) for documentation of used projects at neops.io.
 - [Docker Containers at quay.io](https://quay.io/organization/zebbra/neops) (Private)
-- [Documentation](https://docs.neops.io)
 
 ## Roadmap
 
