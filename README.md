@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="neops" width="400px" src="https://docs.neops.io/_media/logo-dark-horizontal.svg" />
+  <img alt="neops" width="400px" src="https://neops.io/_media/logo-dark-horizontal.svg" />
 </p>
 
 [![Build Status](https://drone.zebbra.ch/api/badges/zebbra/neops-core/status.svg?ref=refs/heads/master)](https://drone.zebbra.ch/zebbra/neops-core)
@@ -20,7 +20,6 @@ Below you can find links to other resources related to neops:
 - [Demo](https://demo.neops.io) (Username: demo, Password: demodemo)
 - [Acknowledgments](#acknowledgments) for documentation of used projects at neops.io.
 - [Docker Containers at quay.io](https://quay.io/organization/zebbra/neops) (Private)
-- [Documentation](https://docs.neops.io)
 
 ## Roadmap
 
