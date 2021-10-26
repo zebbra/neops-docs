@@ -1,4 +1,4 @@
-![logo](_media/logo.svg ':size=300')
+![logo](_media/neops_square_dark.svg ':size=300')
 
 # Full-Stack Network Automation, your way
 
