@@ -1,4 +1,4 @@
-[![Build Status](https://drone.zebbra.ch/api/badges/zebbra/neops-core/status.svg?ref=refs/heads/master)](https://drone.zebbra.ch/zebbra/neops-core)
+![Build Status](https://drone.zebbra.ch/api/badges/zebbra/neops-core/status.svg?ref=refs/heads/master)
 
 ## About
 
