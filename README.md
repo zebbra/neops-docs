@@ -13,7 +13,6 @@ For more information request a demo [here](https://outlook.office365.com/owa/cal
 Below you can find links to other resources related to neops:
 
 - [zebbra](https://zebbra.ch) has built neops.io
-- [Demo](https://demo.neops.io) (Username: demo, Password: demodemo)
 - [Acknowledgments](#acknowledgments) for documentation of used projects at neops.io.
 - [Docker Containers at quay.io](https://quay.io/organization/zebbra/neops) (Private)
 
