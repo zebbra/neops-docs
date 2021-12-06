@@ -5,5 +5,5 @@
 Create an agile network infrastructure and company culture that is ready for change.
 
 [Website](https://neops.io)
-[Get Demo](https://outlook.office365.com/owa/calendar/neopsio@zebbra.ch/bookings/)
+[Book Demo](https://outlook.office365.com/owa/calendar/neopsio@zebbra.ch/bookings/)
 
