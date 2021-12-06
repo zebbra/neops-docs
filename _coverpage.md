@@ -1,9 +1,9 @@
-![logo](_media/neops_square_dark.svg ':size=300')
+![logo](_media/neops_Brandmark_Color.svg ':size=300')
 
-# Full-Stack Network Automation, your way
+Intelligent automation through abstraction of complexity.
 
-We have taken inspiration from software IDEs, CI/CD pipelines and core DevOps methodologies to build a pragmatic NetOps tool chain behind a fancy UX, thus enabling the focus to be on the network engineering aspects of the job.
+Create an agile network infrastructure and company culture that is ready for change.
 
-[Documentation](installation.md#getting-started)
+[Website](https://neops.io)
 [Get Demo](https://outlook.office365.com/owa/calendar/neopsio@zebbra.ch/bookings/)
 
