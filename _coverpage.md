@@ -1,4 +1,4 @@
-![logo](_media/neops_Brandmark_Color.svg ':size=300')
+![logo](_media/neops_Brandmark_Color_RGB.svg ':size=300')
 
 Intelligent automation through abstraction of complexity.
 
