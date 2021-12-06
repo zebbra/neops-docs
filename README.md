@@ -6,7 +6,7 @@
 
 The key to be competitive tomorrow lies in an effective network automation that is closely integrated into your business processes. neops was built for complex enterprise and MSP environments and empowers you to automate and integrate on the fast-track. Many organizations invest heavily in enabling their network teams to learn to code and to automate. neops builds on those skills and helps to realize value faster by providing a modular platform that takes care of the heavy lifting. This lets your engineers focus on creating custom network & business logic, while neops provides the overview, tools and mechanisms to handle the management part.
 
-For more information request a demo [here](https://outlook.office365.com/owa/calendar/neopsio@zebbra.ch/bookings/)
+For more information request a demo [here](https://outlook.office365.com/owa/calendar/neopsio@zebbra.ch/bookings/).
 
 ## Resources
 
