@@ -2,9 +2,9 @@
 
 ## About
 
-**neops.io, the smart way to network programmability.**
+**neops, the smart way to network programmability.**
 
-The key to be competitive tomorrow lies in an effective network automation that is closely integrated into your business processes. neops.io was built for complex enterprise and MSP environments and empowers you to automate and integrate on the fast-track. Many organizations invest heavily in enabling their network teams to learn to code and to automate. neops.io builds on those skills and helps to realize value faster by providing a modular platform that takes care of the heavy lifting. This lets your engineers focus on creating custom network & business logic, while neops.io provides the overview, tools and mechanisms to handle the management part.
+The key to be competitive tomorrow lies in an effective network automation that is closely integrated into your business processes. neops was built for complex enterprise and MSP environments and empowers you to automate and integrate on the fast-track. Many organizations invest heavily in enabling their network teams to learn to code and to automate. neops builds on those skills and helps to realize value faster by providing a modular platform that takes care of the heavy lifting. This lets your engineers focus on creating custom network & business logic, while neops provides the overview, tools and mechanisms to handle the management part.
 
 For more information request a demo [here](https://outlook.office365.com/owa/calendar/neopsio@zebbra.ch/bookings/)
 
@@ -12,8 +12,8 @@ For more information request a demo [here](https://outlook.office365.com/owa/cal
 
 Below you can find links to other resources related to neops:
 
-- [zebbra](https://zebbra.ch) has built neops.io
-- [Acknowledgments](#acknowledgments) for documentation of used projects at neops.io.
+- [zebbra](https://zebbra.ch) has built neops
+- [Acknowledgments](#acknowledgments) for documentation of used projects at neops.
 - [Docker Containers at quay.io](https://quay.io/organization/zebbra/neops) (Private)
 
 ## Roadmap
@@ -45,7 +45,7 @@ And the whole [Zebbra Team](https://zebbra.ch/#team)!
 
 ## License
 
-Currently neops.io is released under a proprietary license.
+Currently neops is released under a proprietary license.
 
 ## Contributing
 
