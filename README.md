@@ -15,6 +15,7 @@ Below you can find links to other resources related to neops:
 - [zebbra](https://zebbra.ch) has built neops
 - [Acknowledgments](#acknowledgments) for documentation of used projects at neops.
 - [Docker Containers at quay.io](https://quay.io/organization/zebbra/neops) (private).
+- [Neops NPM registry](https://github.com/orgs/zebbra/packages?repo_name=neops-registry-npm) for available NPM packages
 
 ## Roadmap
 
