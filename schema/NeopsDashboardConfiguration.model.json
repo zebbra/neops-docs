@@ -1,5 +1,5 @@
 {
-  "$id": "https://docs.neops.io/schema/NeopsDashboardConfiguration",
+  "$id": "https://raw.githubusercontent.com/zebbra/neops-docs/master/schema/NeopsDashboardConfiguration.model.json",
   "$ref": "#/definitions/NeopsDashboardConfiguration",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
